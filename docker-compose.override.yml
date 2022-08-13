@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  cartdrop-node-api:
+    build:
+      dockerfile: ./Dockerfile
+    env_file: ./.dev.env
+    volumes:
+      - .:/cartdrop
+    ports:
+      - 5000:5000
+    command: npm run dev
+
+  pg_db:
+    volumes:
+      - ./scripts/postgres_init.dev.sh:/docker-entrypoint-initdb.d/init_sql_dev.sh
+    env_file: ./.dev.env
+    restart: unless-stopped
+    ports:
+      - 5432:5432
