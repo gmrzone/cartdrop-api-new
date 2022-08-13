@@ -7,7 +7,7 @@ services:
       - /cartdrop/node_modules
     ports:
       - 5000:5000
-    command: npm run dev
+    command: sh -c "/wait && npm run dev"
 
   pg_db:
     volumes:
