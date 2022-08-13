@@ -7,6 +7,11 @@ const PORT = 5000
 
 
 app.get('/', (req: Request, res: Response) => {
+    console.log(process.env['POSTGRES_USER'], "postgres user")
+    console.log(process.env['POSTGRES_PASSWORD'], "postgres_password")
+    console.log(process.env['DB_NAME'], "Database name")
+    console.log(process.env['DB_HOST'], "database host")
+    console.log(process.env.NODE_ENV, "Node environment")
     return res.status(200).json({status: "ok"})
 })
 
