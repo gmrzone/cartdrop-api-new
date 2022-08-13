@@ -12,5 +12,7 @@ services:
       - pgdata:/var/lib/postgresql/data
     image: postgres
     container_name: cartdrop_database_node
+    ports:
+      - 5432:5432
 volumes:
   pgdata:
