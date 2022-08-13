@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  cartdrop-node-api:
+    build:
+      context: .
+    container_name: cartdrop_node_api
+    depends_on:
+      - pg_db
+
+  pg_db:
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    image: postgres
+    container_name: cartdrop_database_node
+volumes:
+  pgdata:
