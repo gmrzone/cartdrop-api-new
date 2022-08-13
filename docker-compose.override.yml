@@ -6,6 +6,7 @@ services:
     env_file: ./.dev.env
     volumes:
       - .:/cartdrop
+      - /cartdrop/node_modules
     ports:
       - 5000:5000
     command: npm run dev
