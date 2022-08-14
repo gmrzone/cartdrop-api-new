@@ -1,4 +1,4 @@
-node_modules
+/node_modules
 dist
 .prod.env
 /scripts/postgres_init.prod.sh
