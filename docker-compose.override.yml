@@ -4,7 +4,7 @@ services:
     env_file: ./.dev.env
     volumes:
       - .:/cartdrop
-      - /cartdrop/node_modules
+      # - /cartdrop/node_modules
     ports:
       - 5000:5000
     command: sh -c "/wait && npm run dev"
