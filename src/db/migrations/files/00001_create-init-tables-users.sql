@@ -103,5 +103,63 @@ CREATE INDEX IF NOT EXISTS users_first_name_index07_like
     (first_name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
+-- TABLE user_address
+
+CREATE SEQUENCE IF NOT EXISTS public.user_address_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.user_address_id_seq
+    OWNER TO afzal;
+
+CREATE TABLE IF NOT EXISTS public.user_address (
+    id bigint NOT NULL DEFAULT nextval('user_address_id_seq'::regclass),
+    created timestamp with time zone NOT NULL,
+    update timestamp with time zone NOT NULL,
+    uuid uuid NOT NULL,
+    address_1 character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    address_2 character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    city character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    state character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    user_id bigint NOT NULL,
+    is_primary boolean NOT NULL,
+    pincode character varying(6) COLLATE pg_catalog."default" NOT NULL,
+
+    CONSTRAINT user_address_pkey PRIMARY KEY (id),
+    CONSTRAINT user_address_uuid_unique UNIQUE (uuid),
+    CONSTRAINT user_address_user_id_fk_users_id FOREIGN KEY (user_id)
+        REFERENCES public.users (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.user_address
+    OWNER to afzal;
+
+ALTER SEQUENCE public.user_address_id_seq
+    OWNED BY user_address.id;
+
+-- user_address INDEXES
+
+CREATE INDEX IF NOT EXISTS user_address_user_id_index01
+    ON public.user_address USING btree
+    (user_id ASC NULLS LAST)
+    TABLESPACE pg_default;
 
 
+CREATE INDEX IF NOT EXISTS user_address_state_index02
+    ON public.user_address USING btree
+    (state COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
+CREATE INDEX IF NOT EXISTS user_address_city_index03
+    ON public.user_address USING btree
+    (city COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;

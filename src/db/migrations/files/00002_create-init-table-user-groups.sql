@@ -1,17 +1,17 @@
 -- TABLE auth_group
 
-CREATE SEQUENCE IF NOT EXISTS public.auth_group_seq_id
+CREATE SEQUENCE IF NOT EXISTS public.auth_group_id_seq
     INCREMENT 1
     START 1
     MINVALUE 1
     MAXVALUE 2147483647
     CACHE 1;
 
-ALTER SEQUENCE IF EXISTS public.auth_group_seq_id
+ALTER SEQUENCE IF EXISTS public.auth_group_id_seq
     OWNER TO afzal;
 
 CREATE TABLE IF NOT EXISTS public.auth_group (
-    id integer NOT NULL DEFAULT nextval('auth_group_seq_id'::regclass),
+    id integer NOT NULL DEFAULT nextval('auth_group_id_seq'::regclass),
     name character varying(150) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT auth_group_pkey PRIMARY KEY (id),
     CONSTRAINT auth_group_name_key UNIQUE (name)
@@ -29,11 +29,11 @@ CREATE INDEX IF NOT EXISTS auth_group_name_index01_like
     (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
-ALTER SEQUENCE public.auth_group_seq_id
+ALTER SEQUENCE public.auth_group_id_seq
     OWNED BY auth_group.id;
 
 -- TABLE user_group
-CREATE SEQUENCE IF NOT EXISTS public.user_groups_seq_id
+CREATE SEQUENCE IF NOT EXISTS public.user_groups_id_seq
     INCREMENT 1
     START 1
     MINVALUE 1
@@ -41,11 +41,11 @@ CREATE SEQUENCE IF NOT EXISTS public.user_groups_seq_id
     CACHE 1
     OWNED BY users.id;
 
-ALTER SEQUENCE public.user_groups_seq_id
+ALTER SEQUENCE public.user_groups_id_seq
     OWNER TO afzal;
 
 CREATE TABLE IF NOT EXISTS public.user_groups (
-    id bigint NOT NULL DEFAULT nextval('user_groups_seq_id'::regclass),
+    id bigint NOT NULL DEFAULT nextval('user_groups_id_seq'::regclass),
     user_id bigint NOT NULL,
     group_id integer NOT NULL,
     CONSTRAINT user_groups_pkey PRIMARY KEY (id),

@@ -13,6 +13,6 @@ services:
     image: postgres
     container_name: cartdrop_database_node
     ports:
-      - 5432:5432
+      - 5435:5435
 volumes:
   pgdata:
