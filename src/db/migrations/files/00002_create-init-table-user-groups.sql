@@ -1,18 +1,17 @@
 -- TABLE auth_group
 
-CREATE SEQUENCE IF NOT EXISTS public.auth_group_id_seq
+CREATE SEQUENCE IF NOT EXISTS public.auth_group_seq_id
     INCREMENT 1
     START 1
     MINVALUE 1
     MAXVALUE 2147483647
-    CACHE 1
-    OWNED BY auth_group.id;
+    CACHE 1;
 
-ALTER SEQUENCE public.auth_group_id_seq
+ALTER SEQUENCE IF EXISTS public.auth_group_seq_id
     OWNER TO afzal;
 
 CREATE TABLE IF NOT EXISTS public.auth_group (
-    id integer NOT NULL DEFAULT nextval('auth_group_seq_id':regclass),
+    id integer NOT NULL DEFAULT nextval('auth_group_seq_id'::regclass),
     name character varying(150) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT auth_group_pkey PRIMARY KEY (id),
     CONSTRAINT auth_group_name_key UNIQUE (name)
@@ -25,11 +24,13 @@ ALTER TABLE IF EXISTS public.auth_group
 
 -- auth_group INDEXES
 
-CREATE INDEX IF NOT EXISTS public.auth_group_name_index01_like
+CREATE INDEX IF NOT EXISTS auth_group_name_index01_like
     ON public.auth_group USING btree
-    (name COLLATE pg_catalog."default" varchat_pattern_ops ASC NULLS LAST)
+    (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
+ALTER SEQUENCE public.auth_group_seq_id
+    OWNED BY auth_group.id;
 
 -- TABLE user_group
 CREATE SEQUENCE IF NOT EXISTS public.user_groups_seq_id
@@ -38,7 +39,7 @@ CREATE SEQUENCE IF NOT EXISTS public.user_groups_seq_id
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1
-    OWNED BY accounts_cartdropuser.id;
+    OWNED BY users.id;
 
 ALTER SEQUENCE public.user_groups_seq_id
     OWNER TO afzal;
@@ -70,12 +71,12 @@ ALTER TABLE IF EXISTS public.user_groups
 
 CREATE INDEX IF NOT EXISTS user_groups_user_id_index01
     ON public.user_groups USING btree
-    (user_id ASC NULL LAST)
+    (user_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
 
 CREATE INDEX IF NOT EXISTS user_groups_group_id_index02
     ON public.user_groups USING btree
-    (group_id ASC NULL LAST)
+    (group_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
