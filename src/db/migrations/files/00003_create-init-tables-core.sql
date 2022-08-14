@@ -109,7 +109,98 @@ CREATE INDEX IF NOT EXISTS coupon_code_valid_to_index03
 
 -- CATEGORY TABLES
 
+CREATE SEQUENCE IF NOT EXISTS public.product_category_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
 
+ALTER SEQUENCE public.product_category_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_category (
+    id bigint NOT NULL DEFAULT nextval('product_category_id_seq'::regclass),
+    created timestamp with time zone NOT NULL,
+    updated timestamp with time zone NOT NULL,
+    slug character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    uuid uuid NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_category_pkey PRIMARY KEY(id),
+    CONSTRAINT product_category_name_unique UNIQUE(name),
+    CONSTRAINT product_category_uuid_unique_key UNIQUE(name)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_category
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_category_id_seq
+    OWNED BY product_category.id;
+
+-- product_category INDEXES
+
+CREATE INDEX IF NOT EXISTS product_category_created_index01
+    ON public.product_category USING btree
+    (created ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_category_name_index02
+    ON public.product_category USING btree
+    (name COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_category_name_like_index03
+    ON public.product_category USING btree
+    (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_category_slug_index04
+    ON public.product_category USING btree
+    (slug COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_category_slug_like_index04
+    ON public.product_category USING btree
+    (slug COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+-- Product Category images table
+
+CREATE SEQUENCE IF NOT EXISTS product_category_images_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE IF EXISTS product_category_images_id_seq
+    OWNER TO afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_category_images (
+    id bigint NOT NULL DEFAULT nextval('product_category_images_id_seq'::regclass),
+    image character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    product_category_id bigint NOT NULL,
+    CONSTRAINT product_category_images_pkey PRIMARY KEY(id),
+    CONSTRAINT prioduct_category_id_fk_product_category FOREIGN KEY(product_category_id)
+        REFERENCES public.product_category (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_category_images
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS product_category_images_id_seq
+    OWNED by product_category_images.id;
+
+-- product_category_images INDEXES
+CREATE INDEX IF NOT EXISTS product_Category_images_category_id_index01
+    ON public.product_category_images USING btree
+    (product_category_id ASC NULLS LAST)
+    TABLESPACE pg_default;
 
 
 
