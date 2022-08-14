@@ -22,7 +22,7 @@ const poolConfig = {
 }
 
 
-class Database {
+export class Database {
     _pool: Pool
     constructor() {
         this._pool = new Pool(poolConfig)
