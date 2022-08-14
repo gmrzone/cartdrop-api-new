@@ -13,7 +13,7 @@ app.get('/', async (req: Request, res: Response) => {
         host: process.env['POSTGRES_DB_HOST'],
         database: process.env['POSTGRES_DB_NAME'],
         password: process.env['POSTGRES_PASSWORD'],
-        port: Number(process.env["POSTGRES_DB_PORT"])
+        port: Number(process.env["PGPORT"])
     })
     client.connect()
     const data = await client.query('SELECT * FROM public.accounts_cartdrop_users ORDER BY id ASC')
