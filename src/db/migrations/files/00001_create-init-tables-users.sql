@@ -1,16 +1,19 @@
--- Table: public.accounts_cartdrop_users
+-- Table: public.users
 
--- DROP TABLE IF EXISTS public.accounts_cartdrop_users;
+-- DROP TABLE IF EXISTS public.users;
 
-CREATE SEQUENCE public.accounts_cartdrop_users_id_seq
+CREATE SEQUENCE public.users_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
     NO MAXVALUE
     CACHE 1;
 
-CREATE TABLE IF NOT EXISTS public.accounts_cartdrop_users (
-    id bigint NOT NULL DEFAULT nextval('accounts_cartdrop_users_id_seq'::regclass),
+ALTER SEQUENCE public.users_id_seq
+    OWNER TO afzal;
+
+CREATE TABLE IF NOT EXISTS public.users (
+    id bigint NOT NULL DEFAULT nextval('users_id_seq'::regclass),
     password character varying(128) COLLATE pg_catalog."default" NOT NULL,
     last_login timestamp with time zone,
     is_superuser boolean NOT NULL,
@@ -27,76 +30,76 @@ CREATE TABLE IF NOT EXISTS public.accounts_cartdrop_users (
     is_email_verified boolean NOT NULL,
     is_number_verified boolean NOT NULL,
     is_disabled boolean NOT NULL,
-    CONSTRAINT accounts_cartdrop_users_pkey PRIMARY KEY (id),
-    CONSTRAINT accounts_cartdrop_users_email_key UNIQUE (email),
-    CONSTRAINT accounts_cartdrop_users_number_key UNIQUE (number),
-    CONSTRAINT accounts_cartdrop_users_username_key UNIQUE (username)
+    CONSTRAINT users_pkey PRIMARY KEY (id),
+    CONSTRAINT users_email_key UNIQUE (email),
+    CONSTRAINT users_number_key UNIQUE (number),
+    CONSTRAINT users_username_key UNIQUE (username)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.accounts_cartdrop_users OWNER to afzal;
+ALTER TABLE IF EXISTS public.users OWNER to afzal;
 
--- Index: accounts_cartdrop_users_email_index01_like
+-- Index: users_email_index01_like
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_users_email_index01_like;
+-- DROP INDEX IF EXISTS public.users_email_index01_like;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_email_index01_like
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_email_index01_like
+    ON public.users USING btree
     (email COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
--- Index: accounts_cartdrop_users_number_index02_like
+-- Index: users_number_index02_like
 
--- DROP INDEX IF EXISTS accounts_cartdrop_users_number_index02_like;
+-- DROP INDEX IF EXISTS users_number_index02_like;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_number_index02_like
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_number_index02_like
+    ON public.users USING btree
     (number COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
--- Index: accounts_cartdrop_users_type_index03
+-- Index: users_type_index03
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_users_type_index03;
+-- DROP INDEX IF EXISTS public.users_type_index03;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_type_index03
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_type_index03
+    ON public.users USING btree
     (type COLLATE pg_catalog."default" ASC NULLS LAST)
     TABLESPACE pg_default;
 
--- Index: accounts_cartdrop_user_type_index04_like
+-- Index: user_type_index04_like
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_user_type_index04_like;
+-- DROP INDEX IF EXISTS public.user_type_index04_like;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_user_type_index04_like
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS user_type_index04_like
+    ON public.users USING btree
     (type COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
--- Index: accounts_cartdrop_users_username_index05_like
+-- Index: users_username_index05_like
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_users_username_index05_like;
+-- DROP INDEX IF EXISTS public.users_username_index05_like;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_username_index05_like
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_username_index05_like
+    ON public.users USING btree
     (username COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
 
--- Index: accounts_cartdrop_users_first_name_index06
+-- Index: users_first_name_index06
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_users_first_name_index06;
+-- DROP INDEX IF EXISTS public.users_first_name_index06;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_first_name_index06
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_first_name_index06
+    ON public.users USING btree
     (first_name COLLATE pg_catalog."default" ASC NULLS LAST)
     TABLESPACE pg_default;
--- Index: accounts_cartdrop_users_first_name_index07_like
+-- Index: users_first_name_index07_like
 
--- DROP INDEX IF EXISTS public.accounts_cartdrop_users_first_name_index07_like;
+-- DROP INDEX IF EXISTS public.users_first_name_index07_like;
 
-CREATE INDEX IF NOT EXISTS accounts_cartdrop_users_first_name_index07_like
-    ON public.accounts_cartdrop_users USING btree
+CREATE INDEX IF NOT EXISTS users_first_name_index07_like
+    ON public.users USING btree
     (first_name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
