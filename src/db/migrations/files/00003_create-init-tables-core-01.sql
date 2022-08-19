@@ -42,16 +42,35 @@ CREATE INDEX IF NOT EXISTS brands_slug_index02_like
     (slug COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
--- Coupon Table
+-- COUPON REUSABLE TYPE TABLE
 
-CREATE SEQUENCE IF NOT EXISTS coupon_codes_id_seq
+CREATE SEQUENCE IF NOT EXISTS public.coupon_reusable_id_seq
     INCREMENT 1
     START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-ALTER SEQUENCE coupon_codes_id_seq
+ALTER SEQUENCE public.coupon_reusable_id_seq
+    OWNER TO afzal;
+
+CREATE TABLE IF NOT EXISTS public.coupon_reusable (
+    id bigint NOT NULL DEFAULT nextval('coupon_reusable_id_seq'::regclass),
+    type character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT coupon_reusable_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+-- Coupon Table
+
+CREATE SEQUENCE IF NOT EXISTS public.coupon_codes_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.coupon_codes_id_seq
     OWNER TO afzal;
 
 CREATE TABLE IF NOT EXISTS public.coupon_codes (
@@ -64,12 +83,17 @@ CREATE TABLE IF NOT EXISTS public.coupon_codes (
     valid_from  timestamp with time zone NOT NULL,
     valid_to  timestamp with time zone NOT NULL,
     active boolean NOT NULL,
-    reusable_type character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    reusable_id bigint NOT NULL,
     summary character varying(200) COLLATE pg_catalog."default" NOT NULL,
 
     CONSTRAINT coupon_code_pkey PRIMARY KEY(id),
     CONSTRAINT coupon_code_uuid_unique UNIQUE(uuid),
-    CONSTRAINT coupon_code_discount_check CHECK (discount >=0 and discount <= 100)
+    CONSTRAINT coupon_code_discount_check CHECK (discount >=0 and discount <= 100),
+    CONSTRAINT coupon_code_fk_reusable FOREIGN KEY(reusable_id)
+        REFERENCES public.coupon_reusable (id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
 )
 
 TABLESPACE pg_default;
