@@ -107,6 +107,57 @@ CREATE INDEX IF NOT EXISTS coupon_code_valid_to_index03
     (valid_to ASC NULLS LAST)
     TABLESPACE pg_default;
 
+
+-- USER COUPON INTERMIDIATE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.user_coupon_intermidiate_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.user_coupon_intermidiate_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.user_coupon_intermidiate (
+    id bigint NOT NULL DEFAULT nextval('user_coupon_intermidiate_id_seq'::regclass),
+    coupon_id bigint NOT NULL,
+    user_id bigint NOT NULL,
+    created timestamp with time zone NOT NULL,
+    updated timestamp with time zone NOT NULL,
+    CONSTRAINT user_coupon_intermidiate_pkey PRIMARY KEY(id),
+    CONSTRAINT user_coupon_intermidiate_fk_coupon FOREIGN KEY(coupon_id)
+        REFERENCES public.coupon_codes (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.user_coupon_intermidiate
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.user_coupon_intermidiate_id_seq
+    OWNED by user_coupon_intermidiate.id;
+
+-- USER COUPON INTERMIDIATE INDEXES
+
+CREATE INDEX IF NOT EXISTS user_coupon_intermidiate_created_index01
+    ON public.user_coupon_intermidiate USING btree
+    (created ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS user_coupon_intermidiate_coupon_id_index02
+    ON public.user_coupon_intermidiate USING btree
+    (coupon_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS user_coupon_intermidiate_user_id_index02
+    ON public.user_coupon_intermidiate USING btree
+    (user_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
 -- CATEGORY TABLES
 
 CREATE SEQUENCE IF NOT EXISTS public.product_category_id_seq
