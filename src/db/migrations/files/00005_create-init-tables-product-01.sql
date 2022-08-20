@@ -1,6 +1,107 @@
 
 -- PRODUCT RELATED TABLES
 
+-- PRODUCT PROCESSOR table (mobile/laptop)
+
+CREATE SEQUENCE IF NOT EXISTS public.product_processor_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_processor_seq
+    OWNER to afzal;
+
+
+CREATE TABLE IF NOT EXISTS public.product_processor (
+    id bigint NOT NULL DEFAULT nextval('product_processor_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_processor_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_processor
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_processor_seq
+    OWNED by product_processor.id;
+
+CREATE INDEX IF NOT EXISTS product_processor_name_like_index01
+    ON public.product_processor USING btree
+    (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_processor_name_index02
+    ON public.product_processor USING btree
+    (name COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
+-- PRODUCT MOBILE SIM TYPE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_sim_type_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_sim_type_id_seq
+    OWNER to afzal;
+
+
+CREATE TABLE IF NOT EXISTS public.product_sim_type (
+    id bigint NOT NULL DEFAULT nextval('product_sim_type_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_sim_type_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_sim_type
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_sim_type_id_seq
+    OWNED by product_sim_type.id;
+
+
+-- PRODUCT SERIES TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_series_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_series_id_seq
+    OWNER to afzal;
+
+
+CREATE TABLE IF NOT EXISTS public.product_series (
+    id bigint NOT NULL DEFAULT nextval('product_series_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_series_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_series
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_series_id_seq
+    OWNED by product_series.id;
+
+CREATE INDEX IF NOT EXISTS product_series_name_like_index01
+    ON public.product_series USING btree
+    (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_series_name_index02
+    ON public.product_series USING btree
+    (name COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
 -- PRODUCT OPERATING SYSTEM TABLE (for Mobile/laptop ETC)
 
 CREATE SEQUENCE IF NOT EXISTS public.operating_system_id_seq
@@ -48,10 +149,28 @@ CREATE TABLE IF NOT EXISTS public.mobile_features (
     touchscreen boolean NOT NULL,
     smart_phone boolean NOT NULL,
     operating_system_id bigint NOT NULL,
+    series_id bigint,
+    sim_type_id bigint NOT NULL,
+    processor_id bigint,
 
     CONSTRAINT mobile_features_pkey PRIMARY KEY(id),
     CONSTRAINT mobile_features_operating_system_fkey FOREIGN KEY(operating_system_id)
         REFERENCES public.operating_system(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT mobile_features_series_id_fk_series_table FOREIGN KEY(series_id)
+        REFERENCES public.product_series(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT mobile_feature_sim_type_id_fk_sim_type FOREIGN KEY(sim_type_id)
+        REFERENCES public.product_sim_type(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT mobile_feature_processor_id_fk_processor_table FOREIGN KEY(processor_id)
+        REFERENCES public.product_processor(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
@@ -69,6 +188,63 @@ CREATE INDEX IF NOT EXISTS mobile_features_operating_system_id_index01
     (operating_system_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
+CREATE INDEX IF NOT EXISTS mobile_features_processor_id_index02
+    ON public.mobile_features USING btree
+    (processor_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+-- PRODUCT LAPTOP FEATURE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.laptop_features_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.laptop_features_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.laptop_features (
+    id bigint NOT NULL DEFAULT nextval('laptop_features_id_seq'::regclass),
+    display_type character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    display_size character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    resolution character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    battery_capacity character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    touchscreen boolean NOT NULL,
+    operating_system_id bigint NOT NULL,
+    series_id bigint,
+    processor_id bigint,
+
+    CONSTRAINT laptop_features_pkey PRIMARY KEY(id),
+    CONSTRAINT laptop_features_operating_system_fkey FOREIGN KEY(operating_system_id)
+        REFERENCES public.operating_system(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT laptop_features_series_id_fk_series_table FOREIGN KEY(series_id)
+        REFERENCES public.product_series(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT laptop_feature_processor_id_fk_processor_table FOREIGN KEY(processor_id)
+        REFERENCES public.product_processor(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+) 
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.laptop_features
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.laptop_features_id_seq
+    OWNED by laptop_features.id;
+
+CREATE INDEX IF NOT EXISTS laptop_features_operating_system_id_index01
+    ON public.laptop_features USING btree
+    (operating_system_id ASC NULLS LAST)
+    TABLESPACE pg_default;
 -- PRODUCT FEATURE TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.products_features_id_seq
@@ -102,90 +278,4 @@ ALTER SEQUENCE IF EXISTS public.products_features_id_seq
     OWNED by products_features.id;
 
 
-
--- PRODUCT VARIATION RELATED TABLES
-
--- PRODUCT RAM (FOR MOBILE AND LAPTOPS ETC)
-
-CREATE SEQUENCE IF NOT EXISTS public.products_ram_id_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1
-    MAXVALUE 9223372036854775807
-    CACHE 1;
-
-ALTER SEQUENCE public.products_ram_id_seq
-    OWNER to afzal;
-
-CREATE TABLE IF NOT EXISTS public.products_ram (
-    id bigint NOT NULL DEFAULT nextval('products_ram_id_seq'::regclass),
-    capactiy character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    type character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT ram_pkey PRIMARY KEY (id)
-)
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.products_ram
-    OWNER to afzal;
-
-ALTER SEQUENCE IF EXISTS public.products_ram_id_seq
-    OWNED by products_ram.id;
-
--- PRODUCT WARRENTY TABLE
-
-CREATE SEQUENCE IF NOT EXISTS public.product_warranty_id_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1
-    MAXVALUE 9223372036854775807
-    CACHE 1;
-
-ALTER SEQUENCE public.product_warranty_id_seq
-    OWNER TO afzal;
-
-
-CREATE TABLE IF NOT EXISTS public.product_warranty (
-    id bigint NOT NULL DEFAULT nextval('product_warranty_id_seq'::regclass),
-    summary text COLLATE pg_catalog."default" NOT NULL,
-    covered character varying(200) COLLATE pg_catalog."default" NOT NULL,
-    not_covered character varying(200) COLLATE pg_catalog."default" NOT NULL,
-
-    CONSTRAINT product_warranty_pkey PRIMARY KEY(id)
-)
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.product_warranty
-    OWNER to afzal;
-
-ALTER SEQUENCE IF EXISTS public.product_warranty_id_seq
-    OWNED by product_warranty.id;
-
-
--- PRODUCT VARIATION RELATED TABLES
-
--- PRODUCT AC CAPACITY VARIANT
-
-CREATE SEQUENCE IF NOT EXISTS public.product_ac_capacity_id_seq
-    INCREMENT 1
-    START 1
-    MINVALUE 1
-    MAXVALUE 9223372036854775807
-    CACHE 1;
-
-ALTER SEQUENCE public.product_ac_capacity_id_seq
-    OWNER to afzal;
-
-
-CREATE TABLE IF NOT EXISTS public.product_ac_capacity (
-    id bigint NOT NULL DEFAULT nextval('product_ac_capacity_id_seq'::regclass),
-    capicity character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT product_ac_capacity_pkey PRIMARY KEY(id)
-)
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.product_ac_capacity
-    OWNER to afzal;
-
-ALTER SEQUENCE IF EXISTS public.product_ac_capacity_id_seq
-    OWNED by product_ac_capacity.id;
 
