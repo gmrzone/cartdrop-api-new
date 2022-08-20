@@ -2,6 +2,41 @@
 
 -- PRODUCT SPECIFICATION TABLE
 
+CREATE SEQUENCE IF NOT EXISTS public.products_specification_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.products_specification_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.products_specification (
+    id bigint NOT NULL DEFAULT nextval('products_specification_id_seq'::regclass),
+    launched_date date NOT NULL,
+    model_no character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    model_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    in_box character varying(600) COLLATE pg_catalog."default" NOT NULL,
+    features_id bigint,
+
+    CONSTRAINT products_specification_pkey PRIMARY KEY(id),
+    CONSTRAINT products_specification_feature_id_unique UNIQUE(features_id),
+    CONSTRAINT product_specification_model_no_unique UNIQUE(model_no),
+    CONSTRAINT specification_feature_id_fk_product_features FOREIGN KEY(features_id)
+        REFERENCES public.products_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.products_specification
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.products_specification_id_seq
+    OWNED by products_specification.id;
+
 -- PRODUCT TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.products_id_seq
@@ -25,6 +60,7 @@ CREATE TABLE IF NOT EXISTS public.products (
     seller_id bigint NOT NULL,
     subcategory_id bigint NOT NULL,
     warranty_id bigint NOT NULL,
+    specification_id bigint,
     weight character varying(100) COLLATE pg_catalog."default" NOT NULL,
     replacement_days integer NOT NULL,
     total_rating numeric(2, 1) NOT NULL,
@@ -33,6 +69,7 @@ CREATE TABLE IF NOT EXISTS public.products (
 
     CONSTRAINT products_pkey PRIMARY KEY(id),
     CONSTRAINT products_uuid_unique_159 UNIQUE(uuid),
+    CONSTRAINT products_specification_id_unique UNIQUE(specification_id),
     CONSTRAINT products_brand_id_fk_brand_table FOREIGN KEY(brand_id)
         REFERENCES public.brands(id) MATCH SIMPLE
         ON DELETE NO ACTION
@@ -53,7 +90,12 @@ CREATE TABLE IF NOT EXISTS public.products (
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED,
-    CONSTRAINT product_replacement_days_greater_then_zero CHECK (replacement_days >= 0)
+    CONSTRAINT products_specification_id_fk_specificatio FOREIGN KEY(specification_id)
+        REFERENCES public.products_specification(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT products_replacement_days_greater_then_zero CHECK (replacement_days >= 0)
 )
 TABLESPACE pg_default;
 
