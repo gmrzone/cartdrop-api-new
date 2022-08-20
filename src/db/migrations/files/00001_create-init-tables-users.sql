@@ -2,10 +2,10 @@
 
 -- DROP TABLE IF EXISTS public.users;
 
-CREATE SEQUENCE public.users_id_seq
+CREATE SEQUENCE IF NOT EXISTS public.users_id_seq
     START WITH 1
     INCREMENT BY 1
-    NO MINVALUE
+    MINVALUE 1
     NO MAXVALUE
     CACHE 1;
 
