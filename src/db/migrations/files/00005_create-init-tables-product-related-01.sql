@@ -1,6 +1,31 @@
 
 -- PRODUCT RELATED TABLES
 
+-- PRODUCT WASHING MACHINE WASHING METHOD TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.washing_method_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.washing_method_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.washing_methods (
+    id bigint NOT NULL DEFAULT nextval('washing_method_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT products_washingmethod_pkey PRIMARY KEY (id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.washing_methods
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.washing_method_seq
+    OWNED BY washing_methods.id;
+
 -- PRODUCT SCREEN TYPE
 
 CREATE SEQUENCE IF NOT EXISTS public.product_screen_type_seq
