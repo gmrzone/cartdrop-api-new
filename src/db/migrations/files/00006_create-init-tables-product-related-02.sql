@@ -234,6 +234,60 @@ CREATE INDEX IF NOT EXISTS washing_machine_features_washing_method_id_index01
     (washing_method_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
+-- PRODUCT AIR CONDITIONER FEATURES
+
+CREATE SEQUENCE IF NOT EXISTS public.air_conditioner_features_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE IF EXISTS public.air_conditioner_features_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.air_conditioner_features (
+    id bigint NOT NULL DEFAULT nextval('air_conditioner_features_id_seq'::regclass),
+    compressor character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    cooling_capacity integer NOT NULL,
+    cooling_coverage_area character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    series_id bigint,
+    type_id bigint,
+
+    CONSTRAINT air_conditioner_features_pkey PRIMARY KEY(id),
+    CONSTRAINT air_conditioner_features_series_id_fk_series_table FOREIGN KEY(series_id)
+        REFERENCES public.product_series(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT air_conditioner_features_type_id_fk_type_table FOREIGN KEY(type_id)
+        REFERENCES public.air_conditioner_type(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT air_conditioner_features_cooling_capacity_check CHECK(cooling_capacity >= 0)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.air_conditioner_features
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.air_conditioner_features_id_seq
+    OWNED by air_conditioner_features.id;
+
+-- PRODUCT AIR CONDITIONER FEATURES INDEXES
+
+CREATE INDEX IF NOT EXISTS air_conditioner_feature_series_id_b509f70d
+    ON public.air_conditioner_features USING btree
+    (series_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS air_conditioner_features_type_id_da8a4f83
+    ON public.air_conditioner_features USING btree
+    (type_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
 -- PRODUCT FEATURE TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.products_features_id_seq
