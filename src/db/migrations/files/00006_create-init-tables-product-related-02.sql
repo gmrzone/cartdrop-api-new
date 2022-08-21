@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS public.refrigerator_features (
 
     CONSTRAINT refrigeratorfeature_features_pkey PRIMARY KEY(id),
     CONSTRAINT refrigeratorfeature_features_type_id_fk_type FOREIGN KEY (type_id)
-        REFERENCES public.product_type(id) MATCH SIMPLE
+        REFERENCES public.refrigerator_type(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED,
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS public.speakers_features (
 
     CONSTRAINT speakers_features_pkey PRIMARY KEY(id),
     CONSTRAINT speakers_features_type_id_fk_type_table FOREIGN KEY(type_id)
-        REFERENCES public.product_type(id) MATCH SIMPLE
+        REFERENCES public.speaker_type(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
@@ -249,11 +249,45 @@ ALTER SEQUENCE public.products_features_id_seq
 CREATE TABLE IF NOT EXISTS public.products_features (
     id bigint NOT NULL DEFAULT nextval('products_features_id_seq'::regclass),
     mobile_id bigint,
-
+    laptop_id bigint,
+    refrigerator_id bigint,
+    speaker_id bigint,
+    television_id bigint,
+    washing_machine_id bigint,
     CONSTRAINT products_features_pkey PRIMARY KEY(id),
     CONSTRAINT product_feature_mobile_id_unique UNIQUE(mobile_id),
+    CONSTRAINT product_feature_laptop_id_unique UNIQUE(laptop_id),
+    CONSTRAINT product_feature_refrigerator_id_unique UNIQUE(refrigerator_id),
+    CONSTRAINT product_feature_speaker_id_unique UNIQUE(speaker_id),
+    CONSTRAINT product_feature_television_id_unique UNIQUE(television_id),
+    CONSTRAINT product_feature_washing_machine_id_unique UNIQUE(washing_machine_id),
     CONSTRAINT feature_mobile_id_fk_mobile_features FOREIGN KEY(mobile_id)
         REFERENCES public.mobile_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_laptop_id_fk_laptop_features FOREIGN KEY(laptop_id)
+        REFERENCES public.laptop_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_refrigerator_id_fk_refrigerator_features FOREIGN KEY(refrigerator_id)
+        REFERENCES public.refrigerator_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_speaker_id_fk_speaker_features FOREIGN KEY(speaker_id)
+        REFERENCES public.speakers_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_television_id_fk_television_features FOREIGN KEY(television_id)
+        REFERENCES public.television_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_washing_machine_id_fk_washing_machine_features FOREIGN KEY(washing_machine_id)
+        REFERENCES public.washing_machine_features(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
