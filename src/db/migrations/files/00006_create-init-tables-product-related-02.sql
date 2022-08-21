@@ -53,18 +53,18 @@ CREATE INDEX IF NOT EXISTS laptop_features_operating_system_id_index01
 
 -- PRODUCT REFRIGERATOR FEATURE
 
-CREATE SEQUENCE IF NOT EXISTS public.refrigeratorfeature_features_id_seq
+CREATE SEQUENCE IF NOT EXISTS public.refrigerator_features_id_seq
     INCREMENT 1
     START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-ALTER SEQUENCE public.refrigeratorfeature_features_id_seq
+ALTER SEQUENCE public.refrigerator_features_id_seq
     OWNER to afzal;
 
-CREATE TABLE IF NOT EXISTS public.refrigeratorfeature_features (
-    id bigint NOT NULL DEFAULT nextval('refrigeratorfeature_features_id_seq'::regclass),
+CREATE TABLE IF NOT EXISTS public.refrigerator_features (
+    id bigint NOT NULL DEFAULT nextval('refrigerator_features_id_seq'::regclass),
     type_id bigint NOT NULL,
     capacity character varying(100) COLLATE pg_catalog."default" NOT NULL,
     energy_rating integer NOT NULL,
@@ -81,15 +81,113 @@ CREATE TABLE IF NOT EXISTS public.refrigeratorfeature_features (
 )
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.refrigeratorfeature_features
+ALTER TABLE IF EXISTS public.refrigerator_features
     OWNER TO afzal;
 
-ALTER SEQUENCE IF EXISTS public.refrigeratorfeature_features_id_seq
-    OWNED BY refrigeratorfeature_features.id;
+ALTER SEQUENCE IF EXISTS public.refrigerator_features_id_seq
+    OWNED BY refrigerator_features.id;
 
-CREATE INDEX IF NOT EXISTS refrigeratorfeature_features_type_id_index01
-    ON public.refrigeratorfeature_features USING btree
+CREATE INDEX IF NOT EXISTS refrigerator_features_type_id_index01
+    ON public.refrigerator_features USING btree
     (type_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+-- PRODUCT SPEAKER FEATURE
+
+CREATE SEQUENCE IF NOT EXISTS public.speakers_features_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.speakers_features_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.speakers_features (
+    id bigint NOT NULL DEFAULT nextval('speakers_features_id_seq'::regclass),
+    type_id bigint NOT NULL,
+    power_output character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    frequency_response character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    has_bluetooth boolean NOT NULL,
+
+    CONSTRAINT speakers_features_pkey PRIMARY KEY(id),
+    CONSTRAINT speakers_features_type_id_fk_type_table FOREIGN KEY(type_id)
+        REFERENCES public.product_type(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.speakers_features
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS public.speakers_features_id_seq
+    OWNED by speakers_features.id;
+
+CREATE INDEX IF NOT EXISTS speakers_features_type_id_index01
+    ON public.speakers_features USING btree
+    (type_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+-- PRODUCT TELEVISION FEATURES
+
+CREATE SEQUENCE IF NOT EXISTS public.television_features_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.television_features_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.television_features (
+    id bigint NOT NULL DEFAULT nextval('television_features_id_seq'::regclass),
+    series_id bigint,
+    screen_type_id bigint NOT NULL,
+    display_size character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    refresh_rate character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    usb_count integer NOT NULL,
+    is_3d boolean NOT NULL,
+    is_curved boolean NOT NULL,
+    has_wifi boolean NOT NULL,
+    includes_wallmount boolean NOT NULL,
+
+    CONSTRAINT television_features_pkey PRIMARY KEY(id),
+    CONSTRAINT television_features_series_id_fk_series_table FOREIGN KEY(series_id)
+        REFERENCES public.product_series(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT television_features_screen_type_id_fk_screen_type_tab FOREIGN KEY(screen_type_id)
+        REFERENCES public.product_screen_type(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT television_features_usb_count_check CHECK (usb_count >= 0)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.television_features
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS public.television_features_id_seq
+    OWNED by television_features.id;
+
+-- TELEVISION FEATURES INDEXES
+
+CREATE INDEX IF NOT EXISTS television_features_series_id_index01
+    ON public.television_features USING btree
+    (series_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS television_features_screen_type_id_index02
+    ON public.television_features USING btree
+    (screen_type_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
 -- PRODUCT FEATURE TABLE

@@ -1,6 +1,31 @@
 
 -- PRODUCT RELATED TABLES
 
+-- PRODUCT SCREEN TYPE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_screen_type_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_screen_type_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_screen_type (
+    id bigint NOT NULL DEFAULT nextval('product_screen_type_seq'::regclass),
+    type character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_screen_type_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_screen__type
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_screen_type_seq
+    OWNED by product_screen_type.id;
+
 -- PRODUCT TYPE TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.product_type_seq
