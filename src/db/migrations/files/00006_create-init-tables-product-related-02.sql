@@ -177,7 +177,7 @@ ALTER TABLE IF EXISTS public.television_features
 
 ALTER SEQUENCE IF EXISTS public.television_features_id_seq
     OWNED by television_features.id;
-
+    
 -- TELEVISION FEATURES INDEXES
 
 CREATE INDEX IF NOT EXISTS television_features_series_id_index01
@@ -188,6 +188,50 @@ CREATE INDEX IF NOT EXISTS television_features_series_id_index01
 CREATE INDEX IF NOT EXISTS television_features_screen_type_id_index02
     ON public.television_features USING btree
     (screen_type_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+
+-- WASHING MACHINE FEATURES TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.washing_machine_features_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.washing_machine_features_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.washing_machine_features (
+    id bigint NOT NULL DEFAULT nextval('washing_machine_features_id_seq'::regclass),
+    washing_method_id bigint NOT NULL,
+    energy_rating integer NOT NULL,
+    washing_capacity integer NOT NULL,
+    has_inbuilt_heater boolean NOT NULL,
+
+    CONSTRAINT washing_machine_features_pkey PRIMARY KEY(id),
+    CONSTRAINT washing_machine_features_washing_method_id_fk_145621 FOREIGN KEY(washing_method_id)
+        REFERENCES public.washing_methods(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT washing_machine_features_energy_rating_check CHECK(energy_rating >= 0),
+    CONSTRAINT washing_machine_features_washing_capacity_check CHECK (washing_capacity >= 0)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.washing_machine_features
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS public.washing_machine_features_id_seq
+    OWNED by washing_machine_features.id;
+
+-- WASHING MACHINE FEATURES INDEXES
+
+CREATE INDEX IF NOT EXISTS washing_machine_features_washing_method_id_index01
+    ON public.washing_machine_features USING btree
+    (washing_method_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
 -- PRODUCT FEATURE TABLE
