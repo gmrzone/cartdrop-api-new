@@ -146,3 +146,64 @@ CREATE INDEX IF NOT EXISTS product_created_index08
     ON public.products USING btree
     (created ASC NULLS LAST)
     TABLESPACE pg_default;
+
+
+-- PRODUCT VARIATION TABLES
+
+CREATE SEQUENCE IF NOT EXISTS public.product_variations_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_variations_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_variations (
+    id bigint NOT NULL DEFAULT nextval('product_variations_id_seq'::regclass),
+    uuid uuid NOT NULL,
+    pid character varying(40) COLLATE pg_catalog."default" NOT NULL,
+    retail_price numeric(10, 2) NOT NULL,
+    price numeric(10, 2) NOT NULL,
+    available_stock integer NOT NULL,
+    product_id bigint NOT NULL,
+    color_id bigint,
+
+    CONSTRAINT product_variations_pkey PRIMARY KEY(id),
+    CONSTRAINT product_variations_uuid_unique UNIQUE(uuid),
+    CONSTRAINT product_variations_pid_unique UNIQUE (pid),
+    CONSTRAINT product_variations_product_id_fk_product_table FOREIGN KEY (product_id)
+        REFERENCES public.products(id) MATCH SIMPLE
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT product_variations_color_id_fk_color_table FOREIGN KEY(color_id)
+        REFERENCES public.product_colors(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT product_variation_price_check CHECK (price >= 0),
+    CONSTRAINT product_variation_retail_price_check CHECK (retail_price >= 0),
+    CONSTRAINT product_variations_available_stock_check CHECK (available_stock >= 0)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_variations
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_variations_id_seq
+    OWNED BY product_variations.id;
+
+-- PRODUCT VARIATION INDEXES
+
+CREATE INDEX IF NOT EXISTS product_variations_color_id_index01
+    ON public.product_variations USING btree
+    (color_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_variations_product_id_index02
+    ON public.product_variations USING btree
+    (product_id ASC NULLS LAST)
+    TABLESPACE pg_default;

@@ -114,5 +114,3 @@ CREATE INDEX IF NOT EXISTS product_reviews_images_review_id_index01
     ON public.product_reviews_images USING btree
     (review_id ASC NULLS LAST)
     TABLESPACE pg_default;
-
-
