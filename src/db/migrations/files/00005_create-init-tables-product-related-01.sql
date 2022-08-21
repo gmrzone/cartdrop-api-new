@@ -51,30 +51,85 @@ ALTER TABLE IF EXISTS public.product_screen__type
 ALTER SEQUENCE IF EXISTS public.product_screen_type_seq
     OWNED by product_screen_type.id;
 
--- PRODUCT TYPE TABLE
+-- PRODUCT SPEAKER TYPE TABLE
 
-CREATE SEQUENCE IF NOT EXISTS public.product_type_seq
+CREATE SEQUENCE IF NOT EXISTS public.speaker_type_seq
     INCREMENT 1
     START 1
     MINVALUE 1
     MAXVALUE 9223372036854775807
     CACHE 1;
 
-ALTER SEQUENCE public.product_type_seq
+ALTER SEQUENCE public.speaker_type_seq
     OWNER to afzal;
 
-CREATE TABLE IF NOT EXISTS public.product_type (
-    id bigint NOT NULL DEFAULT nextval('product_type_seq'::regclass),
+CREATE TABLE IF NOT EXISTS public.speaker_type (
+    id bigint NOT NULL DEFAULT nextval('speaker_type_seq'::regclass),
     type character varying(100) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT product_type_pkey PRIMARY KEY(id)
+    CONSTRAINT speaker_type_pkey PRIMARY KEY(id),
+    CONSTRAINT speaker_type_type_unique UNIQUE (type)
 )
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.product_type
+ALTER TABLE IF EXISTS public.speaker_type
     OWNER to afzal;
 
-ALTER SEQUENCE IF EXISTS public.product_type_seq
-    OWNED by product_type.id;
+ALTER SEQUENCE IF EXISTS public.speaker_type_seq
+    OWNED by speaker_type.id;
+
+-- PRODUCT REFRIGERATOR TYPE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.refrigerator_type_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.refrigerator_type_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.refrigerator_type (
+    id bigint NOT NULL DEFAULT nextval('refrigerator_type_seq'::regclass),
+    type character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT refrigerator_type_pkey PRIMARY KEY(id),
+    CONSTRAINT refrigerator_type_type_unique UNIQUE (type)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.refrigerator_type
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.refrigerator_type_seq
+    OWNED by refrigerator_type.id;
+
+
+
+-- PRODUCT AIR CONDITIONER TYPE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.air_conditioner_type_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.air_conditioner_type_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.air_conditioner_type (
+    id bigint NOT NULL DEFAULT nextval('air_conditioner_type_seq'::regclass),
+    type character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT air_conditioner_type_pkey PRIMARY KEY(id),
+    CONSTRAINT air_conditioner_type_type_unique UNIQUE (type)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.air_conditioner_type
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.air_conditioner_type_seq
+    OWNED by air_conditioner_type.id;
 
 -- PRODUCT PROCESSOR table (mobile/laptop)
 
