@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import database from './db/index';
-import user from './db/User'
+import user from './services/userService'
 const app: Application = express()
 const PORT = process.env['SERVER_PORT']
 
