@@ -169,5 +169,374 @@
       "slug": "womens-t-shirts",
       "category_id": 4
     }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 1,
+      "image": "Subcategory_Media/mobiles/mobiles/mobile_4-nobg.png",
+      "subcategory_id": 1,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 2,
+      "image": "Subcategory_Media/mobiles/mobiles/mobile_3-nobg_adj.png",
+      "subcategory_id": 1,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 3,
+      "image": "Subcategory_Media/mobiles/mobiles/mobile_2-nobg.png",
+      "subcategory_id": 1,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 4,
+      "image": "Subcategory_Media/mobiles/mobiles/mobile_1-bg_removed.png",
+      "subcategory_id": 1,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 5,
+      "image": "Subcategory_Media/electronics/laptop/laptop_1_nobg.png",
+      "subcategory_id": 3,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 6,
+      "image": "Subcategory_Media/electronics/laptop/laptop_3-nobg.png",
+      "subcategory_id": 3,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 7,
+      "image": "Subcategory_Media/electronics/laptop/laptop_3_nobg.png",
+      "subcategory_id": 3,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 8,
+      "image": "Subcategory_Media/electronics/laptop/laptop_4_nobg.png",
+      "subcategory_id": 3,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 9,
+      "image": "Subcategory_Media/appliances/washing-machines/washing_machine1-nobg.png",
+      "subcategory_id": 13,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 10,
+      "image": "Subcategory_Media/electronics/television/TV.jpg",
+      "subcategory_id": 5,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 11,
+      "image": "Subcategory_Media/appliances/refrigerators/fridge.jpg",
+      "subcategory_id": 12,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 12,
+      "image": "Subcategory_Media/fashion/backpack/bag_2-nobg.png",
+      "subcategory_id": 8,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 13,
+      "image": "Subcategory_Media/appliances/washing-machines/main.jpeg",
+      "subcategory_id": 13,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 14,
+      "image": "Subcategory_Media/appliances/washing-machines/main_WWZqz5L.jpeg",
+      "subcategory_id": 13,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 15,
+      "image": "Subcategory_Media/appliances/washing-machines/main_1FUHozI.jpeg",
+      "subcategory_id": 13,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 16,
+      "image": "Subcategory_Media/electronics/television/main.jpeg",
+      "subcategory_id": 5,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 17,
+      "image": "Subcategory_Media/electronics/television/main_iCz69Wc.jpeg",
+      "subcategory_id": 5,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 18,
+      "image": "Subcategory_Media/electronics/television/main_4uooLYP.jpeg",
+      "subcategory_id": 5,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 19,
+      "image": "Subcategory_Media/appliances/refrigerators/main.jpeg",
+      "subcategory_id": 12,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 20,
+      "image": "Subcategory_Media/appliances/refrigerators/main_w14dAOO.jpeg",
+      "subcategory_id": 12,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 21,
+      "image": "Subcategory_Media/appliances/refrigerators/main_j66Tagk.jpeg",
+      "subcategory_id": 12,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 22,
+      "image": "Subcategory_Media/appliances/air-conditioner/main_open.jpeg",
+      "subcategory_id": 11,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 23,
+      "image": "Subcategory_Media/appliances/air-conditioner/main.jpeg",
+      "subcategory_id": 11,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 24,
+      "image": "Subcategory_Media/appliances/air-conditioner/main_lTtkDhs.jpeg",
+      "subcategory_id": 11,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 25,
+      "image": "Subcategory_Media/appliances/air-conditioner/main_MBxNc78.jpeg",
+      "subcategory_id": 11,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 26,
+      "image": "Subcategory_Media/books/programming/main.jpg",
+      "subcategory_id": 15,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 27,
+      "image": "Subcategory_Media/books/programming/main_9RvKIhM.jpg",
+      "subcategory_id": 15,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 28,
+      "image": "Subcategory_Media/books/programming/main_97NMPnY.jpg",
+      "subcategory_id": 15,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 29,
+      "image": "Subcategory_Media/books/programming/main_EMMbb5o.jpg",
+      "subcategory_id": 15,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 30,
+      "image": "Subcategory_Media/groceries/juices/main.jpeg",
+      "subcategory_id": 16,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 31,
+      "image": "Subcategory_Media/groceries/juices/main_x25stzF.jpeg",
+      "subcategory_id": 16,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 32,
+      "image": "Subcategory_Media/groceries/juices/main_FyRdVtU.jpeg",
+      "subcategory_id": 16,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 33,
+      "image": "Subcategory_Media/groceries/juices/main_lCOlTXd.jpeg",
+      "subcategory_id": 16,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 34,
+      "image": "Subcategory_Media/electronics/speakers/main.jpeg",
+      "subcategory_id": 14,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 35,
+      "image": "Subcategory_Media/electronics/speakers/main_PSgG25d.jpeg",
+      "subcategory_id": 14,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 36,
+      "image": "Subcategory_Media/electronics/speakers/main_Bcg4qrl.jpeg",
+      "subcategory_id": 14,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 37,
+      "image": "Subcategory_Media/electronics/speakers/main_Cfbjp4U.jpeg",
+      "subcategory_id": 14,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 38,
+      "image": "Subcategory_Media/accessories/paints/main.jpeg",
+      "subcategory_id": 6,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 39,
+      "image": "Subcategory_Media/accessories/paints/main_04BnJYi.jpeg",
+      "subcategory_id": 6,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 40,
+      "image": "Subcategory_Media/accessories/paints/main_IOdkAIG.jpeg",
+      "subcategory_id": 6,
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "product_subcategory_images",
+    "fields": {
+      "pk": 41,
+      "image": "Subcategory_Media/accessories/paints/main_S5OBGzJ.jpeg",
+      "subcategory_id": 6,
+      "placeholder": "default_placeholder.jpg"
+    }
   }
 ]
