@@ -1,0 +1,173 @@
+[
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 1,
+      "name": "Mobiles",
+      "slug": "mobiles",
+      "category_id": 1
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 2,
+      "name": "Mobile Accessories",
+      "slug": "mobile-accessories",
+      "category_id": 1
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 3,
+      "name": "Laptops",
+      "slug": "laptop",
+      "category_id": 2
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 4,
+      "name": "Laptop Accessories",
+      "slug": "laptop-accessories",
+      "category_id": 2
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 5,
+      "name": "Televisions",
+      "slug": "television",
+      "category_id": 2
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 6,
+      "name": "Paints",
+      "slug": "paints",
+      "category_id": 3
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 7,
+      "name": "Accessories",
+      "slug": "accessories",
+      "category_id": 3
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 8,
+      "name": "Backpacks",
+      "slug": "backpack",
+      "category_id": 4
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 9,
+      "name": "Hand Bags",
+      "slug": "hand-bags",
+      "category_id": 4
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 10,
+      "name": "Shoes",
+      "slug": "shoes",
+      "category_id": 4
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 11,
+      "name": "Air Conditioners",
+      "slug": "air-conditioner",
+      "category_id": 5
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 12,
+      "name": "Refrigerators",
+      "slug": "refrigerators",
+      "category_id": 5
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 13,
+      "name": "Washing Machines",
+      "slug": "washing-machines",
+      "category_id": 5
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 14,
+      "name": "Speakers",
+      "slug": "speakers",
+      "category_id": 2
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 15,
+      "name": "Programming",
+      "slug": "programming",
+      "category_id": 7
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 16,
+      "name": "Juices",
+      "slug": "juices",
+      "category_id": 6
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 17,
+      "name": "Chocolates",
+      "slug": "chocolates",
+      "category_id": 6
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 18,
+      "name": "Men's T-Shirts",
+      "slug": "mens-t-shirts",
+      "category_id": 4
+    }
+  },
+  {
+    "table": "product_subcategory",
+    "fields": {
+      "pk": 19,
+      "name": "Women's T-Shirts",
+      "slug": "womens-t-shirts",
+      "category_id": 4
+    }
+  }
+]
