@@ -156,7 +156,7 @@
     "table": "product_subcategory",
     "fields": {
       "pk": 18,
-      "name": "Men's T-Shirts",
+      "name": "Men''s T-Shirts",
       "slug": "mens-t-shirts",
       "category_id": 4
     }
@@ -165,7 +165,7 @@
     "table": "product_subcategory",
     "fields": {
       "pk": 19,
-      "name": "Women's T-Shirts",
+      "name": "Women''s T-Shirts",
       "slug": "womens-t-shirts",
       "category_id": 4
     }

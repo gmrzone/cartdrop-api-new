@@ -5,9 +5,8 @@ const categoryValues = [];
 const categoryImagesValues = [];
 
 categoryData.forEach((row) => {
-  const currentISODate = new Date().toISOString();
-  const uuid = uuid4();
   if (row.table === "product_category") {
+    const uuid = uuid4();
     const {
       fields: { pk, name, slug },
     } = row;
@@ -27,5 +26,6 @@ module.exports.insertCategory = `INSERT INTO public.product_category
 VALUES ${categoryValues.join(", ")};`;
 
 module.exports.insertCategoryImages = `INSERT INTO public.product_category_images 
-(id, image, product_category_id) VALUES 
-${categoryImagesValues.join(", ")};`;
+(id, image, product_category_id) 
+VALUES ${categoryImagesValues.join(", ")};`;
+
