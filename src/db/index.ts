@@ -1,5 +1,5 @@
 import path from 'path';
-import { Pool } from 'pg';
+import { Pool, PoolClient, PoolConfig } from 'pg';
 import { migrate } from 'postgres-migrations';
 
 
@@ -10,7 +10,7 @@ const getVar = (key: string): string => {
     }
     return value
 }
-const poolConfig = {
+const poolConfig: PoolConfig = {
     database: getVar('POSTGRES_DB_NAME'),
     user: getVar('POSTGRES_USER'),
     password: getVar('POSTGRES_PASSWORD'),
@@ -21,11 +21,17 @@ const poolConfig = {
     connectionTimeoutMillis: +getVar('DB_POOL_CLIENT_CONNECTION_TIMEOUT')
 }
 
+export interface IDATABASE {
+    _pool: Pool;
+    runMigrations: () => Promise<void>;
+    getPoolClient: () => Promise<PoolClient>;
+    getQuery: () => Pool;
+}
 
-export class Database {
+export class Database implements IDATABASE {
     _pool: Pool
-    constructor() {
-        this._pool = new Pool(poolConfig)
+    constructor(config: PoolConfig) {
+        this._pool = new Pool(config)
     }
 
     runMigrations = async (): Promise<void> => {
@@ -40,4 +46,15 @@ export class Database {
             client.release()
         }
     }
+
+    getPoolClient = async (): Promise<PoolClient> => {
+        const client = await this._pool.connect()
+        return client
+    }
+
+    getQuery = () => {
+        return this._pool
+    }
 }
+
+export default new Database(poolConfig)
