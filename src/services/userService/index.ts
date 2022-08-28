@@ -1,6 +1,6 @@
 import bcrypt from "bcryptjs";
-import { IDATABASE } from "../index";
-import database from '../index'
+import { IDATABASE } from "../../db/index";
+import database from '../../db/index'
 interface IUser {
   _db: IDATABASE;
   hashPassword: (
@@ -14,7 +14,6 @@ class User implements IUser {
   constructor(db: IDATABASE) {
     this._db = db;
   }
-
   hashPassword = async (password: string, saltRound: number = 10) => {
     try {
       const hash = await bcrypt.hash(password, saltRound);
@@ -42,7 +41,7 @@ class User implements IUser {
     try{
         const passwordHash = await this.hashPassword(password);
         const pool = this._db.getQuery();
-        const currentDateTime = new Date().toUTCString();
+        const currentDateTime = new Date().toISOString();
         const SQL = `INSERT INTO public.users 
                     (username, number, email, type, password, first_name, last_name, photo, 
                     last_login, date_joined, is_active, is_superuser, is_staff, is_email_verified, 
