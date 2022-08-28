@@ -1,8 +1,10 @@
 import express, { Application, Request, Response } from "express";
 import { Client } from 'pg';
-import { Database } from './db/index'
+import { Database } from './db/index';
 const app: Application = express()
 const PORT = process.env['SERVER_PORT']
+
+app.use('/static', express.static('public'))
 
 const database = new Database()
 database.runMigrations()
@@ -16,7 +18,7 @@ app.get('/', async (req: Request, res: Response) => {
         port: Number(process.env["PGPORT"])
     })
     client.connect()
-    const data = await client.query('SELECT * FROM public.accounts_cartdrop_users ORDER BY id ASC')
+    const data = await client.query('SELECT * FROM public.users ORDER BY id ASC')
     console.log(process.env['POSTGRES_USER'], "postgres user")
     console.log(process.env['POSTGRES_PASSWORD'], "postgres_password")
     console.log(process.env['POSTGRES_DB_NAME'], "Database name")
