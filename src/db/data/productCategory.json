@@ -1,0 +1,147 @@
+[
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 1,
+      "name": "Mobiles",
+      "slug": "mobiles"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 2,
+      "slug": "electronics",
+      "name": "Electronics"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 3,
+      "slug": "accessories",
+      "name": "Accessories"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 4,
+      "slug": "fashion",
+      "name": "Fashion"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 5,
+      "slug": "appliances",
+      "name": "Appliances"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 6,
+      "slug": "groceries",
+      "name": "Groceries"
+    }
+  },
+  {
+    "table": "product_category",
+    "fields": {
+      "pk": 7,
+      "slug": "books",
+      "name": "Books"
+    }
+  },
+
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 1,
+      "image": "Category_Media/mobiles/mobile_2-nobg.png",
+      "product_category_id": 1
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 2,
+      "image": "Category_Media/mobiles/mobile_1-bg_removed.png",
+      "product_category_id": 1
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 3,
+      "image": "Category_Media/mobiles/mobile_3-nobg_adj.png",
+      "product_category_id": 1
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 4,
+      "image": "Category_Media/mobiles/mobile_4-nobg.png",
+      "product_category_id": 1
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 5,
+      "image": "Category_Media/electronics/laptop_1_nobg.png",
+      "product_category_id": 2
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 6,
+      "image": "Category_Media/electronics/laptop_3-nobg.png",
+      "product_category_id": 2
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 7,
+      "image": "Category_Media/accessories/accessories_1-nobg.png",
+      "product_category_id": 3
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 8,
+      "image": "Category_Media/fashion/fashion_nobg.png.png",
+      "product_category_id": 4
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 9,
+      "image": "Category_Media/appliances/appliances_nobg.png",
+      "product_category_id": 5
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 10,
+      "image": "Category_Media/groceries/groceries_nogb.png",
+      "product_category_id": 6
+    }
+  },
+  {
+    "table": "product_category_images",
+    "fields": {
+      "pk": 11,
+      "image": "Category_Media/books/books_2-nobg.png",
+      "product_category_id": 7
+    }
+  }
+]
