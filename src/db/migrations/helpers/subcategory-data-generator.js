@@ -1,14 +1,12 @@
 const subcategoryData = require("../../data/productSubcategory.json");
-const {v4: uuid4} = require("uuid");
 
 const subcategoryValues = []
 const subcategoryImagesValues = []
 
 subcategoryData.forEach(row => {
     if (row.table === "product_subcategory"){
-        const uuid = uuid4()
         const {fields: {pk, name, slug, category_id}} = row
-        const value = `(${pk}, '${uuid}', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '${name}', '${slug}', ${category_id})`
+        const value = `(${pk}, uuid_generate_v4(), CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '${name}', '${slug}', ${category_id})`
         subcategoryValues.push(value)
     }
     else if (row.table === "product_subcategory_images"){

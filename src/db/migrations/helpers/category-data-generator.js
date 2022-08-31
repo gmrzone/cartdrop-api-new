@@ -1,16 +1,14 @@
 const categoryData = require("../../data/productCategory.json");
-const { v4: uuid4 } = require("uuid");
 
 const categoryValues = [];
 const categoryImagesValues = [];
 
 categoryData.forEach((row) => {
   if (row.table === "product_category") {
-    const uuid = uuid4();
     const {
       fields: { pk, name, slug },
     } = row;
-    const value = `(${pk}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '${slug}', '${uuid}', '${name}')`;
+    const value = `(${pk}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, '${slug}', uuid_generate_v4(), '${name}')`;
     categoryValues.push(value);
   } else if (row.table === "product_category_images") {
     const {
