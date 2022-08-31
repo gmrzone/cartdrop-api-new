@@ -1,0 +1,242 @@
+[
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 1,
+      "name": "Samsung",
+      "slug": "samsung",
+      "photo": "Brand_images/samsung/samsung.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 2,
+      "name": "Apple",
+      "slug": "apple",
+      "photo": "Brand_images/apple/apple.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 3,
+      "name": "LG",
+      "slug": "lg",
+      "photo": "Brand_images/lg/LG.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 4,
+      "name": "Huawei",
+      "slug": "huawei",
+      "photo": "Brand_images/huawei/Huawei.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 5,
+      "name": "Lenovo",
+      "slug": "lenovo",
+      "photo": "Brand_images/lenovo/lenovo.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 6,
+      "name": "HP",
+      "slug": "hp",
+      "photo": "Brand_images/hp/HP.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 7,
+      "name": "MSI",
+      "slug": "msi",
+      "photo": "Brand_images/msi/MSI.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 8,
+      "name": "Bose",
+      "slug": "bose",
+      "photo": "Brand_images/bose/Bose.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 9,
+      "name": "JBL",
+      "slug": "jbl",
+      "photo": "Brand_images/jbl/JBL.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 10,
+      "name": "BOSCH",
+      "slug": "bosch",
+      "photo": "Brand_images/bosch/Bosch.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 11,
+      "name": "Whirlpool",
+      "slug": "whirlpool",
+      "photo": "Brand_images/whirlpool/whirlpool.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 12,
+      "name": "Carrier",
+      "slug": "carrier",
+      "photo": "Brand_images/carrier/carrier.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 13,
+      "name": "Asian Paint",
+      "slug": "asian-paint",
+      "photo": "Brand_images/asian-paint/asian-paints.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 14,
+      "name": "Auric",
+      "slug": "auric",
+      "photo": "Brand_images/auric/auric.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 15,
+      "name": "Real Active",
+      "slug": "real-active",
+      "photo": "Brand_images/real-active/real_active.jpeg",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 16,
+      "name": "Tropicana",
+      "slug": "tropicana",
+      "photo": "Brand_images/tropicana/Tropicana.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 17,
+      "name": "Cadbury",
+      "slug": "cadbury",
+      "photo": "Brand_images/cadbury/cadbury.jpg",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 18,
+      "name": "O''really",
+      "slug": "oreally",
+      "photo": "Brand_images/oreally/oreally.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 19,
+      "name": "Packt",
+      "slug": "packt",
+      "photo": "Brand_images/packt/packt.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 20,
+      "name": "SHAFIRE",
+      "slug": "shafire",
+      "photo": "Brand_images/shafire/apple.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 21,
+      "name": "Steelbird",
+      "slug": "steelbird",
+      "photo": "Brand_images/steelbird/auric.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 22,
+      "name": "Rangwell",
+      "slug": "rangwell",
+      "photo": "Brand_images/rangwell/oreally.png",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 23,
+      "name": "Plantex",
+      "slug": "plantex",
+      "photo": "Brand_images/plantex/color.jpg",
+      "placeholder": "default_placeholder.jpg"
+    }
+  },
+  {
+    "table": "brands",
+    "fields": {
+      "pk": 24,
+      "name": "Minute Maid",
+      "slug": "minute-maid",
+      "photo": "Brand_images/minute-maid/color.jpg",
+      "placeholder": "default_placeholder.jpg"
+    }
+  }
+]

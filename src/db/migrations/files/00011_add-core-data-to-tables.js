@@ -6,5 +6,9 @@ const {
   insertSubcategory,
   insertSubcategoryImages,
 } = require("../helpers/subcategory-data-generator");
+const { insertBrands } = require("../helpers/brand-data-generator")
+
+const createUUIDextension = 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";'
+
 module.exports.generateSql = () =>
-  `${insertCategory} ${insertCategoryImages} ${insertSubcategory} ${insertSubcategoryImages}`;
+  `${createUUIDextension} ${insertCategory} ${insertCategoryImages} ${insertSubcategory} ${insertSubcategoryImages} ${insertBrands}`;
