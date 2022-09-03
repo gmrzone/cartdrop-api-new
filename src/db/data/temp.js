@@ -31,6 +31,7 @@ fsPromise
       const couponData = [];
       const couponSubcategoryIntermidiate = [];
       const couponReusableData = [];
+      const reusableUnique = new Set();
       let pkCounter = 1;
       let subcategoryPkCounter = 1;
       let couponReusableCounter = 1;
@@ -66,23 +67,30 @@ fsPromise
             subcategoryPkCounter += 1;
           }
           if (item.fields.reusable_type) {
-            const reusableNewItem = {
-              table: reusableTableName,
-              fields: {
-                pk: couponReusableCounter,
-                type: "item.fields.reusable_type",
-              },
-            };
-            couponReusableData.push(reusableNewItem);
-            couponReusableCounter += 1;
+            if (!reusableUnique.has(item.fields.reusable_type)) {
+              const reusableNewItem = {
+                table: reusableTableName,
+                fields: {
+                  pk: couponReusableCounter,
+                  type: item.fields.reusable_type,
+                },
+              };
+              couponReusableData.push(reusableNewItem);
+              reusableUnique.add(item.fields.reusable_type)
+              couponReusableCounter += 1;
+            }
           }
           couponData.push(newItem);
           pkCounter += 1;
         }
       });
+      const completeData = couponReusableData.concat(
+        couponData,
+        couponSubcategoryIntermidiate
+      );
       fsPromise.writeFile(
-        "/Users/zop9896/Projects/cartdrop-api-node/src/db/data/productBrands.json",
-        JSON.stringify(brandData, null, 2),
+        "/Users/zop9896/Projects/cartdrop-api-node/src/db/data/productCoupons.json",
+        JSON.stringify(completeData, null, 2),
         { encoding: "utf-8" }
       );
     }
