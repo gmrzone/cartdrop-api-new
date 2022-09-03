@@ -51,6 +51,7 @@ fsPromise
               valid_to: "2024-09-01T05:50:55Z",
               active: item.fields.active,
               summary: item.fields.summary,
+              reusable_id: item.fields.reusable_type === "SINGLE" ? 1 : 2
             },
           };
           if (item.fields.subcategory) {

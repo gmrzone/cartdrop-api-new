@@ -22,7 +22,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 20% off on all products. This coupon can only be used on your first order."
+      "summary": "Get 20% off on all products. This coupon can only be used on your first order.",
+      "reusable_id": 1
     }
   },
   {
@@ -34,7 +35,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 10% off on all mobiles. This coupon can only be used once per month"
+      "summary": "Get 10% off on all mobiles. This coupon can only be used once per month",
+      "reusable_id": 2
     }
   },
   {
@@ -46,7 +48,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 12% off on all Laptops. This Coupon can only be used once per month."
+      "summary": "Get 12% off on all Laptops. This Coupon can only be used once per month.",
+      "reusable_id": 2
     }
   },
   {
@@ -58,7 +61,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 13% off on all Television. This Coupon can only be used once per month."
+      "summary": "Get 13% off on all Television. This Coupon can only be used once per month.",
+      "reusable_id": 2
     }
   },
   {
@@ -70,7 +74,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 5% off on all paints. This coupon can only be used once per month."
+      "summary": "Get 5% off on all paints. This coupon can only be used once per month.",
+      "reusable_id": 2
     }
   },
   {
@@ -82,7 +87,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 9% off on Air Conditioners. This coupon can only be used once per month"
+      "summary": "Get 9% off on Air Conditioners. This coupon can only be used once per month",
+      "reusable_id": 2
     }
   },
   {
@@ -94,7 +100,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 10% discount on Refrigerators. This coupon can only be used once per month."
+      "summary": "Get 10% discount on Refrigerators. This coupon can only be used once per month.",
+      "reusable_id": 2
     }
   },
   {
@@ -106,7 +113,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 12% off on all Washing Machines. This Coupon can only be used once per month."
+      "summary": "Get 12% off on all Washing Machines. This Coupon can only be used once per month.",
+      "reusable_id": 2
     }
   },
   {
@@ -118,7 +126,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 11% off on all speakers. This coupon can only ny used once per month"
+      "summary": "Get 11% off on all speakers. This coupon can only ny used once per month",
+      "reusable_id": 1
     }
   },
   {
@@ -130,7 +139,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 5% off on all Programming books. This coupon can only be used once per month"
+      "summary": "Get 5% off on all Programming books. This coupon can only be used once per month",
+      "reusable_id": 1
     }
   },
   {
@@ -142,7 +152,8 @@
       "valid_from": "2022-08-01T05:50:50Z",
       "valid_to": "2024-09-01T05:50:55Z",
       "active": true,
-      "summary": "Get 5% off on all Juices. This Coupon can only be used once per month"
+      "summary": "Get 5% off on all Juices. This Coupon can only be used once per month",
+      "reusable_id": 1
     }
   },
   {
