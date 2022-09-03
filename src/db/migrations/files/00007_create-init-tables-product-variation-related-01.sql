@@ -25,6 +25,57 @@ ALTER TABLE IF EXISTS public.product_ac_capacity
 ALTER SEQUENCE IF EXISTS public.product_ac_capacity_id_seq
     OWNED by product_ac_capacity.id;
 
+-- AC CAPACITY INDEXES
+
+CREATE INDEX IF NOT EXISTS product_ac_capacity_capacity_like_index01
+    ON public.product_ac_capacity USING btree
+    (capicity COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_ac_capacity_capacity_index02
+    ON public.product_ac_capacity USING btree
+    (capicity COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+-- AC STAR RATING TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_ac_star_rating_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_ac_star_rating_id_seq
+    OWNER to afzal;
+
+
+CREATE TABLE IF NOT EXISTS public.product_ac_star_rating (
+    id bigint NOT NULL DEFAULT nextval('product_ac_star_rating_id_seq'::regclass),
+    star character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT product_ac_star_rating_pkey PRIMARY KEY(id)
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_ac_star_rating
+    OWNER to afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_ac_star_rating_id_seq
+    OWNED by product_ac_star_rating.id;
+
+-- AC STAR RATING INDEXES
+
+
+CREATE INDEX IF NOT EXISTS product_product_ac_star_rating_like_index01
+    ON public.product_ac_star_rating USING btree
+    (star COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_ac_star_rating_index02
+    ON public.product_ac_star_rating USING btree
+    (star COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
 -- PRODUCT COLOR TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.product_colors_id_seq
