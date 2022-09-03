@@ -352,8 +352,3 @@ CREATE INDEX IF NOT EXISTS mobile_features_processor_id_index02
     (processor_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
-
-
-
-
-

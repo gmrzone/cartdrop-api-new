@@ -169,10 +169,13 @@ CREATE TABLE IF NOT EXISTS public.product_variations (
     available_stock integer NOT NULL,
     product_id bigint NOT NULL,
     color_id bigint,
+    variant_id bigint NOT NULL,
+    active boolean NOT NULL,
 
     CONSTRAINT product_variations_pkey PRIMARY KEY(id),
     CONSTRAINT product_variations_uuid_unique UNIQUE(uuid),
     CONSTRAINT product_variations_pid_unique UNIQUE (pid),
+    CONSTRAINT product_variations_variant_id_unique UNIQUE(variant_id),
     CONSTRAINT product_variations_product_id_fk_product_table FOREIGN KEY (product_id)
         REFERENCES public.products(id) MATCH SIMPLE
         ON DELETE CASCADE
@@ -180,6 +183,11 @@ CREATE TABLE IF NOT EXISTS public.product_variations (
         DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT product_variations_color_id_fk_color_table FOREIGN KEY(color_id)
         REFERENCES public.product_colors(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT product_variations_variant_id_fk_variant_table FOREIGN KEY(variant_id)
+        REFERENCES public.product_variant(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED,
@@ -207,3 +215,4 @@ CREATE INDEX IF NOT EXISTS product_variations_product_id_index02
     ON public.product_variations USING btree
     (product_id ASC NULLS LAST)
     TABLESPACE pg_default;
+
