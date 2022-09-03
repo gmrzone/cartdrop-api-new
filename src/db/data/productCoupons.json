@@ -1,0 +1,228 @@
+[
+  {
+    "table": "coupon_reusable",
+    "fields": {
+      "pk": 1,
+      "type": "SINGLE"
+    }
+  },
+  {
+    "table": "coupon_reusable",
+    "fields": {
+      "pk": 2,
+      "type": "MONTHLY"
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 1,
+      "code": "FIRST_ORDER",
+      "discount": 20,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 20% off on all products. This coupon can only be used on your first order."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 2,
+      "code": "MOBILE_10",
+      "discount": 10,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 10% off on all mobiles. This coupon can only be used once per month"
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 3,
+      "code": "LAPPY_12",
+      "discount": 12,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 12% off on all Laptops. This Coupon can only be used once per month."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 4,
+      "code": "TV_13",
+      "discount": 13,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 13% off on all Television. This Coupon can only be used once per month."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 5,
+      "code": "PAINT-5",
+      "discount": 5,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 5% off on all paints. This coupon can only be used once per month."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 6,
+      "code": "AC_NINE",
+      "discount": 9,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 9% off on Air Conditioners. This coupon can only be used once per month"
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 7,
+      "code": "FREEZER_10",
+      "discount": 10,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 10% discount on Refrigerators. This coupon can only be used once per month."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 8,
+      "code": "WASH_12",
+      "discount": 12,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 12% off on all Washing Machines. This Coupon can only be used once per month."
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 9,
+      "code": "SPEAKER_11",
+      "discount": 11,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 11% off on all speakers. This coupon can only ny used once per month"
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 10,
+      "code": "PROGRAMMER_5",
+      "discount": 0,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 5% off on all Programming books. This coupon can only be used once per month"
+    }
+  },
+  {
+    "table": "coupon_codes",
+    "fields": {
+      "pk": 11,
+      "code": "JUICE_5",
+      "discount": 5,
+      "valid_from": "2022-08-01T05:50:50Z",
+      "valid_to": "2024-09-01T05:50:55Z",
+      "active": true,
+      "summary": "Get 5% off on all Juices. This Coupon can only be used once per month"
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 1,
+      "coupon_code_id": 2,
+      "subcategory_id": 1
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 2,
+      "coupon_code_id": 3,
+      "subcategory_id": 3
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 3,
+      "coupon_code_id": 4,
+      "subcategory_id": 5
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 4,
+      "coupon_code_id": 5,
+      "subcategory_id": 6
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 5,
+      "coupon_code_id": 6,
+      "subcategory_id": 11
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 6,
+      "coupon_code_id": 7,
+      "subcategory_id": 12
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 7,
+      "coupon_code_id": 8,
+      "subcategory_id": 13
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 8,
+      "coupon_code_id": 9,
+      "subcategory_id": 14
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 9,
+      "coupon_code_id": 10,
+      "subcategory_id": 15
+    }
+  },
+  {
+    "table": "coupon_codes_subcategory_intermediate",
+    "fields": {
+      "pk": 10,
+      "coupon_code_id": 11,
+      "subcategory_id": 16
+    }
+  }
+]
