@@ -308,6 +308,7 @@ CREATE TABLE IF NOT EXISTS public.products_features (
     speaker_id bigint,
     television_id bigint,
     washing_machine_id bigint,
+    air_conditioner_id bigint,
     CONSTRAINT products_features_pkey PRIMARY KEY(id),
     CONSTRAINT product_feature_mobile_id_unique UNIQUE(mobile_id),
     CONSTRAINT product_feature_laptop_id_unique UNIQUE(laptop_id),
@@ -315,6 +316,7 @@ CREATE TABLE IF NOT EXISTS public.products_features (
     CONSTRAINT product_feature_speaker_id_unique UNIQUE(speaker_id),
     CONSTRAINT product_feature_television_id_unique UNIQUE(television_id),
     CONSTRAINT product_feature_washing_machine_id_unique UNIQUE(washing_machine_id),
+    CONSTRAINT product_feature_air_conditioner_id_unique UNIQUE(air_conditioner_id),
     CONSTRAINT feature_mobile_id_fk_mobile_features FOREIGN KEY(mobile_id)
         REFERENCES public.mobile_features(id) MATCH SIMPLE
         ON DELETE NO ACTION
@@ -342,6 +344,11 @@ CREATE TABLE IF NOT EXISTS public.products_features (
         DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT feature_washing_machine_id_fk_washing_machine_features FOREIGN KEY(washing_machine_id)
         REFERENCES public.washing_machine_features(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT feature_air_conditioner_id_fk_ac_features FOREIGN KEY(air_conditioner_id)
+        REFERENCES public.air_conditioner_features(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
