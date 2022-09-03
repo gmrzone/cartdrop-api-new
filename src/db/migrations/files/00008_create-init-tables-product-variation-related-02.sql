@@ -98,6 +98,115 @@ CREATE INDEX IF NOT EXISTS product_air_conditioner_variant_star_rating_id_index0
     (star_rating_id ASC NULLS LAST)
     TABLESPACE pg_default;
 
+-- PRODUCT TV VARIANT
+
+CREATE SEQUENCE IF NOT EXISTS public.product_television_variant_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_television_variant_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_television_variant (
+    id bigint NOT NULL DEFAULT nextval('product_television_variant_id_seq'::regclass),
+    display_size character varying(100) COLLATE pg_catalog."default" NOT NULL,
+
+    CONSTRAINT product_television_variant_pkey PRIMARY KEY (id)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_television_variant
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_television_variant_id_seq
+    OWNED BY product_television_variant.id;
+
+-- PRODUCT REFRIGERATOR VARIANT
+
+CREATE SEQUENCE IF NOT EXISTS public.product_refrigerator_variant_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_refrigerator_variant_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_refrigerator_variant (
+    id bigint NOT NULL DEFAULT nextval('product_refrigerator_variant_id_seq'::regclass),
+    capacity character varying(100) COLLATE pg_catalog."default" NOT NULL,
+
+    CONSTRAINT product_refrigerator_variant_pkey PRIMARY KEY (id)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_refrigerator_variant
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_refrigerator_variant_id_seq
+    OWNED BY product_refrigerator_variant.id;
+
+-- PRODUCT JUICE VARIANT
+
+CREATE SEQUENCE IF NOT EXISTS public.product_juice_variant_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_juice_variant_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_juice_variant (
+    id bigint NOT NULL DEFAULT nextval('product_juice_variant_id_seq'::regclass),
+    quantity character varying(100) COLLATE pg_catalog."default" NOT NULL,
+
+    CONSTRAINT product_juice_variant_pkey PRIMARY KEY (id)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_juice_variant
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_juice_variant_id_seq
+    OWNED BY product_juice_variant.id;
+
+-- PRODUCT BOOK VARIANT TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_book_variant_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_book_variant_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_book_variant (
+    id bigint NOT NULL DEFAULT nextval('product_book_variant_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+
+    CONSTRAINT product_book_variant_pkey PRIMARY KEY (id)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_book_variant
+    OWNER TO afzal;
+
+ALTER SEQUENCE public.product_book_variant_id_seq
+    OWNED BY product_book_variant.id;
+
+
 -- PRODUCT VARIATION TABLE
 
 CREATE SEQUENCE IF NOT EXISTS public.product_variant_id_seq
@@ -117,12 +226,20 @@ CREATE TABLE IF NOT EXISTS public.product_variant (
     laptop_variant_id bigint NOT NULL,
     fashion_variant_id bigint NOT NULL,
     air_conditioner_variant_id bigint NOT NULL,
+    television_variant_id bigint NOT NULL,
+    refrigerator_variant_id bigint NOT NULL,
+    juice_variant_id bigint NOT NULL,
+    book_variant_id bigint NOT NULL,
 
     CONSTRAINT product_variant_pkey PRIMARY KEY(id),
     CONSTRAINT product_fashion_variant_id_unique UNIQUE (fashion_variant_id),
     CONSTRAINT product_mobile_variant_id_unique UNIQUE (mobile_variant_id),
     CONSTRAINT product_laptop_variant_id_unique UNIQUE (laptop_variant_id),
     CONSTRAINT product_air_conditioner_variant_id_unique UNIQUE (air_conditioner_variant_id),
+    CONSTRAINT product_television_variant_id_unique UNIQUE (television_variant_id),
+    CONSTRAINT product_refrigerator_variant_id_unique UNIQUE (refrigerator_variant_id),
+    CONSTRAINT product_juice_variant_id_unique UNIQUE (juice_variant_id),
+    CONSTRAINT book_variant_id_unique UNIQUE (book_variant_id),
     CONSTRAINT mobile_variant_id_fk_mobile_variant_table FOREIGN KEY(mobile_variant_id)
         REFERENCES public.product_mobile_variant(id) MATCH SIMPLE
         ON DELETE NO ACTION
@@ -139,7 +256,27 @@ CREATE TABLE IF NOT EXISTS public.product_variant (
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT air_conditioner_variant_id_fk_air_conditioner_variant_table FOREIGN KEY(air_conditioner_variant_id)
-        REFERENCES product_air_conditioner_variant(id) MATCH SIMPLE
+        REFERENCES public.product_air_conditioner_variant(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT television_variant_id_fk_television_variant_table FOREIGN KEY(television_variant_id)
+        REFERENCES public.product_television_variant(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT refrigerator_variant_id_fk_refrigerator_variant_table FOREIGN KEY(refrigerator_variant_id)
+        REFERENCES public.product_refrigerator_variant(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT juice_variant_id_fk_juice_variant_table FOREIGN KEY(juice_variant_id)
+        REFERENCES public.product_juice_variant(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT book_variant_id_fk_book_variant_table FOREIGN KEY(book_variant_id)
+        REFERENCES public.product_book_variant(id) MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         DEFERRABLE INITIALLY DEFERRED
