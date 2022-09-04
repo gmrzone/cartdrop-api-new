@@ -1,9 +1,9 @@
-const brandData = require("../../data/productBrands.json");
+const brandData = require('../../data/productBrands.json');
 
 const brandValues = [];
 
 brandData.forEach((row) => {
-  if (row.table === "brands") {
+  if (row.table === 'brands') {
     const {
       fields: { pk, name, slug, photo, placeholder },
     } = row;
@@ -13,5 +13,5 @@ brandData.forEach((row) => {
 
   module.exports.insertBrands = `INSERT INTO public.brands 
     (id, uuid, name, slug, photo, placeholder) 
-    VALUES ${brandValues.join(", ")};`;
+    VALUES ${brandValues.join(', ')};`;
 });
