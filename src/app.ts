@@ -3,6 +3,7 @@ import cors from 'cors'
 import database from './config/db/index';
 import user from './services/userService';
 import { CORS_OPTIONS } from './config/constants'
+import userRoutes from './routes/user'
 const app: Application = express();
 const PORT = process.env['SERVER_PORT'];
 
@@ -13,18 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(CORS_OPTIONS))
 app.use('/static', express.static('public'));
-
-app.get('/', async (req: Request, res: Response) => {
-  await user.createUser('gmrzone', '27021992', '9220976696', 'saiyedafzalgz@gmail.com', 'customer', 'Afzal', 'Saiyed');
-  const pool = database.getQuery();
-  const data = await pool.query('SELECT * FROM public.users ORDER BY id ASC');
-  console.log(process.env['POSTGRES_USER'], 'postgres user');
-  console.log(process.env['POSTGRES_PASSWORD'], 'postgres_password');
-  console.log(process.env['POSTGRES_DB_NAME'], 'Database name');
-  console.log(process.env['POSTGRES_DB_HOST'], 'database host');
-  console.log(PORT, 'Server Port');
-  console.log(process.env.NODE_ENV, 'Node environment');
-  return res.status(200).json({ status: 'ok', data: data.rows });
-});
+app.use('/api/users', userRoutes)
 
 app.listen(PORT, () => console.log(`Application is running on port ${PORT}`));
