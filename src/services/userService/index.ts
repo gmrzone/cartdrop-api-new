@@ -14,7 +14,7 @@ class User implements IUser {
   constructor(db: IDATABASE) {
     this._db = db;
   }
-  hashPassword = async (password: string, saltRound: number = 10) => {
+  hashPassword = async (password: string, saltRound=10) => {
     try {
       const hash = await bcrypt.hash(password, saltRound);
       return hash;
@@ -30,13 +30,13 @@ class User implements IUser {
     type: string,
     firstName: string,
     lastName: string,
-    photoUrl: string = "static/default_profilepic.png",
-    isActive: boolean = true,
-    isSuperuser: boolean = false,
-    isStaff: boolean = false,
-    isEmailVerified: boolean = false,
-    isNumberVerified: boolean = false,
-    isDisabled: boolean = false
+    photoUrl="static/default_profilepic.png",
+    isActive = true,
+    isSuperuser = false,
+    isStaff = false,
+    isEmailVerified = false,
+    isNumberVerified = false,
+    isDisabled = false
   ) => {
     try{
         const passwordHash = await this.hashPassword(password);
@@ -68,7 +68,7 @@ class User implements IUser {
         await pool.query(SQL, SQL_PARAMS);
     }
     catch(err){
-
+      console.log(err)
     }
 
   };

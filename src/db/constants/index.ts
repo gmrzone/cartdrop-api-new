@@ -1,4 +1,4 @@
-import { getVar } from '../../utils'
+import { getVar } from '../../helpers'
 import { PoolConfig } from 'pg'
 
 
