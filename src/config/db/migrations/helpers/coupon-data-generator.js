@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
 const couponData = require('../../data/productCoupons.json');
 const couponReusableValues = [];
 const couponValues = [];
@@ -25,14 +26,17 @@ couponData.forEach((row) => {
   }
 });
 
+// eslint-disable-next-line no-undef
 module.exports.insertCouponReusable = `INSERT INTO public.coupon_reusable 
 (id, type) VALUES 
 ${couponReusableValues.join(', ')};`;
 
+// eslint-disable-next-line no-undef
 module.exports.insertCoupon = `INSERT INTO public.coupon_codes 
 (id, created, updated, uuid, code, discount, valid_from, valid_to, active, reusable_id, summary) 
 VALUES ${couponValues.join(', ')};`;
 
+// eslint-disable-next-line no-undef
 module.exports.insertCouponSubcategoryIntermidiate = `INSERT INTO public.coupon_codes_subcategory_intermediate 
 (id, coupon_code_id, subcategory_id) 
 VALUES ${couponSubcategoryIntermidiate.join(', ')};`;

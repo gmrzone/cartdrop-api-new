@@ -1,5 +1,5 @@
 import express, { Application, Request, Response } from 'express';
-import database from './db/index';
+import database from './config/db/index';
 import user from './services/userService';
 const app: Application = express();
 const PORT = process.env['SERVER_PORT'];
@@ -7,6 +7,7 @@ const PORT = process.env['SERVER_PORT'];
 database.runMigrations();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static('public'));
 
 app.get('/', async (req: Request, res: Response) => {
