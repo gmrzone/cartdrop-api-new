@@ -1,7 +1,7 @@
 import path from 'path';
 import { Pool, PoolClient, PoolConfig } from 'pg';
 import { migrate } from 'postgres-migrations';
-import { POOL_CONFIG } from './constants';
+import { POOL_CONFIG } from '../constants';
 export interface IDATABASE {
   _pool: Pool;
   runMigrations: () => Promise<void>;

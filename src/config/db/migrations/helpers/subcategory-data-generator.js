@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
 const subcategoryData = require('../../data/productSubcategory.json');
 
 const subcategoryValues = [];
@@ -19,10 +20,12 @@ subcategoryData.forEach((row) => {
   }
 });
 
+// eslint-disable-next-line no-undef
 module.exports.insertSubcategory = `INSERT INTO public.product_subcategory 
 (id, uuid, created, updated, name, slug, category_id) 
 VALUES ${subcategoryValues.join(', ')};`;
 
+// eslint-disable-next-line no-undef
 module.exports.insertSubcategoryImages = `INSERT INTO public.product_subcategory_images 
 (id, image, subcategory_id, placeholder) 
 VALUES ${subcategoryImagesValues.join(', ')};`;

@@ -1,6 +1,6 @@
 import bcrypt from 'bcryptjs';
-import { IDATABASE } from '../../db/index';
-import database from '../../db/index';
+import { IDATABASE } from '../../config/db/index';
+import database from '../../config/db/index';
 interface IUser {
   _db: IDATABASE;
   hashPassword: (password: string, saltRound: number) => Promise<string | undefined>;
