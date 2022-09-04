@@ -1,5 +1,5 @@
 /node_modules
 dist
-.prod.env
+env/.prod.env
 /scripts/postgres_init.prod.sh
 .DS_Store
