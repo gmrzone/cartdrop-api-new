@@ -114,3 +114,84 @@ CREATE INDEX IF NOT EXISTS product_reviews_images_review_id_index01
     ON public.product_reviews_images USING btree
     (review_id ASC NULLS LAST)
     TABLESPACE pg_default;
+
+-- PRODUCT VARIATION IMAGES TABLE (MANY TO MANY)
+
+CREATE SEQUENCE IF NOT EXISTS public.product_variation_images_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_variation_images_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_variation_images (
+    id bigint NOT NULL DEFAULT nextval('product_variation_images_id_seq'::regclass),
+    image_summary character varying(150) COLLATE pg_catalog."default" NOT NULL,
+    image character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    is_primary boolean NOT NULL,
+    placeholder character varying(100) COLLATE pg_catalog."default" NOT NULL,
+
+
+    CONSTRAINT product_variation_images_pkey PRIMARY KEY(id)
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_variation_images
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_variation_images_id_seq
+    OWNED BY product_variation_images.id;
+
+-- PRODUCT VARIATION AND PRODUCT VARIATION IMAGE INTERMIDIATE TABLE
+
+CREATE SEQUENCE IF NOT EXISTS public.product_variation_images_intermidiate_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9223372036854775807
+    CACHE 1;
+
+ALTER SEQUENCE public.product_variation_images_intermidiate_id_seq
+    OWNER to afzal;
+
+CREATE TABLE IF NOT EXISTS public.product_variation_images_intermidiate (
+    id bigint NOT NULL DEFAULT nextval('product_variation_images_intermidiate_id_seq'::regclass),
+    product_variation_id bigint NOT NULL,
+    product_variation_images_id bigint NOT NULL,
+
+    CONSTRAINT product_variation_images_intermidiate_pkey PRIMARY KEY(id),
+    CONSTRAINT product_variation_id_fk_product_variation_table FOREIGN KEY(product_variation_id)
+        REFERENCES public.product_variations(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT product_variation_images_id_fkproduct_variation_images FOREIGN KEY(product_variation_images_id)
+        REFERENCES public.product_variation_images(id) MATCH SIMPLE
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION
+        DEFERRABLE INITIALLY DEFERRED
+
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.product_variation_images_intermidiate
+    OWNER TO afzal;
+
+ALTER SEQUENCE IF EXISTS public.product_variation_images_intermidiate_id_seq
+    OWNED BY product_variation_images_intermidiate.id;
+
+-- PRODUCT VARIATION AND PRODUCT VARIATION IMAGE INTERMIDIATE INDEXES
+
+CREATE INDEX IF NOT EXISTS product_variation_images_intermidiate_product_variation_id_index01
+    ON public.product_variation_images_intermidiate USING btree
+    (product_variation_id ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_variation_images_intermidiate_product_variation_images_id_index02
+    ON public.product_variation_images_intermidiate USING btree
+    (product_variation_images_id ASC NULLS LAST)
+    TABLESPACE pg_default;
