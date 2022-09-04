@@ -4,9 +4,9 @@ import user from './services/userService'
 const app: Application = express()
 const PORT = process.env['SERVER_PORT']
 
-app.use('/static', express.static('public'))
-
 database.runMigrations()
+
+app.use('/static', express.static('public'))
 
 app.get('/', async (req: Request, res: Response) => {
     await user.createUser("gmrzone", "27021992", "9220976696", "saiyedafzalgz@gmail.com", "customer", "Afzal", "Saiyed")
