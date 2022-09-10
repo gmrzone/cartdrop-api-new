@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
 const { promises: fsPromise } = require('fs');
 
 fsPromise
@@ -40,7 +41,7 @@ fsPromise
             fields: {
               pk: colorCounter,
               name: item.fields.name,
-              slug: item.fields.slau,
+              slug: item.fields.slug,
             },
           };
           productColorData.push(newItem);

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
 const { promises: fsPromise } = require('fs');
 
 const subcategoryMap = {
@@ -85,7 +86,7 @@ fsPromise
       });
       const completeData = couponReusableData.concat(couponData, couponSubcategoryIntermidiate);
       fsPromise.writeFile(
-        '/Users/zop9896/Projects/cartdrop-api-node/src/db/data/productCoupons.json',
+        '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productCoupons.json',
         JSON.stringify(completeData, null, 2),
         { encoding: 'utf-8' },
       );
