@@ -27,7 +27,7 @@ fsPromise
       // GEt Display Type Data
       jsonData.forEach((x) => {
         if (x.model === 'products.displaytype') {
-          displayTypeMap[x.fields.name.toString()] = x.fields.name;
+          displayTypeMap[x.pk.toString()] = x.fields.name;
         }
       });
       jsonData.forEach((row) => {
@@ -166,5 +166,3 @@ fsPromise
   // eslint-disable-next-line no-undef
   .catch((err) => console.log(err));
 
-// module.exports.insertProcessor = `INSERT INTO public.product_processor
-//   (name) VALUES ('NOT AVAILABLE'), ('Ryzen 5 Hexa Core'), ('Intel Core i3 10th Gen')`;

@@ -3,9 +3,10 @@
     "table": "mobile_features",
     "fields": {
       "pk": 1,
+      "display_type": "Retina HD Display",
       "display_size": "11.94 cm (4.7 inch)",
       "resolution": "1334 x 750 Pixels",
-      "battery_capacity": "1,821mAh",
+      "battery_capacity": "1821mAh",
       "touchscreen": true,
       "smart_phone": true,
       "operating_system_id": 4,
@@ -18,6 +19,7 @@
     "table": "mobile_features",
     "fields": {
       "pk": 2,
+      "display_type": "Super Retina XDR Display",
       "display_size": "15.49 cm (6.1 inch)",
       "resolution": "2532 x 1170 Pixels",
       "battery_capacity": "2815 mAh",
@@ -33,6 +35,7 @@
     "table": "mobile_features",
     "fields": {
       "pk": 3,
+      "display_type": "Full HD+ Super AMOLED Display",
       "display_size": "6.5 inches",
       "resolution": "1080 x 2400 (FHD+) Resolution.",
       "battery_capacity": "4500 mAh",
@@ -48,6 +51,7 @@
     "table": "laptop_features",
     "fields": {
       "pk": 1,
+      "display_type": "FHD LED Backlit Anti-glare Display",
       "display_size": "35.56 cm (14 inch)",
       "resolution": "1920X1080 Pixel",
       "touchscreen": false,
@@ -60,6 +64,7 @@
     "table": "laptop_features",
     "fields": {
       "pk": 2,
+      "display_type": "FHD LED Backlit Anti-glare Display",
       "display_size": "39.62 cm (15.6 Inch)",
       "resolution": "1920 x 1080 Pixel",
       "touchscreen": false,
@@ -73,7 +78,7 @@
     "fields": {
       "pk": 1,
       "series_id": 24,
-      "screen_type_id": 8,
+      "screen_type_id": 3,
       "display_size": "163 cm (65 inch)",
       "refresh_rate": "120 Hz",
       "usb_count": 2,
@@ -116,7 +121,7 @@
     }
   },
   {
-    "table": "",
+    "table": "speakers_features",
     "fields": {
       "pk": 1,
       "type_id": 2,
