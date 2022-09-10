@@ -1,94 +1,173 @@
 const { promises: fsPromise } = require('fs');
 
-const subcategoryMap = {
-  1: '1', // mobile
-  2: '2', // mobile accessories
-  3: '3', // laptop
-  4: '4', // laptop accessories
-  5: '5', // Telivision
-  6: '6', // paints
-  7: '7', // accessories
-  9: '8', // backpack
-  10: '9', // hand-bags
-  11: '10', // shoes
-  12: '11', // air-conditioner
-  13: '12', // refrigerators
-  14: '13', // washing-machines
-  15: '14', // speakers
-  16: '15', // programming
-  17: '16', // juices
-  18: '17', // chocolates
-  20: '18', // mens-t-shirts
-  21: '19', // womens-t-shirts
-};
 fsPromise
-  .readFile('/Users/zop9896/Projects/cartdrop-api/json_data/core_latest.json', {
-    encoding: 'utf-8',
-  })
+  .readFile('/Users/zop9896/Projects/cartdrop-api/json_data/products_updated_19-03-2022.json', { encoding: 'utf-8' })
   .then((data) => {
     if (data) {
       const jsonData = JSON.parse(data);
-      const couponData = [];
-      const couponSubcategoryIntermidiate = [];
-      const couponReusableData = [];
-      const reusableUnique = new Set();
-      let pkCounter = 1;
-      let subcategoryPkCounter = 1;
-      let couponReusableCounter = 1;
+
+      const productColorData = [];
+      const productScreenTypeData = [];
+      const productAcCapacityData = [];
+      const acStarRatingData = [];
+      const productBookVariantData = [];
+      const productOperatingSystemData = [];
+      const washingMethodsData = [];
+      const acTypeData = [];
+      const productSeriesData = [];
+      const refrigeratorTypeData = [];
+      const speakerTypeData = [];
+      const simtypeData = [];
+
+      let colorCounter = 1;
+      let productScreenCounter = 1;
+      let acCapacityCounter = 1;
+      let acStarRatingCounter = 1;
+      let bookVariantCounter = 1;
+      let operatingSystemCounter = 1;
+      let washingMethodCounter = 1;
+      let acTypeCounter = 1;
+      let productSeriesCounter = 1;
+      let refrigeratorTypeCounter = 1;
+      let speakerTypeCounter = 1;
+      let simTypeCounter = 1;
+
       jsonData.forEach((item) => {
-        if (item.model === 'core.couponcode') {
-          const tableName = 'coupon_codes';
-          const reusableTableName = 'coupon_reusable';
-          const subcategoryIntermidiateTableName = 'coupon_codes_subcategory_intermediate';
+        if (item.model === 'products.productcolor') {
+          const tableName = 'product_colors';
           const newItem = {
             table: tableName,
             fields: {
-              pk: pkCounter,
-              code: item.fields.code,
-              discount: item.fields.discount,
-              valid_from: '2022-08-01T05:50:50Z',
-              valid_to: '2024-09-01T05:50:55Z',
-              active: item.fields.active,
-              summary: item.fields.summary,
-              reusable_id: item.fields.reusable_type === 'SINGLE' ? 1 : 2,
+              pk: colorCounter,
+              name: item.fields.name,
+              slug: item.fields.slau,
             },
           };
-          if (item.fields.subcategory) {
-            const intermidiaryNewItems = {
-              table: subcategoryIntermidiateTableName,
-              fields: {
-                pk: subcategoryPkCounter,
-                coupon_code_id: pkCounter,
-                subcategory_id: +subcategoryMap[item.fields.subcategory.toString()],
-              },
-            };
-            couponSubcategoryIntermidiate.push(intermidiaryNewItems);
-            subcategoryPkCounter += 1;
-          }
-          if (item.fields.reusable_type) {
-            if (!reusableUnique.has(item.fields.reusable_type)) {
-              const reusableNewItem = {
-                table: reusableTableName,
-                fields: {
-                  pk: couponReusableCounter,
-                  type: item.fields.reusable_type,
-                },
-              };
-              couponReusableData.push(reusableNewItem);
-              reusableUnique.add(item.fields.reusable_type);
-              couponReusableCounter += 1;
-            }
-          }
-          couponData.push(newItem);
-          pkCounter += 1;
+          productColorData.push(newItem);
+          colorCounter += 1;
+        } else if (item.model === 'products.screentype') {
+          const tableName = 'product_screen_type';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: productScreenCounter,
+              type: item.fields.name,
+            },
+          };
+          productScreenTypeData.push(newItem);
+          productScreenCounter += 1;
+        } else if (item.model === 'products.accapacityvariant') {
+          const tableName = 'product_ac_capacity';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: acCapacityCounter,
+              capacity: item.fields.capacity,
+            },
+          };
+          productAcCapacityData.push(newItem);
+          acCapacityCounter += 1;
+        } else if (item.model === 'products.acstarratingvariant') {
+          const tableName = 'product_ac_star_rating';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: acStarRatingCounter,
+              star: item.fields.star,
+            },
+          };
+          acStarRatingData.push(newItem);
+          acStarRatingCounter += 1;
+        } else if (item.model === 'products.bookvariant') {
+          const tableName = 'product_book_variant';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: bookVariantCounter,
+              name: item.fields.name,
+            },
+          };
+          productBookVariantData.push(newItem);
+          bookVariantCounter += 1;
+        } else if (item.model === 'products.operatingsystem') {
+          const tableName = 'operating_system';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: operatingSystemCounter,
+              name: item.fields.name,
+              slug: item.fields.slug,
+            },
+          };
+          productOperatingSystemData.push(newItem);
+          operatingSystemCounter += 1;
+        } else if (item.model === 'products.washingmethod') {
+          const tableName = 'washing_methods';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: washingMethodCounter,
+              name: item.fields.name,
+            },
+          };
+          washingMethodsData.push(newItem);
+          washingMethodCounter += 1;
+        } else if (item.model === 'products.actype') {
+          const tableName = 'air_conditioner_type';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: acTypeCounter,
+              type: item.fields.name,
+            },
+          };
+          acTypeData.push(newItem);
+          acTypeCounter += 1;
+        } else if (item.model === 'products.productseries') {
+          const tableName = 'product_series';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: productSeriesCounter,
+              name: item.fields.name,
+            },
+          };
+          productSeriesData.push(newItem);
+          productSeriesCounter += 1;
+        } else if (item.model === 'products.refrigeratortype') {
+          const tableName = 'refrigerator_type';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: refrigeratorTypeCounter,
+              type: item.fields.name,
+            },
+          };
+          refrigeratorTypeData.push(newItem);
+          refrigeratorTypeCounter += 1;
+        } else if (item.model === 'products.speakertype') {
+          const tableName = 'speaker_type';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: speakerTypeCounter,
+              type: item.fields.name,
+            },
+          };
+          speakerTypeData.push(newItem);
+          speakerTypeCounter += 1;
+        } else if (item.model === 'products.simtype') {
+          const tableName = 'product_sim_type';
+          const newItem = {
+            table: tableName,
+            fields: {
+              pk: simTypeCounter,
+              name: item.fields.name,
+            },
+          };
+          simtypeData.push(newItem);
+          simTypeCounter += 1;
         }
       });
-      const completeData = couponReusableData.concat(couponData, couponSubcategoryIntermidiate);
-      fsPromise.writeFile(
-        '/Users/zop9896/Projects/cartdrop-api-node/src/db/data/productCoupons.json',
-        JSON.stringify(completeData, null, 2),
-        { encoding: 'utf-8' },
-      );
     }
-  })
-  .catch((err) => console.log(err));
+  });

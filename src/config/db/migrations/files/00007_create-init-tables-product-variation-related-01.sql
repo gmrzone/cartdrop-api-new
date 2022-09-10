@@ -91,9 +91,11 @@ ALTER SEQUENCE public.product_colors_id_seq
 CREATE TABLE IF NOT EXISTS public.product_colors (
     id bigint NOT NULL DEFAULT nextval('product_colors_id_seq'::regclass),
     name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    slug character varying(100) COLLATE pg_catalog."default" NOT NULL,
 
     CONSTRAINT product_colors_pkey PRIMARY KEY(id),
-    CONSTRAINT product_colors_name_unique UNIQUE(name)
+    CONSTRAINT product_colors_name_unique UNIQUE(name),
+    CONSTRAINT product_colors_slug_unique UNIQUE(slug)
 )
 TABLESPACE pg_default;
 
@@ -110,9 +112,19 @@ CREATE INDEX IF NOT EXISTS product_colors_name_index01
     (name COLLATE pg_catalog."default" ASC NULLS LAST)
     TABLESPACE pg_default;
 
-CREATE INDEX IF NOT EXISTS product_colors_name_like_index01
+CREATE INDEX IF NOT EXISTS product_colors_name_like_index02
     ON public.product_colors USING btree
     (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_colors_slug_index03
+    ON public.product_colors USING btree
+    (slug COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS product_colors_slug_like_index04
+    ON public.product_colors USING btree
+    (slug COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
 -- PRODUCT RAM (FOR MOBILE AND LAPTOPS ETC)
