@@ -169,5 +169,24 @@ fsPromise
           simTypeCounter += 1;
         }
       });
+      const completeData = productColorData.concat(
+        productScreenTypeData,
+        productAcCapacityData,
+        acStarRatingData,
+        productBookVariantData,
+        productOperatingSystemData,
+        washingMethodsData,
+        acTypeData,
+        productSeriesData,
+        refrigeratorTypeData,
+        speakerTypeData,
+        simtypeData,
+      );
+      return fsPromise.writeFile(
+        '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productRelated.json',
+        JSON.stringify(completeData, null, 2),
+        { encoding: 'utf-8' },
+      );
     }
-  });
+  })
+  .catch((err) => console.log(err));
