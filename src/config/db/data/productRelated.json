@@ -1,0 +1,550 @@
+[
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 1,
+      "name": "Red"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 2,
+      "name": "Yellow"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 3,
+      "name": "Green"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 4,
+      "name": "Blue"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 5,
+      "name": "Navy Blue"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 6,
+      "name": "Black"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 7,
+      "name": "White"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 8,
+      "name": "Purple"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 9,
+      "name": "Brown"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 10,
+      "name": "Grey"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 11,
+      "name": "Gold"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 12,
+      "name": "Space Grey"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 13,
+      "name": "Jet Black"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 14,
+      "name": "Silver"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 15,
+      "name": "Purple Glow"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 16,
+      "name": "Blue Charm"
+    }
+  },
+  {
+    "table": "product_colors",
+    "fields": {
+      "pk": 17,
+      "name": "Cloud Navy"
+    }
+  },
+  {
+    "table": "product_screen_type",
+    "fields": {
+      "pk": 1,
+      "type": "LCD"
+    }
+  },
+  {
+    "table": "product_screen_type",
+    "fields": {
+      "pk": 2,
+      "type": "LED"
+    }
+  },
+  {
+    "table": "product_screen_type",
+    "fields": {
+      "pk": 3,
+      "type": "OLED"
+    }
+  },
+  {
+    "table": "product_screen_type",
+    "fields": {
+      "pk": 4,
+      "type": "QLED"
+    }
+  },
+  {
+    "table": "product_ac_capacity",
+    "fields": {
+      "pk": 1,
+      "capacity": "1 Ton"
+    }
+  },
+  {
+    "table": "product_ac_capacity",
+    "fields": {
+      "pk": 2,
+      "capacity": "1.5 Ton"
+    }
+  },
+  {
+    "table": "product_ac_capacity",
+    "fields": {
+      "pk": 3,
+      "capacity": "2 Ton"
+    }
+  },
+  {
+    "table": "product_ac_star_rating",
+    "fields": {
+      "pk": 1,
+      "star": "3 Star"
+    }
+  },
+  {
+    "table": "product_ac_star_rating",
+    "fields": {
+      "pk": 2,
+      "star": "4 Star"
+    }
+  },
+  {
+    "table": "product_ac_star_rating",
+    "fields": {
+      "pk": 3,
+      "star": "5 Star"
+    }
+  },
+  {
+    "table": "product_book_variant",
+    "fields": {
+      "pk": 1,
+      "name": "E-Book"
+    }
+  },
+  {
+    "table": "product_book_variant",
+    "fields": {
+      "pk": 2,
+      "name": "Paperback"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 1,
+      "name": "Windows 10 Home",
+      "slug": "windows-10-home"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 2,
+      "name": "Windows 10 Professional",
+      "slug": "windows-10-pro"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 3,
+      "name": "IOS 14",
+      "slug": "ios-14"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 4,
+      "name": "IOS 13",
+      "slug": "ios-13"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 5,
+      "name": "IOS 12",
+      "slug": "ios-12"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 6,
+      "name": "Android 11",
+      "slug": "android-11"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 7,
+      "name": "Android Android Q 10",
+      "slug": "android-android-q-10"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 8,
+      "name": "Android 10",
+      "slug": "android-10"
+    }
+  },
+  {
+    "table": "operating_system",
+    "fields": {
+      "pk": 9,
+      "name": "Android 9",
+      "slug": "android-9"
+    }
+  },
+  {
+    "table": "washing_methods",
+    "fields": {
+      "pk": 1,
+      "name": "3 Smart Motion"
+    }
+  },
+  {
+    "table": "washing_methods",
+    "fields": {
+      "pk": 2,
+      "name": "Pulsator"
+    }
+  },
+  {
+    "table": "washing_methods",
+    "fields": {
+      "pk": 3,
+      "name": "Agipellar Wash"
+    }
+  },
+  {
+    "table": "washing_methods",
+    "fields": {
+      "pk": 4,
+      "name": "Tumble Wash"
+    }
+  },
+  {
+    "table": "air_conditioner_type",
+    "fields": {
+      "pk": 1,
+      "type": "Split"
+    }
+  },
+  {
+    "table": "air_conditioner_type",
+    "fields": {
+      "pk": 2,
+      "type": "Window"
+    }
+  },
+  {
+    "table": "air_conditioner_type",
+    "fields": {
+      "pk": 3,
+      "type": "Portable"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 1,
+      "name": "Samsung Galaxy S"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 2,
+      "name": "Samsung Galaxy A"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 3,
+      "name": "Samsung Galaxy Note"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 4,
+      "name": "Samsung Galaxy J"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 5,
+      "name": "Macbook Pro"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 6,
+      "name": "Mackbook Air"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 7,
+      "name": "Thinkpad T Series"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 8,
+      "name": "Thinkpad Series"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 9,
+      "name": "Lenovo V Series"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 10,
+      "name": "Samsung Galaxy Books"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 11,
+      "name": "Microsoft Surface"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 12,
+      "name": "HP Pavilion"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 13,
+      "name": "HP Envy"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 14,
+      "name": "HP Spectre"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 15,
+      "name": "HP ProBook"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 16,
+      "name": "HP EliteBook"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 17,
+      "name": "HP Omen"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 18,
+      "name": "HP Chromebook"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 19,
+      "name": "HP Stream"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 20,
+      "name": "APPLE iPhone SE"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 21,
+      "name": "APPLE iPhone 12"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 22,
+      "name": "ThinkPad E14 Gen2"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 23,
+      "name": "HP 15s"
+    }
+  },
+  {
+    "table": "product_series",
+    "fields": {
+      "pk": 24,
+      "name": "The Frame 2021 Series"
+    }
+  },
+  {
+    "table": "refrigerator_type",
+    "fields": {
+      "pk": 1,
+      "type": "Double Door"
+    }
+  },
+  {
+    "table": "refrigerator_type",
+    "fields": {
+      "pk": 2,
+      "type": "Triple Door"
+    }
+  },
+  {
+    "table": "refrigerator_type",
+    "fields": {
+      "pk": 3,
+      "type": "Single Door"
+    }
+  },
+  {
+    "table": "speaker_type",
+    "fields": {
+      "pk": 1,
+      "type": "Speakers"
+    }
+  },
+  {
+    "table": "speaker_type",
+    "fields": {
+      "pk": 2,
+      "type": "Bluetooth Speakers"
+    }
+  },
+  {
+    "table": "speaker_type",
+    "fields": {
+      "pk": 3,
+      "type": "Home Theatres"
+    }
+  },
+  {
+    "table": "product_sim_type",
+    "fields": {
+      "pk": 1,
+      "name": "Dual Sim"
+    }
+  },
+  {
+    "table": "product_sim_type",
+    "fields": {
+      "pk": 2,
+      "name": "Single Sim"
+    }
+  }
+]
