@@ -23,6 +23,17 @@ const {
   insertSimType,
 } = require('../helpers/product-related-data-generator');
 
+const {
+  insertProcessor,
+  insertMobileFeature,
+  insertLaptopFeature,
+  insertTelivisionFeature,
+  insertWashingMachineFeature,
+  insertAcFeature,
+  insertRefrigeratorFeature,
+  insertSpeakerFeature,
+} = require('../helpers/product-feature-data-generator');
+
 const createUUIDextension = 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";';
 
 module.exports.generateSql = () =>
@@ -32,4 +43,7 @@ module.exports.generateSql = () =>
   ${insertProductColor} ${insertProductScreenType} ${insertAcCapacity} 
   ${insertAcStarRating} ${insertBookVariant} ${insertOperatingSystem} 
   ${insertWashingMethods} ${insertAcTypes} ${insertProductSeries} 
-  ${insertRefrigeratorType} ${insertSpeakerType} ${insertSimType}`;
+  ${insertRefrigeratorType} ${insertSpeakerType} ${insertSimType} 
+  ${insertProcessor} ${insertMobileFeature} ${insertLaptopFeature} 
+  ${insertTelivisionFeature} ${insertWashingMachineFeature} 
+  ${insertAcFeature} ${insertRefrigeratorFeature} ${insertSpeakerFeature}`;
