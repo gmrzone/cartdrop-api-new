@@ -1,0 +1,128 @@
+[
+  {
+    "table": "mobile_features",
+    "fields": {
+      "pk": 1,
+      "display_size": "11.94 cm (4.7 inch)",
+      "resolution": "1334 x 750 Pixels",
+      "battery_capacity": "1,821mAh",
+      "touchscreen": true,
+      "smart_phone": true,
+      "operating_system_id": 4,
+      "series_id": 20,
+      "sim_type_id": 1,
+      "processor_id": 1
+    }
+  },
+  {
+    "table": "mobile_features",
+    "fields": {
+      "pk": 2,
+      "display_size": "15.49 cm (6.1 inch)",
+      "resolution": "2532 x 1170 Pixels",
+      "battery_capacity": "2815 mAh",
+      "touchscreen": true,
+      "smart_phone": true,
+      "operating_system_id": 3,
+      "series_id": 21,
+      "sim_type_id": 2,
+      "processor_id": 1
+    }
+  },
+  {
+    "table": "mobile_features",
+    "fields": {
+      "pk": 3,
+      "display_size": "6.5 inches",
+      "resolution": "1080 x 2400 (FHD+) Resolution.",
+      "battery_capacity": "4500 mAh",
+      "touchscreen": true,
+      "smart_phone": true,
+      "operating_system_id": 6,
+      "series_id": 1,
+      "sim_type_id": 1,
+      "processor_id": 1
+    }
+  },
+  {
+    "table": "laptop_features",
+    "fields": {
+      "pk": 1,
+      "display_size": "35.56 cm (14 inch)",
+      "resolution": "1920X1080 Pixel",
+      "touchscreen": false,
+      "operating_system_id": 1,
+      "series_id": 22,
+      "processor_id": 3
+    }
+  },
+  {
+    "table": "laptop_features",
+    "fields": {
+      "pk": 2,
+      "display_size": "39.62 cm (15.6 Inch)",
+      "resolution": "1920 x 1080 Pixel",
+      "touchscreen": false,
+      "operating_system_id": 1,
+      "series_id": 23,
+      "processor_id": 3
+    }
+  },
+  {
+    "table": "television_features",
+    "fields": {
+      "pk": 1,
+      "series_id": 24,
+      "screen_type_id": 8,
+      "display_size": "163 cm (65 inch)",
+      "refresh_rate": "120 Hz",
+      "usb_count": 2,
+      "is_3d": false,
+      "is_curved": false,
+      "has_wifi": true,
+      "includes_wallmount": true
+    }
+  },
+  {
+    "table": "washing_machine_features",
+    "fields": {
+      "pk": 1,
+      "washing_method_id": 4,
+      "energy_rating": 5,
+      "washing_capacity": 8,
+      "has_inbuilt_heater": true
+    }
+  },
+  {
+    "table": "air_conditioner_features",
+    "fields": {
+      "pk": 1,
+      "compressor": "Rotary",
+      "cooling_capacity": 5000,
+      "cooling_coverage_area": "450 Square Feet sq ft",
+      "series_id": null,
+      "type_id": 1
+    }
+  },
+  {
+    "table": "refrigerator_features",
+    "fields": {
+      "pk": 1,
+      "type_id": 3,
+      "capacity": "200 L",
+      "energy_rating": 4,
+      "compressor_type": "Smart Inverter Compressor",
+      "stabilizer_required": false
+    }
+  },
+  {
+    "table": "",
+    "fields": {
+      "pk": 1,
+      "type_id": 2,
+      "power_output": "",
+      "frequency_response": null,
+      "has_bluetooth": true
+    }
+  }
+]
