@@ -3,119 +3,136 @@
     "table": "product_colors",
     "fields": {
       "pk": 1,
-      "name": "Red"
+      "name": "Red",
+      "slug": "red"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 2,
-      "name": "Yellow"
+      "name": "Yellow",
+      "slug": "yellow"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 3,
-      "name": "Green"
+      "name": "Green",
+      "slug": "green"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 4,
-      "name": "Blue"
+      "name": "Blue",
+      "slug": "blue"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 5,
-      "name": "Navy Blue"
+      "name": "Navy Blue",
+      "slug": "navy-blue"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 6,
-      "name": "Black"
+      "name": "Black",
+      "slug": "black"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 7,
-      "name": "White"
+      "name": "White",
+      "slug": "white"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 8,
-      "name": "Purple"
+      "name": "Purple",
+      "slug": "purple"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 9,
-      "name": "Brown"
+      "name": "Brown",
+      "slug": "brown"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 10,
-      "name": "Grey"
+      "name": "Grey",
+      "slug": "grey"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 11,
-      "name": "Gold"
+      "name": "Gold",
+      "slug": "gold"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 12,
-      "name": "Space Grey"
+      "name": "Space Grey",
+      "slug": "space-grey"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 13,
-      "name": "Jet Black"
+      "name": "Jet Black",
+      "slug": "jet-black"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 14,
-      "name": "Silver"
+      "name": "Silver",
+      "slug": "silver"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 15,
-      "name": "Purple Glow"
+      "name": "Purple Glow",
+      "slug": "purple-glow"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 16,
-      "name": "Blue Charm"
+      "name": "Blue Charm",
+      "slug": "blue-charm"
     }
   },
   {
     "table": "product_colors",
     "fields": {
       "pk": 17,
-      "name": "Cloud Navy"
+      "name": "Cloud Navy",
+      "slug": "cloud-navy"
     }
   },
   {

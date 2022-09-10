@@ -14,7 +14,7 @@ ALTER SEQUENCE public.product_ac_capacity_id_seq
 
 CREATE TABLE IF NOT EXISTS public.product_ac_capacity (
     id bigint NOT NULL DEFAULT nextval('product_ac_capacity_id_seq'::regclass),
-    capicity character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    capacity character varying(100) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT product_ac_capacity_pkey PRIMARY KEY(id)
 )
 TABLESPACE pg_default;
@@ -29,12 +29,12 @@ ALTER SEQUENCE IF EXISTS public.product_ac_capacity_id_seq
 
 CREATE INDEX IF NOT EXISTS product_ac_capacity_capacity_like_index01
     ON public.product_ac_capacity USING btree
-    (capicity COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    (capacity COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
 CREATE INDEX IF NOT EXISTS product_ac_capacity_capacity_index02
     ON public.product_ac_capacity USING btree
-    (capicity COLLATE pg_catalog."default" ASC NULLS LAST)
+    (capacity COLLATE pg_catalog."default" ASC NULLS LAST)
     TABLESPACE pg_default;
 
 -- AC STAR RATING TABLE
