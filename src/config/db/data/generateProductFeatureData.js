@@ -27,7 +27,7 @@ fsPromise
       // GEt Display Type Data
       jsonData.forEach((x) => {
         if (x.model === 'products.displaytype') {
-          displayTypeMap[x.fields.display_type.toString()] = x.fields.name;
+          displayTypeMap[x.fields.name.toString()] = x.fields.name;
         }
       });
       jsonData.forEach((row) => {
@@ -133,7 +133,7 @@ fsPromise
           productRefrigeratorFeature.push(newItem);
           refrigeratorCounter += 1;
         } else if (row.model === 'products.productspeakersfeatures') {
-          const tableName = '';
+          const tableName = 'speakers_features';
           const newItem = {
             table: tableName,
             fields: {
@@ -148,8 +148,23 @@ fsPromise
           speakerCounter += 1;
         }
       });
+      const completeData = productMobileFeatureData.concat(
+        productLaptopFeature,
+        productTvFeature,
+        productWashingMachineFeature,
+        productAcFeature,
+        productRefrigeratorFeature,
+        productSpeakerFeature,
+      );
+      return fsPromise.writeFile(
+        '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productFeatures.json',
+        JSON.stringify(completeData, null, 2),
+        { encoding: 'utf-8' },
+      );
     }
-  });
+  })
+  // eslint-disable-next-line no-undef
+  .catch((err) => console.log(err));
 
-// module.exports.insertProcessor = `INSERT INTO public.product_processor 
+// module.exports.insertProcessor = `INSERT INTO public.product_processor
 //   (name) VALUES ('NOT AVAILABLE'), ('Ryzen 5 Hexa Core'), ('Intel Core i3 10th Gen')`;
