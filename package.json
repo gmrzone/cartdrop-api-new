@@ -5,8 +5,8 @@
   "main": "dist/app.js",
   "scripts": {
     "test": "npm test",
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
     "build": "tsc -p . && cp -R src/config/db/data dist/db/data && cp -R src/config/db/migrations dist/db/migrations",
     "lint": "eslint . --ext .ts",
     "pretty": "npx prettier --write ."

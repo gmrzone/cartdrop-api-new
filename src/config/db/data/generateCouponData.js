@@ -92,4 +92,5 @@ fsPromise
       );
     }
   })
+  // eslint-disable-next-line no-undef
   .catch((err) => console.log(err));
