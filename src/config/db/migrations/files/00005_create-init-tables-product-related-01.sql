@@ -247,6 +247,7 @@ ALTER SEQUENCE public.operating_system_id_seq
 CREATE TABLE IF NOT EXISTS public.operating_system (
     id bigint NOT NULL DEFAULT nextval('operating_system_id_seq'::regclass),
     name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    slug character varying(100) COLLATE pg_catalog."default" NOT NULL,
     version character varying(100) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT operating_system_pkey PRIMARY KEY (id)
 )
@@ -257,6 +258,28 @@ ALTER TABLE IF EXISTS public.operating_system
 
 ALTER SEQUENCE IF EXISTS public.operating_system_id_seq
     OWNED by operating_system.id;
+
+-- OPERATING SYSTEM INDEXES
+
+CREATE INDEX IF NOT EXISTS operating_system_name_index01
+    ON public.operating_system USING btree
+    (name COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS operating_system_name_like_index02
+    ON public.operating_system USING btree
+    (name COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS operating_system_slug_index03
+    ON public.operating_system USING btree
+    (slug COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
+CREATE INDEX IF NOT EXISTS operating_system_slug_like_index04
+    ON public.operating_system USING btree
+    (slug COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
+    TABLESPACE pg_default;
 
 -- PRODUCT WARRENTY TABLE
 
