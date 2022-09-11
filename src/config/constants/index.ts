@@ -13,13 +13,13 @@ export const POOL_CONFIG: PoolConfig = {
   connectionTimeoutMillis: +getVar('DB_POOL_CLIENT_CONNECTION_TIMEOUT'),
 };
 
-export const CORS_WHITE_LIST = ['http://127.0.0.1:3000/', 'http://localhost:3000/'];
+export const CORS_WHITE_LIST = ['http://127.0.0.1:3000/', 'http://localhost:4000/'];
 
 export const CORS_OPTIONS: CorsOptions = {
-  origin: (origin, callback) => {
-    if (origin && CORS_WHITE_LIST.indexOf(origin) === -1) {
-      return callback(new Error(`${origin} not allowed by CORS`));
+  origin: function (origin, callback) {
+    if (!origin || CORS_WHITE_LIST.indexOf(origin) !== -1) {
+      return callback(null, true);
     }
-    callback(null, true);
+    callback(new Error(`Origin ${origin} not allowed by cors`));
   },
 };
