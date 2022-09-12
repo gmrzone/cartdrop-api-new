@@ -16,8 +16,8 @@ class CategoryService implements ICategory {
 
   getCategory = async () => {
     const pool = this._db.getQuery();
-    const categorydata: QueryResult<ICATEGORY> = await pool.query(CATEGORY_SERVICE_SQL.GET_CATEGORY());
-    return categorydata;
+    const {rows, rowCount}: QueryResult<ICATEGORY> = await pool.query(CATEGORY_SERVICE_SQL.GET_CATEGORY());
+    return {rows, rowCount};
   };
 
   getCategoryWithImages = async (baseUrl: string) => {
