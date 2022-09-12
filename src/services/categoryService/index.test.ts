@@ -85,7 +85,7 @@ describe('Category Service Test', () => {
         rowCount: 1,
       };
       poolClientQueryMock.mockResolvedValue(queryResponse);
-      const serviceResponse = await categoryService.getCategoryWithImages(baseStaticUrl);
+      const serviceResponse = await categoryService.getCategoriesWithImages(baseStaticUrl);
       expect(serviceResponse).toEqual(serviceResponse);
       expect(getPoolClientMock).toHaveBeenCalledTimes(1);
       expect(poolClientQueryMock).toHaveBeenCalledTimes(1);
@@ -97,7 +97,7 @@ describe('Category Service Test', () => {
       let error;
       poolClientQueryMock.mockReturnValue(Promise.reject(new Error('SQL ERROR')));
       try {
-        await categoryService.getCategoryWithImages(baseStaticUrl);
+        await categoryService.getCategoriesWithImages(baseStaticUrl);
       } catch (err) {
         if (err instanceof Error) {
           error = err;

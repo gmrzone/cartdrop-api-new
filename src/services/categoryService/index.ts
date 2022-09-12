@@ -16,19 +16,19 @@ class CategoryService implements ICategory {
 
   getCategory = async () => {
     const pool = this._db.getQuery();
-    const {rows, rowCount}: QueryResult<ICATEGORY> = await pool.query(CATEGORY_SERVICE_SQL.GET_CATEGORY());
-    return {rows, rowCount};
+    const { rows, rowCount }: QueryResult<ICATEGORY> = await pool.query(CATEGORY_SERVICE_SQL.GET_CATEGORY());
+    return { rows, rowCount };
   };
 
-  getCategoryWithImages = async (baseUrl: string) => {
+  getCategoriesWithImages = async (baseUrl: string) => {
     const client = await this._db.getPoolClient();
     try {
       const { rows, rowCount }: QueryResult<ICATEGORY_RESPONSE> = await client.query(
         CATEGORY_SERVICE_SQL.GET_CATEGORY_WITH_IMAGES(baseUrl),
       );
-      return {rows, rowCount};
+      return { rows, rowCount };
+    // eslint-disable-next-line no-useless-catch
     } catch (err) {
-      console.log(err);
       throw err;
     } finally {
       client.release();
