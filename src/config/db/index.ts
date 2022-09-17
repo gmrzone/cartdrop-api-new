@@ -1,11 +1,11 @@
 import path from 'path';
-import { Pool, PoolClient } from 'pg';
+import { Pool, PoolClient, QueryResult, QueryResultRow } from 'pg';
 import { migrate } from 'postgres-migrations';
 import { POOL_CONFIG } from '../constants';
 import { pgPoolFactory } from '../helpers/getPool';
 
 const poolInstance = pgPoolFactory.getInstance(POOL_CONFIG);
-
+// TODO: Database Class Will be deprecated soon
 export interface IDATABASE {
   _pool: Pool;
   runMigrations: () => Promise<void>;
@@ -39,15 +39,25 @@ export class Database implements IDATABASE {
   };
 }
 
-export async function query(sql: string, params: (string | number)[]) {
+export async function query<T extends QueryResultRow>(
+  sql: string,
+  params: (string | number)[],
+): Promise<QueryResult<T>> {
   return await poolInstance.query(sql, params);
 }
 
-export async function executeQueryWithClient(
-  callback: (client: PoolClient) => object,
-) {
+export async function executeQueryWithClient<T extends QueryResultRow>(
+  callback: (client: PoolClient) => Promise<QueryResult<T>>,
+): Promise<QueryResult<T>> {
   const client = await poolInstance.connect();
-  return callback(client);
+  try {
+    const data = await callback(client);
+    client.release();
+    return data;
+  } catch (err) {
+    client.release();
+    throw err;
+  }
 }
 
 export default new Database();
