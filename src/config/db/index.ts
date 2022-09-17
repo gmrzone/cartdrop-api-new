@@ -1,7 +1,11 @@
 import path from 'path';
-import { Pool, PoolClient, PoolConfig } from 'pg';
+import { Pool, PoolClient } from 'pg';
 import { migrate } from 'postgres-migrations';
 import { POOL_CONFIG } from '../constants';
+import { pgPoolFactory } from '../helpers/getPool';
+
+const poolInstance = pgPoolFactory.getInstance(POOL_CONFIG);
+
 export interface IDATABASE {
   _pool: Pool;
   runMigrations: () => Promise<void>;
@@ -10,8 +14,8 @@ export interface IDATABASE {
 }
 export class Database implements IDATABASE {
   _pool: Pool;
-  constructor(config: PoolConfig) {
-    this._pool = new Pool(config);
+  constructor() {
+    this._pool = poolInstance;
   }
 
   runMigrations = async (): Promise<void> => {
@@ -35,4 +39,15 @@ export class Database implements IDATABASE {
   };
 }
 
-export default new Database(POOL_CONFIG);
+export async function query(sql: string, params: (string | number)[]) {
+  return await poolInstance.query(sql, params);
+}
+
+export async function executeQueryWithClient(
+  callback: (client: PoolClient) => object,
+) {
+  const client = await poolInstance.connect();
+  return callback(client);
+}
+
+export default new Database();
