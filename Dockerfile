@@ -1,4 +1,4 @@
-FROM node:18.7.0-slim
+FROM node:current-slim
 WORKDIR /cartdrop
 ## Add the wait script to the image
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.9.0/wait /wait

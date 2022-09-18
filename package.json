@@ -7,7 +7,7 @@
     "test": "jest --watch-all",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "build": "tsc -p . && cp -R src/config/db/data dist/db/data && cp -R src/config/db/migrations dist/db/migrations",
+    "build": "tsc -p . && cp -R src/config/db/data dist/config/db/data && cp -R src/config/db/migrations dist/db/migrations",
     "lint": "eslint . --ext .ts",
     "pretty": "npx prettier --write ."
   },
