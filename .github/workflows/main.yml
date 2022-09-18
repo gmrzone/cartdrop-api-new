@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI_CARTDROP_API
 
 # Controls when the workflow will run
 on:
@@ -31,3 +31,32 @@ jobs:
 
       - name: build project
         run: npm run build
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    container: node:current-slim
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: install packages
+        run: npm install
+
+      - name: run unit tests
+        run : npm test
+
+  tslint:
+    runs-on: ubuntu-latest
+    container: node:current-slim
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: install packages
+        run: npm install
+
+      - name: lint
+        run: npm run lint
+
