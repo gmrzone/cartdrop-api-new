@@ -13,7 +13,7 @@ class CategoryService  {
 
   getCategoriesWithImages = async (baseUrl: string) => {
     const cb = async (client: PoolClient) => {
-      const data :QueryResult<ICATEGORY_RESPONSE> = await client.query(CATEGORY_SERVICE_SQL.GET_CATEGORY_WITH_IMAGES(baseUrl))
+      const data :QueryResult<ICATEGORY_RESPONSE> = await client.query(CATEGORY_SERVICE_SQL.GET_CATEGORY_WITH_IMAGES(), [baseUrl])
       return data
     }
     const {rows, rowCount} = await executeQueryWithClient<ICATEGORY_RESPONSE>(cb)
