@@ -297,8 +297,8 @@ ALTER SEQUENCE public.product_warranty_id_seq
 CREATE TABLE IF NOT EXISTS public.product_warranty (
     id bigint NOT NULL DEFAULT nextval('product_warranty_id_seq'::regclass),
     summary text COLLATE pg_catalog."default" NOT NULL,
-    covered character varying(200) COLLATE pg_catalog."default" NOT NULL,
-    not_covered character varying(200) COLLATE pg_catalog."default" NOT NULL,
+    covered character varying(1000) COLLATE pg_catalog."default" NOT NULL,
+    not_covered character varying(1000) COLLATE pg_catalog."default" NOT NULL,
 
     CONSTRAINT product_warranty_pkey PRIMARY KEY(id)
 )
