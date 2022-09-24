@@ -1,0 +1,1049 @@
+[
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 1,
+      "mobile_id": 1,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 2,
+      "mobile_id": 2,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 3,
+      "mobile_id": null,
+      "laptop_id": 1,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 4,
+      "mobile_id": null,
+      "laptop_id": 2,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 5,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": 1,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 6,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": 1,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 7,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": 1,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 8,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": 1
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 9,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": 1,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 10,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 11,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 12,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 13,
+      "mobile_id": 3,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 14,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 15,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 16,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 17,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 18,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 19,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 20,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 21,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 22,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 23,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_features",
+    "fields": {
+      "pk": 24,
+      "mobile_id": null,
+      "laptop_id": null,
+      "refrigerator_id": null,
+      "speaker_id": null,
+      "television_id": null,
+      "washing_machine_id": null,
+      "air_conditioner_id": null
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 3,
+      "launched_date": "2021-08-08",
+      "model_no": "MHGQ3HN/A",
+      "model_name": "iPhone SE",
+      "in_box": "iPhone, USB-C to Lightning Cable, Documentation",
+      "feature_id": 1
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 5,
+      "launched_date": "2021-08-23",
+      "model_no": "MGJC3HN/A",
+      "model_name": "iPhone 12",
+      "in_box": "iPhone, USB-C to Lightning Cable, Documentation",
+      "feature_id": 2
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 6,
+      "launched_date": "2021-08-24",
+      "model_no": "E14",
+      "model_name": "ThinkPad E14",
+      "in_box": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+      "feature_id": 3
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 7,
+      "launched_date": "2021-08-24",
+      "model_no": "15s-DU1066TU",
+      "model_name": "HP 15s",
+      "in_box": "Laptop, Power Adaptor, User Guide, Warranty Documents",
+      "feature_id": 4
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 8,
+      "launched_date": "2021-08-26",
+      "model_no": "QA65LS03AAKLXL",
+      "model_name": "The Frame 2021 Series",
+      "in_box": "1 LED TV, 1 Power Cord, 1 Remocon, 2 Stand-Top, 1 OC",
+      "feature_id": 5
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 9,
+      "launched_date": "2021-08-26",
+      "model_no": "500",
+      "model_name": "Bose 500",
+      "in_box": "1 Speaker, Power Cord",
+      "feature_id": 6
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 10,
+      "launched_date": "2021-08-26",
+      "model_no": "WAJ2426MIN",
+      "model_name": "WAJ2426MIN",
+      "in_box": "1 Washing Machine, Inlet Hose, User Manual",
+      "feature_id": 7
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 11,
+      "launched_date": "2021-08-26",
+      "model_no": "AR18AYNZBBE/AR18AYNZBBENNA /AR18AYNZBBEXNA",
+      "model_name": "AR18AYNZBBE/AR18AYNZBBENNA /AR18AYNZBBEXNA",
+      "in_box": "1 Indoor Unit, 1 Outdoor Unit, Remote, User manual",
+      "feature_id": 8
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 13,
+      "launched_date": "2021-08-26",
+      "model_no": "GL-B221APGY",
+      "model_name": "GL-B221APGY",
+      "in_box": "1 Refrigerator Unit, Owner's Manual",
+      "feature_id": 9
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 14,
+      "launched_date": "2021-08-27",
+      "model_no": "TE-3",
+      "model_name": "Asian Paints white Emulsion",
+      "in_box": "Asian Paints",
+      "feature_id": 10
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 15,
+      "launched_date": "2021-08-27",
+      "model_no": null,
+      "model_name": "Mens Energy",
+      "in_box": "Auric Mens Energy pack of 3",
+      "feature_id": 11
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 16,
+      "launched_date": "2021-08-27",
+      "model_no": null,
+      "model_name": "JavaScript – The Definitive Guide",
+      "in_box": "JavaScript – The Definitive Guide, 7e: Master the World's Most-Used Programming Language",
+      "feature_id": 12
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 17,
+      "launched_date": "2021-12-26",
+      "model_no": "S20FE5G",
+      "model_name": "Samsung Galaxy S20 FE 5G",
+      "in_box": "‎Handset, Non-removable Battery Included, Travel Adapter, USB Cable, User Manual",
+      "feature_id": 13
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 18,
+      "launched_date": "2021-12-26",
+      "model_no": null,
+      "model_name": "SHAFIRE Multifunction Car Sun Visor Organizer",
+      "in_box": "Car Document Holder",
+      "feature_id": 14
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 19,
+      "launched_date": "2021-12-26",
+      "model_no": null,
+      "model_name": "Steelbird Full Finger Bike Riding Gloves with Touch Screen Sensitivity at Thumb",
+      "in_box": "pair of Steelbird gloves",
+      "feature_id": 15
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 20,
+      "launched_date": "2021-12-26",
+      "model_no": "MHGQ3HN/ANEW",
+      "model_name": "Rangwell Heavy Duty Bike Brake Lock",
+      "in_box": "1 Brake Lock",
+      "feature_id": 16
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 21,
+      "launched_date": "2021-12-26",
+      "model_no": "MGJC3HN/AsaDWERF",
+      "model_name": "Plantex Stainless Steel Wall Mount Shelf 2 Tier Bathroom Shelf/Rack with Towel Holder/Towel Hooks/Ba",
+      "in_box": "1 Wall Mount",
+      "feature_id": 17
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 22,
+      "launched_date": "2021-12-26",
+      "model_no": "MHGQ3HN/Afgtyufghrw",
+      "model_name": "A deliciously refreshing orange fruit drink",
+      "in_box": "1 Juice bottle",
+      "feature_id": 18
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 23,
+      "launched_date": "2021-12-26",
+      "model_no": "E14adad",
+      "model_name": "Cadbury Silk Potli Gift Pack",
+      "in_box": "Get any 6 Cadbury chocolates from the following options -Silk Bubbly 50g, Silk Fruit & Nut 55g, Silk Roast Almond 58g, Silk Oreo 60g and Silk Plain 60g.",
+      "feature_id": 19
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 24,
+      "launched_date": "2021-12-26",
+      "model_no": "MGJC3HN/Aqwrwet",
+      "model_name": "Tropicana Orange Delight",
+      "in_box": "1 Tropicana Orange",
+      "feature_id": 20
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 25,
+      "launched_date": "2021-12-26",
+      "model_no": "MHGQ3HNSDafwdfc",
+      "model_name": "Tropicana Litchi Delight Fruit Juice",
+      "in_box": "One Tropicana Litchi Delight Fruit Juice",
+      "feature_id": 21
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 26,
+      "launched_date": "2021-12-26",
+      "model_no": "MHGQ3HN/Adfdetyh",
+      "model_name": "TypeScript: 62",
+      "in_box": "One TypeScript: 62 book",
+      "feature_id": 22
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 27,
+      "launched_date": "2021-12-26",
+      "model_no": "MGJC3HN/Afgdyrtfyd",
+      "model_name": "Django 3 By Example:",
+      "in_box": "Django 3 By Example:",
+      "feature_id": 23
+    }
+  },
+  {
+    "table": "products_specification",
+    "fields": {
+      "pk": 28,
+      "launched_date": "2021-12-26",
+      "model_no": "MHGQ3HN/Agcyfyju",
+      "model_name": "Learning React: Modern Patterns for Developing React Apps, Second Edition",
+      "in_box": "One book",
+      "feature_id": 24
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 1,
+      "summary": "Brand Warranty of 1 Year",
+      "covered": "6 Month Accessories Warranty and 1 Year Mobile Warranty",
+      "not_covered": "Broken Display not covered under warranty"
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 2,
+      "summary": "1 Year Onsite Warranty",
+      "covered": "Manufacturing Defects",
+      "not_covered": "Physical Damage"
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 3,
+      "summary": "1 Year Product Warranty and 1 Year Additional on Panel",
+      "covered": "All Manufacturing Defects",
+      "not_covered": "Warranty Does Not Cover Any External Accessories (Such as Battery, Cable, Carrying Bag), Damage Caused to the Product Due to Improper Installation by Customer, Normal Wear and Tear and Damages Caused to the Product by Accident, Lightening, Ingress of Water, Fire, Dropping or Excessive Shock, Any Damage Caused Due to Tampering of the Product by an Unauthorized Agent."
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 4,
+      "summary": "1 year from date of invoice when bought from authorized seller",
+      "covered": "Bose Corporation (\"Bose\") warrants your product against defects in materials and workmanship when purchased directly from Bose or a Bose authorised reseller. This warranty is extended only to the original end-use purchaser or the person receiving the product as a gift and shall not be extended to any other person or transferee",
+      "not_covered": "defects or damage arising from improper use or maintenance, normal wear and tear, commercial use, accident or external causes. Unauthorised repair, modification or customisation of your product"
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 5,
+      "summary": "2 Years Warranty on Product and 12 Years Warranty on Motor",
+      "covered": "All Parts Excluding Outer Cabinet Ans Plastic Parts from the Date of Purchase Will Be Covered Under Warranty.all Manufacturing Defects Are Also Covered",
+      "not_covered": "Parts: Outer Cabinet and Plastic Parts, Any Accessories External to the Product, The Product is not Used According to the Instructions Given in the Instructions Manual, Defects Caused by Improper Use as Determined by the Company Personnel, Modification or Alteration of Any Nature Made in the Electrical Circuitry or Physical Construction of the Set, Site (Where the Premises is Kept) Conditions That do not Confirm to the Recommended Operating Conditions of the Machine, The Serial Number is Remove"
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 6,
+      "summary": "1 Year Comprehensive Warranty on Product, 1 Year on PCB, 1 Year on Condenser, 1 Year on Gas Recharge and 10 Years on Compressor from Samsung",
+      "covered": "All Parts, Excluding Air Filter/ Front Grill & Plastic Parts (After Installation). The Warranty Covers Defective Materials and Workmanship From the Date of Purchase. Beyond the First Year of the Warranty Period\r\n\r\nOnly the Compressor Repair (Excluding Gas Filled Inside the Compressor) Will be Provided Free of Cost for 5 Years From Date of Purchase. Refrigerant Gas is Having Only One Year Warranty",
+      "not_covered": "Parts: Air Filter/Front Grill is Not Covered in the Warranty After Installation. The Warranty Does Not Cover Installation/Demonstration. Accessories External to the System. Damage parts. The Product is Not Used According to the Instructions Given in the Instruction Manual. Defects Caused by Improper Use as Determined by the Company Personnel. Modification / Alteration of Any Nature is Made in the Electrical Circuitry or Physical Construction of the Set. Site (Premises Where the Product is Kept)"
+    }
+  },
+  {
+    "table": "product_warranty",
+    "fields": {
+      "pk": 7,
+      "summary": "1 Year Warranty on Unit and 10 Years Warranty on Compressor from LG",
+      "covered": "All Parts Excluding Plastic Parts, Glassware, Bulb and Tube from the Date of Purchase Against Defective Material and Workmanship",
+      "not_covered": "Parts: Plastic / Glassware / Bulb / Tube. Any Accessories External to the Product. The Product is Not Used According to the Instructions Given in the Instructions Manual. Defects Caused by Improper Use as Determined by the Company Personnel. Modification or Alteration of Any Nature made in the Electrical Circuitry or Physical Construction of the Set. Site (Where the Premises is Kept) Conditions That do Not Confirm to the Recommended Operating Conditions of the Machine. The Serial Number is Remo"
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 1,
+      "product_code": "MBL",
+      "name": "APPLE iPhone SE",
+      "slug": "apple-iphone-se",
+      "description": "",
+      "brand_id": 2,
+      "subcategory_id": 1,
+      "warrenty_id": 1,
+      "specification_id": 3,
+      "weight": "148",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 2,
+      "product_code": "MBL",
+      "name": "APPLE iPhone 12",
+      "slug": "apple-iphone-12",
+      "description": "",
+      "brand_id": 2,
+      "subcategory_id": 1,
+      "warrenty_id": 1,
+      "specification_id": 5,
+      "weight": "162 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 3,
+      "product_code": "LPT",
+      "name": "Lenovo ThinkPad E14 Gen2 Ryzen 5 Hexa Core 4650U 5th Gen",
+      "slug": "lenovo-thinkpad-e14-gen2-ryzen-5-hexa-core-4650u-5th-gen",
+      "description": "From attending online classes and virtual meetings to playing games and watching movies, the Lenovo",
+      "brand_id": 5,
+      "subcategory_id": 3,
+      "warrenty_id": 2,
+      "specification_id": 6,
+      "weight": "1.59 kg",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 4,
+      "product_code": "LPT",
+      "name": "HP 15s Core i3 10th Gen",
+      "slug": "hp-15s-core-i3-10th-gen",
+      "description": "",
+      "brand_id": 6,
+      "subcategory_id": 3,
+      "warrenty_id": 2,
+      "specification_id": 7,
+      "weight": "1.76 KG",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 5,
+      "product_code": "TVS",
+      "name": "SAMSUNG The Frame 2021 Series QLED Ultra HD (4K) Smart TV",
+      "slug": "samsung-the-frame-2021-series-163-cm-65-inch-qled-ultra-hd-4k-smart-tv",
+      "description": "Create your own art gallery, watch TV and smartphone content simultaneously, and enjoy lifelike visu",
+      "brand_id": 1,
+      "subcategory_id": 5,
+      "warrenty_id": 3,
+      "specification_id": 8,
+      "weight": "22.5 kg",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 6,
+      "product_code": "NCD",
+      "name": "Bose 500 Bluetooth Speaker",
+      "slug": "bose-500-bluetooth-speaker",
+      "description": "Make your parties even more exciting and memorable with this Bose Bluetooth Speaker. It comes with",
+      "brand_id": 8,
+      "subcategory_id": 14,
+      "warrenty_id": 4,
+      "specification_id": 9,
+      "weight": "600 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 7,
+      "product_code": "WMS",
+      "name": "BOSCH 8 kg INVERTER TOUCH CONTROL Fully Automatic Front Load with In-built Heater",
+      "slug": "bosch-8-kg-inverter-touch-control-fully-automatic-front-load-with-in-built-heater",
+      "description": "",
+      "brand_id": 10,
+      "subcategory_id": 13,
+      "warrenty_id": 5,
+      "specification_id": 10,
+      "weight": "71.45 Kg",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 8,
+      "product_code": "NCD",
+      "name": "SAMSUNG Split Inverter AC",
+      "slug": "samsung-split-inverter-ac",
+      "description": "Stay cool at home even on a hot and humid day with the help of the Samsung split inverter AC. Equipp",
+      "brand_id": 1,
+      "subcategory_id": 11,
+      "warrenty_id": 6,
+      "specification_id": 11,
+      "weight": "11.4 Kg",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 9,
+      "product_code": "REF",
+      "name": "LG Direct Cool Single Door 4 Star Refrigerator",
+      "slug": "lg-direct-cool-single-door-4-star-refrigerator",
+      "description": "This LG refrigerator comes equipped with a Smart Inverter Compressor that gives you efficient perfo",
+      "brand_id": 3,
+      "subcategory_id": 12,
+      "warrenty_id": 7,
+      "specification_id": 13,
+      "weight": "40 kg",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 10,
+      "product_code": "PNT",
+      "name": "ASIAN PAINTS TE-3 Emulsion Wall Paint  (4 L)",
+      "slug": "asian-paints-te-3-white-emulsion-wall-paint-4-l",
+      "description": "Asian Paints Tractor Emulsion is an acrylic emulsion paint that offers excellent smoothness to touch",
+      "brand_id": 13,
+      "subcategory_id": 6,
+      "warrenty_id": null,
+      "specification_id": 14,
+      "weight": "4 L",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 11,
+      "product_code": "JUE",
+      "name": "Auric Mens Energy",
+      "slug": "auric-mens-energy",
+      "description": "Product information provided by the seller on the Website is not exhaustive, please read the label",
+      "brand_id": 14,
+      "subcategory_id": 16,
+      "warrenty_id": null,
+      "specification_id": 15,
+      "weight": "750 ml",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 12,
+      "product_code": "BKS",
+      "name": "JavaScript – The Definitive Guide, 7e: Master the World's Most-Used Programming Language",
+      "slug": "javascript-the-definitive-guide-7e-master-the-worlds-most-used-programming-language",
+      "description": "JavaScript is the programming language of the web and is used by more software developers today than",
+      "brand_id": 18,
+      "subcategory_id": 15,
+      "warrenty_id": null,
+      "specification_id": 16,
+      "weight": "400 g",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 13,
+      "product_code": "MBL",
+      "name": "Samsung Galaxy S20 FE 5G",
+      "slug": "samsung-galaxy-s20-fe-5g",
+      "description": "",
+      "brand_id": 1,
+      "subcategory_id": 1,
+      "warrenty_id": 1,
+      "specification_id": 17,
+      "weight": "182",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 14,
+      "product_code": "ACC",
+      "name": "SHAFIRE Multifunction Car Sun Visor Organizer,Leather Car Document Holder",
+      "slug": "shafire-multifunction-car-sun-visor-organizerleather-car-document-holder",
+      "description": "",
+      "brand_id": 20,
+      "subcategory_id": 7,
+      "warrenty_id": 1,
+      "specification_id": 18,
+      "weight": "90 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 15,
+      "product_code": "ACC",
+      "name": "Steelbird Full Finger Bike Riding Gloves with Touch Screen Sensitivity at Thumb and Index Finger, Pr",
+      "slug": "steelbird-full-finger-bike-riding-gloves-with-touch-screen-sensitivity-at-thumb-and-index-finger-pr",
+      "description": "",
+      "brand_id": 21,
+      "subcategory_id": 7,
+      "warrenty_id": null,
+      "specification_id": 19,
+      "weight": "80 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 16,
+      "product_code": "NCD",
+      "name": "Rangwell Heavy Duty Bike Brake Lock - Locking System by Holding Handle Bar with Brake Lever",
+      "slug": "rangwell-heavy-duty-bike-brake-lock-locking-system-by-holding-handle-bar-with-brake-lever",
+      "description": "",
+      "brand_id": 22,
+      "subcategory_id": 7,
+      "warrenty_id": 1,
+      "specification_id": 20,
+      "weight": "210 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 17,
+      "product_code": "NCD",
+      "name": "Plantex Stainless Steel Wall Mount Shelf 2 Tier Bathroom Shelf/Rack",
+      "slug": "plantex-stainless-steel-wall-mount-shelf-2-tier-bathroom-shelfrack",
+      "description": "",
+      "brand_id": 23,
+      "subcategory_id": 7,
+      "warrenty_id": 1,
+      "specification_id": 21,
+      "weight": "500 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 18,
+      "product_code": "NCD",
+      "name": "Minute Maid Pulpy Orange Fruit Drink",
+      "slug": "minute-maid-pulpy-orange-fruit-drink",
+      "description": "A deliciously refreshing orange fruit drink",
+      "brand_id": 24,
+      "subcategory_id": 16,
+      "warrenty_id": null,
+      "specification_id": 22,
+      "weight": "900 g",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 19,
+      "product_code": "CHO",
+      "name": "Cadbury Silk Potli Gift Pack",
+      "slug": "cadbury-silk-potli-gift-pack",
+      "description": "Cadbury silk fruit and nut not only has the regular smooth and creamy milk chocolate, but also has a",
+      "brand_id": 17,
+      "subcategory_id": 17,
+      "warrenty_id": null,
+      "specification_id": 23,
+      "weight": "486 g",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 20,
+      "product_code": "NCD",
+      "name": "Tropicana Orange Delight",
+      "slug": "tropicana-orange-delight",
+      "description": "Get 100% pure squeezed orange juice from Tropicana®. From our Pure Premium to our lower sugar Trop50",
+      "brand_id": 16,
+      "subcategory_id": 16,
+      "warrenty_id": null,
+      "specification_id": 24,
+      "weight": "988 g",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 21,
+      "product_code": "JUE",
+      "name": "Tropicana Litchi Delight Fruit Juice",
+      "slug": "tropicana-litchi-delight-fruit-juice",
+      "description": "Get 100% pure squeezed orange juice from Tropicana®. From our Pure Premium to our lower sugar Trop50",
+      "brand_id": 16,
+      "subcategory_id": 16,
+      "warrenty_id": null,
+      "specification_id": 25,
+      "weight": "988 g",
+      "replacement_days": 0,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 22,
+      "product_code": "BKS",
+      "name": "Effective TypeScript: 62 Specific Ways to Improve Your TypeScript",
+      "slug": "effective-typescript-62-specific-ways-to-improve-your-typescript",
+      "description": "TypeScript is a typed superset of JavaScript with the potential to solve many of the headaches for w",
+      "brand_id": 18,
+      "subcategory_id": 15,
+      "warrenty_id": null,
+      "specification_id": 26,
+      "weight": "600 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 23,
+      "product_code": "BKS",
+      "name": "Django 3 By Example: Build powerful and reliable Python web applications from scratch, 3rd Edition",
+      "slug": "django-3-by-example-build-powerful-and-reliable-python-web-applications-from-scratch-3rd-edition",
+      "description": "Learn Django 3 with four end-to-end web projects",
+      "brand_id": 19,
+      "subcategory_id": 15,
+      "warrenty_id": null,
+      "specification_id": 27,
+      "weight": "700 g",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  },
+  {
+    "table": "products",
+    "fields": {
+      "id": 24,
+      "product_code": "BKS",
+      "name": "Learning React: Modern Patterns for Developing React Apps, Second Edition",
+      "slug": "learning-react-modern-patterns-for-developing-react-apps-second-edition",
+      "description": "If you want to learn how to build efficient React applications, this is your book. Ideal for web dev",
+      "brand_id": 18,
+      "subcategory_id": 15,
+      "warrenty_id": null,
+      "specification_id": 28,
+      "weight": "0",
+      "replacement_days": 10,
+      "total_rating": 0
+    }
+  }
+]
