@@ -9,18 +9,18 @@ fsPromise
   .then((data) => {
     const jsonData = JSON.parse(data);
 
-    const fashionVariant = [];
     const clothingSize = [];
-    const productVariant = [];
+    const fashionVariant = [];
     const juiceVariant = [];
     const refrigeratorVariant = [];
     const tvVariant = [];
+    const productVariant = [];
 
     let fashionVariantCounter = 1;
-    let productVariantCounter = 1;
     let juiceVariantCounter = 1;
     let refrigeratorVariantCounter = 1;
     let tvVariantCounter = 1;
+    let productVariantCounter = 1;
 
     jsonData.forEach((row) => {
       const productVariantTableName = 'product_variant';
@@ -149,7 +149,7 @@ fsPromise
         productVariantCounter += 1;
       }
     });
-    const completeData = fashionVariant.concat(clothingSize, productVariant, juiceVariant, refrigeratorVariant, tvVariant)
+    const completeData = clothingSize.concat(fashionVariant, juiceVariant, refrigeratorVariant, tvVariant, productVariant)
     return fsPromise.writeFile('/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productVariationRelated.json', JSON.stringify(completeData, null, 2), {encoding: 'utf-8'})
   })
   // eslint-disable-next-line no-undef
