@@ -68,7 +68,7 @@ fsPromise
           const value = {
             table: tableName,
             fields: {
-              id: row.pk,
+              pk: row.pk,
               product_code: row.fields.product_code,
               name: row.fields.name,
               slug: row.fields.slug,

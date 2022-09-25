@@ -327,7 +327,7 @@
     "fields": {
       "pk": 5,
       "launched_date": "2021-08-23",
-      "model_no": "MGJC3HN/A",
+      "model_no": "MGJC3HNN/A",
       "model_name": "iPhone 12",
       "in_box": "iPhone, USB-C to Lightning Cable, Documentation",
       "feature_id": 2
@@ -406,7 +406,7 @@
       "launched_date": "2021-08-26",
       "model_no": "GL-B221APGY",
       "model_name": "GL-B221APGY",
-      "in_box": "1 Refrigerator Unit, Owner's Manual",
+      "in_box": "1 Refrigerator Unit, Owners Manual",
       "feature_id": 9
     }
   },
@@ -426,7 +426,7 @@
     "fields": {
       "pk": 15,
       "launched_date": "2021-08-27",
-      "model_no": null,
+      "model_no": "TE-33",
       "model_name": "Mens Energy",
       "in_box": "Auric Mens Energy pack of 3",
       "feature_id": 11
@@ -437,9 +437,9 @@
     "fields": {
       "pk": 16,
       "launched_date": "2021-08-27",
-      "model_no": null,
+      "model_no": "TE-34",
       "model_name": "JavaScript – The Definitive Guide",
-      "in_box": "JavaScript – The Definitive Guide, 7e: Master the World's Most-Used Programming Language",
+      "in_box": "JavaScript – The Definitive Guide, 7e: Master the Worlds Most-Used Programming Language",
       "feature_id": 12
     }
   },
@@ -459,7 +459,7 @@
     "fields": {
       "pk": 18,
       "launched_date": "2021-12-26",
-      "model_no": null,
+      "model_no": "S20FE5GEWS",
       "model_name": "SHAFIRE Multifunction Car Sun Visor Organizer",
       "in_box": "Car Document Holder",
       "feature_id": 14
@@ -470,7 +470,7 @@
     "fields": {
       "pk": 19,
       "launched_date": "2021-12-26",
-      "model_no": null,
+      "model_no": "S20FE5GQWAS",
       "model_name": "Steelbird Full Finger Bike Riding Gloves with Touch Screen Sensitivity at Thumb",
       "in_box": "pair of Steelbird gloves",
       "feature_id": 15
@@ -641,7 +641,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 1,
+      "pk": 1,
       "product_code": "MBL",
       "name": "APPLE iPhone SE",
       "slug": "apple-iphone-se",
@@ -658,7 +658,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 2,
+      "pk": 2,
       "product_code": "MBL",
       "name": "APPLE iPhone 12",
       "slug": "apple-iphone-12",
@@ -675,7 +675,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 3,
+      "pk": 3,
       "product_code": "LPT",
       "name": "Lenovo ThinkPad E14 Gen2 Ryzen 5 Hexa Core 4650U 5th Gen",
       "slug": "lenovo-thinkpad-e14-gen2-ryzen-5-hexa-core-4650u-5th-gen",
@@ -692,7 +692,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 4,
+      "pk": 4,
       "product_code": "LPT",
       "name": "HP 15s Core i3 10th Gen",
       "slug": "hp-15s-core-i3-10th-gen",
@@ -709,7 +709,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 5,
+      "pk": 5,
       "product_code": "TVS",
       "name": "SAMSUNG The Frame 2021 Series QLED Ultra HD (4K) Smart TV",
       "slug": "samsung-the-frame-2021-series-163-cm-65-inch-qled-ultra-hd-4k-smart-tv",
@@ -726,7 +726,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 6,
+      "pk": 6,
       "product_code": "NCD",
       "name": "Bose 500 Bluetooth Speaker",
       "slug": "bose-500-bluetooth-speaker",
@@ -743,7 +743,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 7,
+      "pk": 7,
       "product_code": "WMS",
       "name": "BOSCH 8 kg INVERTER TOUCH CONTROL Fully Automatic Front Load with In-built Heater",
       "slug": "bosch-8-kg-inverter-touch-control-fully-automatic-front-load-with-in-built-heater",
@@ -760,7 +760,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 8,
+      "pk": 8,
       "product_code": "NCD",
       "name": "SAMSUNG Split Inverter AC",
       "slug": "samsung-split-inverter-ac",
@@ -777,7 +777,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 9,
+      "pk": 9,
       "product_code": "REF",
       "name": "LG Direct Cool Single Door 4 Star Refrigerator",
       "slug": "lg-direct-cool-single-door-4-star-refrigerator",
@@ -794,14 +794,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 10,
+      "pk": 10,
       "product_code": "PNT",
       "name": "ASIAN PAINTS TE-3 Emulsion Wall Paint  (4 L)",
       "slug": "asian-paints-te-3-white-emulsion-wall-paint-4-l",
       "description": "Asian Paints Tractor Emulsion is an acrylic emulsion paint that offers excellent smoothness to touch",
       "brand_id": 13,
       "subcategory_id": 6,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 14,
       "weight": "4 L",
       "replacement_days": 0,
@@ -811,14 +811,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 11,
+      "pk": 11,
       "product_code": "JUE",
       "name": "Auric Mens Energy",
       "slug": "auric-mens-energy",
       "description": "Product information provided by the seller on the Website is not exhaustive, please read the label",
       "brand_id": 14,
       "subcategory_id": 16,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 15,
       "weight": "750 ml",
       "replacement_days": 0,
@@ -828,14 +828,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 12,
+      "pk": 12,
       "product_code": "BKS",
-      "name": "JavaScript – The Definitive Guide, 7e: Master the World's Most-Used Programming Language",
+      "name": "JavaScript – The Definitive Guide, 7e: Master the Worlds Most-Used Programming Language",
       "slug": "javascript-the-definitive-guide-7e-master-the-worlds-most-used-programming-language",
       "description": "JavaScript is the programming language of the web and is used by more software developers today than",
       "brand_id": 18,
       "subcategory_id": 15,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 16,
       "weight": "400 g",
       "replacement_days": 0,
@@ -845,7 +845,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 13,
+      "pk": 13,
       "product_code": "MBL",
       "name": "Samsung Galaxy S20 FE 5G",
       "slug": "samsung-galaxy-s20-fe-5g",
@@ -862,7 +862,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 14,
+      "pk": 14,
       "product_code": "ACC",
       "name": "SHAFIRE Multifunction Car Sun Visor Organizer,Leather Car Document Holder",
       "slug": "shafire-multifunction-car-sun-visor-organizerleather-car-document-holder",
@@ -879,14 +879,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 15,
+      "pk": 15,
       "product_code": "ACC",
       "name": "Steelbird Full Finger Bike Riding Gloves with Touch Screen Sensitivity at Thumb and Index Finger, Pr",
       "slug": "steelbird-full-finger-bike-riding-gloves-with-touch-screen-sensitivity-at-thumb-and-index-finger-pr",
       "description": "",
       "brand_id": 21,
       "subcategory_id": 7,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 19,
       "weight": "80 g",
       "replacement_days": 10,
@@ -896,7 +896,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 16,
+      "pk": 16,
       "product_code": "NCD",
       "name": "Rangwell Heavy Duty Bike Brake Lock - Locking System by Holding Handle Bar with Brake Lever",
       "slug": "rangwell-heavy-duty-bike-brake-lock-locking-system-by-holding-handle-bar-with-brake-lever",
@@ -913,7 +913,7 @@
   {
     "table": "products",
     "fields": {
-      "id": 17,
+      "pk": 17,
       "product_code": "NCD",
       "name": "Plantex Stainless Steel Wall Mount Shelf 2 Tier Bathroom Shelf/Rack",
       "slug": "plantex-stainless-steel-wall-mount-shelf-2-tier-bathroom-shelfrack",
@@ -930,14 +930,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 18,
+      "pk": 18,
       "product_code": "NCD",
       "name": "Minute Maid Pulpy Orange Fruit Drink",
       "slug": "minute-maid-pulpy-orange-fruit-drink",
       "description": "A deliciously refreshing orange fruit drink",
       "brand_id": 24,
       "subcategory_id": 16,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 22,
       "weight": "900 g",
       "replacement_days": 0,
@@ -947,14 +947,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 19,
+      "pk": 19,
       "product_code": "CHO",
       "name": "Cadbury Silk Potli Gift Pack",
       "slug": "cadbury-silk-potli-gift-pack",
       "description": "Cadbury silk fruit and nut not only has the regular smooth and creamy milk chocolate, but also has a",
       "brand_id": 17,
       "subcategory_id": 17,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 23,
       "weight": "486 g",
       "replacement_days": 0,
@@ -964,14 +964,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 20,
+      "pk": 20,
       "product_code": "NCD",
       "name": "Tropicana Orange Delight",
       "slug": "tropicana-orange-delight",
       "description": "Get 100% pure squeezed orange juice from Tropicana®. From our Pure Premium to our lower sugar Trop50",
       "brand_id": 16,
       "subcategory_id": 16,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 24,
       "weight": "988 g",
       "replacement_days": 0,
@@ -981,14 +981,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 21,
+      "pk": 21,
       "product_code": "JUE",
       "name": "Tropicana Litchi Delight Fruit Juice",
       "slug": "tropicana-litchi-delight-fruit-juice",
       "description": "Get 100% pure squeezed orange juice from Tropicana®. From our Pure Premium to our lower sugar Trop50",
       "brand_id": 16,
       "subcategory_id": 16,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 25,
       "weight": "988 g",
       "replacement_days": 0,
@@ -998,14 +998,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 22,
+      "pk": 22,
       "product_code": "BKS",
       "name": "Effective TypeScript: 62 Specific Ways to Improve Your TypeScript",
       "slug": "effective-typescript-62-specific-ways-to-improve-your-typescript",
       "description": "TypeScript is a typed superset of JavaScript with the potential to solve many of the headaches for w",
       "brand_id": 18,
       "subcategory_id": 15,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 26,
       "weight": "600 g",
       "replacement_days": 10,
@@ -1015,14 +1015,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 23,
+      "pk": 23,
       "product_code": "BKS",
       "name": "Django 3 By Example: Build powerful and reliable Python web applications from scratch, 3rd Edition",
       "slug": "django-3-by-example-build-powerful-and-reliable-python-web-applications-from-scratch-3rd-edition",
       "description": "Learn Django 3 with four end-to-end web projects",
       "brand_id": 19,
       "subcategory_id": 15,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 27,
       "weight": "700 g",
       "replacement_days": 10,
@@ -1032,14 +1032,14 @@
   {
     "table": "products",
     "fields": {
-      "id": 24,
+      "pk": 24,
       "product_code": "BKS",
       "name": "Learning React: Modern Patterns for Developing React Apps, Second Edition",
       "slug": "learning-react-modern-patterns-for-developing-react-apps-second-edition",
       "description": "If you want to learn how to build efficient React applications, this is your book. Ideal for web dev",
       "brand_id": 18,
       "subcategory_id": 15,
-      "warrenty_id": null,
+      "warrenty_id": 1,
       "specification_id": 28,
       "weight": "0",
       "replacement_days": 10,
