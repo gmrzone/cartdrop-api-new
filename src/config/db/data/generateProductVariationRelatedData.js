@@ -61,6 +61,7 @@ fsPromise
         };
         productVariant.push(productVariantData);
         fashionVariantCounter += 1;
+        productVariantCounter += 1
       } else if (row.model === 'products.productvariation') {
         if (row.fields.juices_quantity) {
           const tableName = 'product_juice_variant';

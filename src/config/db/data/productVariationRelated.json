@@ -244,7 +244,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 6,
       "name": "EXTRA SMALL",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -259,7 +259,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 7,
       "name": "MEDIUM",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -274,7 +274,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 8,
       "name": "LARGE",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -289,7 +289,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 9,
       "name": "EXTRA LARGE",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -304,7 +304,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 10,
       "name": "DOUBLE EXTRA LARGE",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -319,7 +319,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 5,
+      "pk": 11,
       "name": "215 L",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -334,7 +334,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 6,
+      "pk": 12,
       "name": "235 L",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -349,7 +349,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 7,
+      "pk": 13,
       "name": "3 x 250 ml",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -364,7 +364,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 8,
+      "pk": 14,
       "name": "1 L",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -379,7 +379,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 9,
+      "pk": 15,
       "name": "343g",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -394,7 +394,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 10,
+      "pk": 16,
       "name": "1 L",
       "mobile_variant_id": null,
       "laptop_variant_id": null,
@@ -409,7 +409,7 @@
   {
     "table": "product_variant",
     "fields": {
-      "pk": 11,
+      "pk": 17,
       "name": "1 L",
       "mobile_variant_id": null,
       "laptop_variant_id": null,

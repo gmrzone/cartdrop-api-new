@@ -47,6 +47,15 @@ const {
   insertProduct,
 } = require('../helpers/product-data-generator');
 
+const {
+  insertClothesSize,
+  insertFashionVariant,
+  insertJuiceVariant,
+  insertRefrigeratorVariant,
+  insertTvVariant,
+  insertProductVariant,
+} = require('../helpers/product-variation-related-data-generator');
+
 const createUUIDextension = 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp";';
 const createSuperUser = `INSERT INTO public.users (
   id, password, is_superuser, number, email, username, type, first_name, 
@@ -69,4 +78,6 @@ module.exports.generateSql = () =>
   ${insertTelivisionFeature} ${insertWashingMachineFeature} 
   ${insertAcFeature} ${insertRefrigeratorFeature} ${insertSpeakerFeature} 
   ${insertProductFeature} ${insertSpecification} ${insertProductWarrenty} 
-  ${insertProduct}`;
+  ${insertProduct} ${insertClothesSize} ${insertFashionVariant} 
+  ${insertJuiceVariant} ${insertRefrigeratorVariant} ${insertTvVariant} 
+  ${insertProductVariant}`;
