@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS public.product_variations (
     available_stock integer NOT NULL,
     product_id bigint NOT NULL,
     color_id bigint,
-    variant_id bigint NOT NULL,
+    variant_id bigint,
     active boolean NOT NULL,
 
     CONSTRAINT product_variations_pkey PRIMARY KEY(id),
