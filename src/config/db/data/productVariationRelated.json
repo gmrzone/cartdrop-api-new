@@ -1,0 +1,424 @@
+[
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 1,
+      "size_id": 1
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 2,
+      "size_id": 2
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 3,
+      "size_id": 3
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 4,
+      "size_id": 4
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 5,
+      "size_id": 5
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 6,
+      "size_id": 6
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 1,
+      "name": "SMALL",
+      "code": "S"
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 2,
+      "name": "EXTRA SMALL",
+      "code": "XS"
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 3,
+      "name": "MEDIUM",
+      "code": "M"
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 4,
+      "name": "LARGE",
+      "code": "L"
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 5,
+      "name": "EXTRA LARGE",
+      "code": "XL"
+    }
+  },
+  {
+    "table": "product_clothes_size",
+    "fields": {
+      "pk": 6,
+      "name": "DOUBLE EXTRA LARGE",
+      "code": "XXL"
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 1,
+      "name": "65",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": 1,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 2,
+      "name": "55",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": 2,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 3,
+      "name": "50",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": 3,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 4,
+      "name": "43",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": 4,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "SMALL",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 1,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "EXTRA SMALL",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 2,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "MEDIUM",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 3,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "LARGE",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 4,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "EXTRA LARGE",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 5,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "DOUBLE EXTRA LARGE",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": 6,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 5,
+      "name": "215 L",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": 1,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 6,
+      "name": "235 L",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": 2,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 7,
+      "name": "3 x 250 ml",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": 1,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 8,
+      "name": "1 L",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": 2,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 9,
+      "name": "343g",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": 3,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 10,
+      "name": "1 L",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": 4,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 11,
+      "name": "1 L",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": 5,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 1,
+      "quantity": "3 x 250 ml"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 2,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 3,
+      "quantity": "343g"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 4,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 5,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_refrigerator_variant",
+    "fields": {
+      "pk": 1,
+      "capacity": "215 L"
+    }
+  },
+  {
+    "table": "product_refrigerator_variant",
+    "fields": {
+      "pk": 2,
+      "capacity": "235 L"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 1,
+      "display_size": "65"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 2,
+      "display_size": "55"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 3,
+      "display_size": "50"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 4,
+      "display_size": "43"
+    }
+  }
+]
