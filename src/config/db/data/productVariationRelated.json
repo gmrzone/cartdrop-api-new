@@ -1,47 +1,5 @@
 [
   {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 1,
-      "size_id": 1
-    }
-  },
-  {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 2,
-      "size_id": 2
-    }
-  },
-  {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 3,
-      "size_id": 3
-    }
-  },
-  {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 4,
-      "size_id": 4
-    }
-  },
-  {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 5,
-      "size_id": 5
-    }
-  },
-  {
-    "table": "product_fashion_variant",
-    "fields": {
-      "pk": 6,
-      "size_id": 6
-    }
-  },
-  {
     "table": "product_clothes_size",
     "fields": {
       "pk": 1,
@@ -87,6 +45,125 @@
       "pk": 6,
       "name": "DOUBLE EXTRA LARGE",
       "code": "XXL"
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 1,
+      "size_id": 1
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 2,
+      "size_id": 2
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 3,
+      "size_id": 3
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 4,
+      "size_id": 4
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 5,
+      "size_id": 5
+    }
+  },
+  {
+    "table": "product_fashion_variant",
+    "fields": {
+      "pk": 6,
+      "size_id": 6
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 1,
+      "quantity": "3 x 250 ml"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 2,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 3,
+      "quantity": "343g"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 4,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_juice_variant",
+    "fields": {
+      "pk": 5,
+      "quantity": "1 L"
+    }
+  },
+  {
+    "table": "product_refrigerator_variant",
+    "fields": {
+      "pk": 1,
+      "capacity": "215 L"
+    }
+  },
+  {
+    "table": "product_refrigerator_variant",
+    "fields": {
+      "pk": 2,
+      "capacity": "235 L"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 1,
+      "display_size": "65"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 2,
+      "display_size": "55"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 3,
+      "display_size": "50"
+    }
+  },
+  {
+    "table": "product_television_variant",
+    "fields": {
+      "pk": 4,
+      "display_size": "43"
     }
   },
   {
@@ -342,83 +419,6 @@
       "refrigerator_variant_id": null,
       "juice_variant_id": 5,
       "book_variant_id": null
-    }
-  },
-  {
-    "table": "product_juice_variant",
-    "fields": {
-      "pk": 1,
-      "quantity": "3 x 250 ml"
-    }
-  },
-  {
-    "table": "product_juice_variant",
-    "fields": {
-      "pk": 2,
-      "quantity": "1 L"
-    }
-  },
-  {
-    "table": "product_juice_variant",
-    "fields": {
-      "pk": 3,
-      "quantity": "343g"
-    }
-  },
-  {
-    "table": "product_juice_variant",
-    "fields": {
-      "pk": 4,
-      "quantity": "1 L"
-    }
-  },
-  {
-    "table": "product_juice_variant",
-    "fields": {
-      "pk": 5,
-      "quantity": "1 L"
-    }
-  },
-  {
-    "table": "product_refrigerator_variant",
-    "fields": {
-      "pk": 1,
-      "capacity": "215 L"
-    }
-  },
-  {
-    "table": "product_refrigerator_variant",
-    "fields": {
-      "pk": 2,
-      "capacity": "235 L"
-    }
-  },
-  {
-    "table": "product_television_variant",
-    "fields": {
-      "pk": 1,
-      "display_size": "65"
-    }
-  },
-  {
-    "table": "product_television_variant",
-    "fields": {
-      "pk": 2,
-      "display_size": "55"
-    }
-  },
-  {
-    "table": "product_television_variant",
-    "fields": {
-      "pk": 3,
-      "display_size": "50"
-    }
-  },
-  {
-    "table": "product_television_variant",
-    "fields": {
-      "pk": 4,
-      "display_size": "43"
     }
   }
 ]
