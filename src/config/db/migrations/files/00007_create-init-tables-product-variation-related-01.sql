@@ -141,7 +141,7 @@ ALTER SEQUENCE public.products_ram_id_seq
 
 CREATE TABLE IF NOT EXISTS public.products_ram (
     id bigint NOT NULL DEFAULT nextval('products_ram_id_seq'::regclass),
-    capactity character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    capacity character varying(100) COLLATE pg_catalog."default" NOT NULL,
     type character varying(100) COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT product_ram_pkey PRIMARY KEY (id)
 )
@@ -171,8 +171,7 @@ CREATE TABLE IF NOT EXISTS public.products_storage (
     capacity CHARACTER varying(100) COLLATE pg_catalog."default" NOT NULL,
     type CHARACTER varying(100) COLLATE pg_catalog."default" NOT NULL,
 
-    CONSTRAINT product_storage_pkey PRIMARY KEY(id),
-    CONSTRAINT product_storage_capacity_unique UNIQUE(capacity)
+    CONSTRAINT product_storage_pkey PRIMARY KEY(id)
 )
 TABLESPACE pg_default;
 
@@ -181,6 +180,12 @@ ALTER TABLE IF EXISTS public.products_storage
 
 ALTER SEQUENCE IF EXISTS public.products_storage_id_seq
     OWNED by products_storage.id;
+
+CREATE INDEX IF NOT EXISTS products_storage_capacity_index01
+    ON public.products_storage USING btree
+    (capacity COLLATE pg_catalog."default" ASC NULLS LAST)
+    TABLESPACE pg_default;
+
 
 -- FASHION CLothes SIZE TABLE
 

@@ -175,7 +175,6 @@ CREATE TABLE IF NOT EXISTS public.product_variations (
     CONSTRAINT product_variations_pkey PRIMARY KEY(id),
     CONSTRAINT product_variations_uuid_unique UNIQUE(uuid),
     CONSTRAINT product_variations_pid_unique UNIQUE (pid),
-    CONSTRAINT product_variations_variant_id_unique UNIQUE(variant_id),
     CONSTRAINT product_variations_product_id_fk_product_table FOREIGN KEY (product_id)
         REFERENCES public.products(id) MATCH SIMPLE
         ON DELETE CASCADE

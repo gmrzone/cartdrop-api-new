@@ -85,7 +85,6 @@ CREATE INDEX IF NOT EXISTS users_username_index05_like
     (username COLLATE pg_catalog."default" varchar_pattern_ops ASC NULLS LAST)
     TABLESPACE pg_default;
 
-
 -- Index: users_first_name_index06
 
 -- DROP INDEX IF EXISTS public.users_first_name_index06;

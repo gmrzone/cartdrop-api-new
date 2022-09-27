@@ -1213,7 +1213,7 @@
             "price": "46990.00",
             "available_stock": 30,
             "product_id": 13,
-            "color_id": 18,
+            "color_id": 17,
             "variant_id": 35,
             "active": true,
             "images": [
@@ -1387,7 +1387,7 @@
         "table": "product_variations",
         "fields": {
             "pk": 42,
-            "pid": "BKSOUQJNNTFFCLFDHC",
+            "pid": "BKSOUQJNNTFFCLFDHCESD",
             "retail_price": "5000.00",
             "price": "3596.00",
             "available_stock": 30,
