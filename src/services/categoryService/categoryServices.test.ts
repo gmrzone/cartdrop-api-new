@@ -32,10 +32,10 @@ describe('Category Service Test', () => {
         rowCount: 1,
       };
       queryMock.mockResolvedValue(queryResponse);
-      const data = await categoryService.getCategory();
+      const data = await categoryService.getCategories();
       expect(queryMock).toHaveBeenCalledTimes(1);
       expect(queryMock).toHaveBeenCalledWith(
-        CATEGORY_SERVICE_SQL.GET_CATEGORY(),
+        CATEGORY_SERVICE_SQL.GET_CATEGORIES(),
         [],
       );
       expect(data).toEqual(queryResponse);
@@ -45,7 +45,7 @@ describe('Category Service Test', () => {
       let error;
       queryMock.mockReturnValue(Promise.reject(new Error('SQL ERROR')));
       try {
-        await categoryService.getCategory();
+        await categoryService.getCategories();
       } catch (err) {
         if (err instanceof Error) {
           error = err;
@@ -56,7 +56,7 @@ describe('Category Service Test', () => {
         expect(error?.message).toBe('SQL ERROR');
         expect(queryMock).toHaveBeenCalledTimes(1);
         expect(queryMock).toHaveBeenCalledWith(
-          CATEGORY_SERVICE_SQL.GET_CATEGORY(),
+          CATEGORY_SERVICE_SQL.GET_CATEGORIES(),
           [],
         );
       }

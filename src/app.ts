@@ -25,6 +25,6 @@ app.use(cors(CORS_OPTIONS));
 app.use(limiter);
 app.use('/static', express.static('public'));
 app.use('/api/users', userRoutes);
-app.use('/api/category', categoryRoute);
+app.use('/api/categories', categoryRoute);
 
 export default app;
