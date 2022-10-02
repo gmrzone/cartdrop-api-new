@@ -35,7 +35,7 @@ describe('Category Service Test', () => {
       const data = await categoryService.getCategories();
       expect(queryMock).toHaveBeenCalledTimes(1);
       expect(queryMock).toHaveBeenCalledWith(
-        CATEGORY_SERVICE_SQL.GET_CATEGORIES(),
+        CATEGORY_SERVICE_SQL.GET_CATEGORIES,
         [],
       );
       expect(data).toEqual(queryResponse);
@@ -56,7 +56,7 @@ describe('Category Service Test', () => {
         expect(error?.message).toBe('SQL ERROR');
         expect(queryMock).toHaveBeenCalledTimes(1);
         expect(queryMock).toHaveBeenCalledWith(
-          CATEGORY_SERVICE_SQL.GET_CATEGORIES(),
+          CATEGORY_SERVICE_SQL.GET_CATEGORIES,
           [],
         );
       }
