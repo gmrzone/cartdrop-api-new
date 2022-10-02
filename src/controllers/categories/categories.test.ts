@@ -1,12 +1,17 @@
 import { Request, Response } from 'express';
 const getCategoriesWithImages = jest.fn();
-import { getCategories } from './index';
+import { getCategories } from '.';
 
 jest.mock('../../services/categoryService', () => {
   return {
     getCategoriesWithImages: getCategoriesWithImages,
   };
 });
+
+jest.mock('../../config/constants', () => ({
+  __esModule: true,
+  ROW_COUNT_HEADER_NAME: "x-row-count"
+}))
 
 const mockRequest = {
   protocol: 'http',
