@@ -1,13 +1,12 @@
 import { Request, Response } from 'express';
 import CategoryService from '../../services/categoryService';
-import { getBaseStaticUrl } from '../../helpers/index'
-import { generateErrorObject } from '../../helpers'
-
+import { generateErrorObject, getBaseStaticUrl } from '../../helpers'
+import { ROW_COUNT_HEADER_NAME } from '../../config/constants'
 export const getCategories = async (req: Request, res: Response) => {
     try{
         const baseUrl = getBaseStaticUrl(req)
         const { rows, rowCount } = await CategoryService.getCategoriesWithImages(baseUrl)
-        res.setHeader('x-row-count',rowCount)
+        res.setHeader(ROW_COUNT_HEADER_NAME,rowCount)
         res.status(200)
         return res.json(rows)
     }
