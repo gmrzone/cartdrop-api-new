@@ -18,7 +18,7 @@ interface ICATEGORY_SERVICE {
 class CategoryService implements ICATEGORY_SERVICE {
   getCategories = async () => {
     const { rows, rowCount } = await query<ICATEGORY>(
-      CATEGORY_SERVICE_SQL.GET_CATEGORIES(),
+      CATEGORY_SERVICE_SQL.GET_CATEGORIES,
       [],
     );
     return { rows, rowCount };
@@ -27,7 +27,7 @@ class CategoryService implements ICATEGORY_SERVICE {
   getCategoriesWithImages = async (baseUrl: string) => {
     const cb = async (client: PoolClient) => {
       const data: QueryResult<ICATEGORY_RESPONSE> = await client.query(
-        CATEGORY_SERVICE_SQL.GET_CATEGORIES_WITH_IMAGES(),
+        CATEGORY_SERVICE_SQL.GET_CATEGORIES_WITH_IMAGES,
         [baseUrl],
       );
       return data;
