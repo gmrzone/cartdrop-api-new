@@ -12,11 +12,11 @@ export interface ICATEGORY_IMAGE {
   image: string;
 }
 
-interface IMAGE_MAP {
+interface IIMAGE {
   image: string;
 }
 export type CATEGPORY_IMAGE_MAP = {
-  [key: string]: IMAGE_MAP[];
+  [key: string]: IIMAGE[];
 };
 
 export interface ICATEGORY_RESPONSE {
@@ -24,5 +24,5 @@ export interface ICATEGORY_RESPONSE {
   slug: string;
   uuid: string;
   created: string;
-  category_images: IMAGE_MAP[]
+  category_images: IIMAGE[]
 }
