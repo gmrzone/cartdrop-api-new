@@ -23,3 +23,6 @@ export const CORS_OPTIONS: CorsOptions = {
     callback(new Error(`Origin ${origin} not allowed by cors`));
   },
 };
+
+
+export const ROW_COUNT_HEADER_NAME = 'x-row-count'
