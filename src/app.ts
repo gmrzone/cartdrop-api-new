@@ -6,7 +6,10 @@ import { CORS_OPTIONS } from './config/constants';
 import userRoutes from './routes/user';
 import categoryRoute from './routes/categories';
 import subcategoryRoutes from './routes/subcategories';
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
 
+const swaggerDocument = YAML.load('./docs/cartdrop.yml');
 const app: Application = express();
 
 // TODO : Remove express-rate-limit dependency and implement request rate limit middleware using redis
@@ -31,5 +34,6 @@ app.use('/static', express.static('public'));
 app.use('/api/users', userRoutes);
 app.use('/api/categories', categoryRoute);
 app.use('/api/subcategories', subcategoryRoutes);
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 
 export default app;
