@@ -23,6 +23,7 @@ export const getSubcategoriesWithOffers = async (req: Request, res: Response) =>
         const baseUrl = getBaseStaticUrl(req)
         const { rows, rowCount} = await SubcategoryService.getSubcategoriesWithCoupons(baseUrl)
         res.setHeader(ROW_COUNT_HEADER_NAME, rowCount)
+        res.status(200)
         return res.json(rows)
     }
     catch(err){
