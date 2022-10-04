@@ -18,7 +18,7 @@ describe('Category Service Test', () => {
   });
 
   describe('getCategory tests', () => {
-    test('getCategory with SQL errors should match response', async () => {
+    test('getCategory with out SQL errors should match response', async () => {
       const queryResponse = {
         rows: [
           {
@@ -41,7 +41,7 @@ describe('Category Service Test', () => {
       expect(data).toEqual(queryResponse);
     });
 
-    test('getCategory Without SQL Errors should throw an error', async () => {
+    test('getCategory With SQL Errors should throw an error', async () => {
       let error;
       queryMock.mockReturnValue(Promise.reject(new Error('SQL ERROR')));
       try {

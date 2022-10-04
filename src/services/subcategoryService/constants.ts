@@ -13,7 +13,7 @@ export const SUBCATEGORY_SERVICE_SQL = {
     ON product_subcategory.id = coupon_codes_subcategory_intermediate.subcategory_id JOIN public.coupon_codes ON 
     coupon_codes_subcategory_intermediate.coupon_code_id = coupon_codes.id GROUP BY product_subcategory.id ORDER BY
     product_subcategory.id;`,
-    GET_SUBCATEGORIES_WITH_COUPONS_NEW: `SELECT name, slug, product_subcategory.uuid, product_subcategory.created, 
+  GET_SUBCATEGORIES_WITH_COUPONS_NEW: `SELECT name, slug, product_subcategory.uuid, product_subcategory.created, 
     array_agg(json_build_object('code', coupon_codes.code, 'discount', coupon_codes.discount)) as coupons, si.image as subcategory_images
     FROM public.product_subcategory JOIN public.coupon_codes_subcategory_intermediate 
     ON product_subcategory.id = coupon_codes_subcategory_intermediate.subcategory_id JOIN public.coupon_codes ON 
