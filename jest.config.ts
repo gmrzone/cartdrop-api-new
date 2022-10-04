@@ -6,12 +6,6 @@ const config: Config = {
     color: 'blue',
   },
   verbose: true,
-  globals: {
-    'ts-jest': {
-      tsconfig: `${__dirname}/tsconfig.json`,
-      diagnostics: false,
-    },
-  },
   testTimeout: 20000,
   collectCoverageFrom: ['**/*.{js,ts}', '!**/node_modules/**'],
   transform: {

@@ -18,6 +18,7 @@ interface ISUBCATEGORY_SERVICE {
   }>;
 }
 class SubCategoryService implements ISUBCATEGORY_SERVICE {
+  
   getSubcategories = async () => {
     const { rows, rowCount } = await query<ISUBCATEGORY>(
       SUBCATEGORY_SERVICE_SQL.GET_SUBCATEGORIES,

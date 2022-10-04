@@ -112,10 +112,67 @@ describe('Subcategory Service Test', () => {
     });
   });
 
+  describe('getSubcategoriesForCategory TEsts', () => {
+    const baseURL = 'http://localhost:5000/static';
+    const category = 'electronics';
+
+    test('getSubcategoriesForCategory without error should return proper response', async () => {
+      const queryResponseWithImages = {
+        rows: [
+          {
+            ...queryResponse.rows[0],
+            subcategory_images: [
+              {
+                image:
+                  'http://localhost:5000/static/Subcategory_Media/mobiles/mobiles/mobile_4-nobg.png',
+              },
+            ],
+          },
+        ],
+        rowCount: 1,
+      };
+      queryMock.mockResolvedValue(queryResponseWithImages);
+      const data = await SubcategoryServices.getSubcategoriesForCategory(
+        category,
+        baseURL,
+      );
+      expect(data).toEqual(queryResponseWithImages);
+      expect(queryMock).toHaveBeenCalledTimes(1);
+      expect(queryMock).toHaveBeenCalledWith(
+        SUBCATEGORY_SERVICE_SQL.GET_SUBCATEGORIES_FOR_CATEGORY,
+        [baseURL, category],
+      );
+    });
+
+    test('getSubcategoriesForCategory with error should raise proper errors', async () => {
+      let error;
+      queryMock.mockRejectedValueOnce(new Error('SQL ERROR'));
+      try {
+        await SubcategoryServices.getSubcategoriesForCategory(
+          category,
+          baseURL,
+        );
+      } catch (err) {
+        if (err instanceof Error) {
+          error = err;
+        }
+      } finally {
+        expect(error).toBeDefined();
+        expect(error?.name).toBe('Error');
+        expect(error?.message).toBe('SQL ERROR');
+        expect(queryMock).toHaveBeenCalledTimes(1);
+        expect(queryMock).toHaveBeenCalledWith(
+          SUBCATEGORY_SERVICE_SQL.GET_SUBCATEGORIES_FOR_CATEGORY,
+          [baseURL, category],
+        );
+      }
+    });
+  });
+
   describe('getSubcategoryWIthCoupons Tests', () => {
     const baseURL = 'http://localhost:5000/static';
-    
-    test('getSubcategoryWIthCoupons without should return proper response', async () => {
+
+    test('getSubcategoryWIthCoupons without error should return proper response', async () => {
       const queryResponseWithCoupon = {
         rows: [
           {

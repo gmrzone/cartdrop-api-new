@@ -27,7 +27,7 @@ export const getSubcategoriesForCategory = async (
     const baseUrl = getBaseStaticUrl(req);
     const { rows, rowCount } =
       await SubcategoryService.getSubcategoriesForCategory(category, baseUrl);
-    res.setHeader('ROW_COUNT_HEADER_NAME', rowCount);
+    res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
     if (!rowCount) {
       const errorResponse = generateErrorObject(
         new Error(`There is no subcategories for category ${category}`),
