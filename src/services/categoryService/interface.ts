@@ -24,5 +24,5 @@ export interface ICATEGORY_RESPONSE {
   slug: string;
   uuid: string;
   created: string;
-  category_images: IIMAGE[]
+  category_images: IIMAGE[];
 }

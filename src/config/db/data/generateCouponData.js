@@ -40,7 +40,8 @@ fsPromise
         if (item.model === 'core.couponcode') {
           const tableName = 'coupon_codes';
           const reusableTableName = 'coupon_reusable';
-          const subcategoryIntermidiateTableName = 'coupon_codes_subcategory_intermediate';
+          const subcategoryIntermidiateTableName =
+            'coupon_codes_subcategory_intermediate';
           const newItem = {
             table: tableName,
             fields: {
@@ -60,7 +61,8 @@ fsPromise
               fields: {
                 pk: subcategoryPkCounter,
                 coupon_code_id: pkCounter,
-                subcategory_id: +subcategoryMap[item.fields.subcategory.toString()],
+                subcategory_id:
+                  +subcategoryMap[item.fields.subcategory.toString()],
               },
             };
             couponSubcategoryIntermidiate.push(intermidiaryNewItems);
@@ -84,7 +86,10 @@ fsPromise
           pkCounter += 1;
         }
       });
-      const completeData = couponReusableData.concat(couponData, couponSubcategoryIntermidiate);
+      const completeData = couponReusableData.concat(
+        couponData,
+        couponSubcategoryIntermidiate,
+      );
       fsPromise.writeFile(
         '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productCoupons.json',
         JSON.stringify(completeData, null, 2),

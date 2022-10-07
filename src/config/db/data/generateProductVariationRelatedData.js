@@ -61,7 +61,7 @@ fsPromise
         };
         productVariant.push(productVariantData);
         fashionVariantCounter += 1;
-        productVariantCounter += 1
+        productVariantCounter += 1;
       } else if (row.model === 'products.productvariation') {
         if (row.fields.juices_quantity) {
           const tableName = 'product_juice_variant';
@@ -150,8 +150,18 @@ fsPromise
         productVariantCounter += 1;
       }
     });
-    const completeData = clothingSize.concat(fashionVariant, juiceVariant, refrigeratorVariant, tvVariant, productVariant)
-    return fsPromise.writeFile('/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productVariationRelated.json', JSON.stringify(completeData, null, 2), {encoding: 'utf-8'})
+    const completeData = clothingSize.concat(
+      fashionVariant,
+      juiceVariant,
+      refrigeratorVariant,
+      tvVariant,
+      productVariant,
+    );
+    return fsPromise.writeFile(
+      '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productVariationRelated.json',
+      JSON.stringify(completeData, null, 2),
+      { encoding: 'utf-8' },
+    );
   })
   // eslint-disable-next-line no-undef
-  .catch(err => console.log(err))
+  .catch((err) => console.log(err));

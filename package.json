@@ -10,7 +10,8 @@
     "dev": "nodemon src/server.ts",
     "build": "tsc -p . && cp -R src/config/db/data dist/config/db/data && cp -R src/config/db/migrations dist/config/db/migrations",
     "lint": "eslint .",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "prepare": "husky install"
   },
   "author": "Afzal Saiyed",
   "license": "ISC",
@@ -40,7 +41,7 @@
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "jest": "^29.0.3",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",

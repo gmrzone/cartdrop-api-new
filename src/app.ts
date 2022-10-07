@@ -34,6 +34,6 @@ app.use('/static', express.static('public'));
 app.use('/api/users', userRoutes);
 app.use('/api/categories', categoryRoute);
 app.use('/api/subcategories', subcategoryRoutes);
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 export default app;

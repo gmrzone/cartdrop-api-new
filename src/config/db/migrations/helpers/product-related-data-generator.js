@@ -101,5 +101,3 @@ module.exports.insertSpeakerType = `INSERT INTO public.speaker_type
 // eslint-disable-next-line no-undef
 module.exports.insertSimType = `INSERT INTO public.product_sim_type 
 (id, name) VALUES ${simTypeValues.join(', ')};`;
-
-

@@ -13,7 +13,10 @@ export const POOL_CONFIG: PoolConfig = {
   connectionTimeoutMillis: +getVar('DB_POOL_CLIENT_CONNECTION_TIMEOUT'),
 };
 
-export const CORS_WHITE_LIST = ['http://127.0.0.1:3000/', 'http://localhost:4000/'];
+export const CORS_WHITE_LIST = [
+  'http://127.0.0.1:3000/',
+  'http://localhost:4000/',
+];
 
 export const CORS_OPTIONS: CorsOptions = {
   origin: function (origin, callback) {
@@ -24,5 +27,4 @@ export const CORS_OPTIONS: CorsOptions = {
   },
 };
 
-
-export const ROW_COUNT_HEADER_NAME = 'x-row-count'
+export const ROW_COUNT_HEADER_NAME = 'x-row-count';
