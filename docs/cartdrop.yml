@@ -3,7 +3,7 @@ info:
   title: CARTDROP - OpenAPI 3.0
   description: |-
     Cartdrop Open API
-    
+
     Some useful links:
     - [Cartdrop repository](https://github.com/gmrzone/cartdrop-api-new)
     - [Cartdrop Frontend repository](https://github.com/gmrzone/cartdrop)
@@ -36,7 +36,7 @@ paths:
       operationId: getCategories
       responses:
         '200':
-          description: Sucessfull
+          description: Sucess Response
           content:
             application/json:
               schema:
@@ -45,12 +45,12 @@ paths:
                   $ref: '#/components/schemas/Category'
 
         '500':
-          description: Internal Error
+          description: Internal Server Error Response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error500'
-            
+
   /subcategories:
     get:
       tags:
@@ -75,19 +75,28 @@ paths:
                 $ref: '#/components/schemas/Error500'
   /subcategories/{category}:
     get:
-      tags: 
+      tags:
         - Subcategory
       summary: Get subcategories for specific category
       description: Get subcategories for specific category
       operationId: getSubcategoriesForCategory
-      parameters: 
+      parameters:
         - name: category
           in: path
           description: category slug
           required: true
           schema:
             type: string
-            enum: ['mobiles', 'electronics', 'accessories', 'fashion', 'appliances', 'groceries', 'books']
+            enum:
+              [
+                'mobiles',
+                'electronics',
+                'accessories',
+                'fashion',
+                'appliances',
+                'groceries',
+                'books',
+              ]
       responses:
         '200':
           description: Success Response
@@ -109,10 +118,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error500'
+  /subcategories/offers:
+    get:
+      tags:
+        - Subcategory
+      summary: Get list for subcategories with offer coupons available
+      description: Get list for subcategories with offer coupons available
+      operationId: getSubcategoriesWithCoupons
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubcategoryWithCoupons'
+        '500':
+          description: 404 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
 
-                
-          
-                      
 components:
   schemas:
     Category:
@@ -120,13 +148,13 @@ components:
       properties:
         name:
           type: string
-        slug: 
+        slug:
           type: string
         uuid:
           type: string
         created:
           type: string
-        category_images: 
+        category_images:
           type: array
           items:
             type: object
@@ -138,13 +166,41 @@ components:
       properties:
         name:
           type: string
-        slug: 
+        slug:
           type: string
         uuid:
           type: string
         created:
           type: string
-        category_images: 
+        category_images:
+          type: array
+          items:
+            type: object
+            properties:
+              image:
+                type: string
+    SubcategoryWithCoupons:
+      type: object
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        uuid:
+          type: string
+        created:
+          type: string
+        coupons:
+          type: array
+          items:
+            type: object
+            properties:
+              code:
+                type: string
+              discount:
+                type: integer
+                example: 10
+        category_images:
           type: array
           items:
             type: object
@@ -152,13 +208,12 @@ components:
               image:
                 type: string
 
-
     Error500:
       type: object
       properties:
         currentDate:
           type: string
-        message: 
+        message:
           type: string
         statusCode:
           type: integer
@@ -168,13 +223,12 @@ components:
       properties:
         currentDate:
           type: string
-        message: 
+        message:
           type: string
         statusCode:
           type: integer
           example: 404
 
-  
   securitySchemes:
     petstore_auth:
       type: oauth2
