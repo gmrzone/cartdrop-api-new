@@ -1,6 +1,7 @@
 import { getVar } from '../../helpers';
 import { PoolConfig } from 'pg';
 import { CorsOptions } from 'cors';
+import { rateLimiterHandler } from '../../helpers';
 
 export const POOL_CONFIG: PoolConfig = {
   database: getVar('POSTGRES_DB_NAME'),
@@ -28,3 +29,15 @@ export const CORS_OPTIONS: CorsOptions = {
 };
 
 export const ROW_COUNT_HEADER_NAME = 'x-row-count';
+
+export const rateLimitOptions = {
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+  standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+  message: {
+    status: 'error',
+  },
+  handler: rateLimiterHandler,
+  skipFailedRequests: true,
+};
