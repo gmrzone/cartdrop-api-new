@@ -2,7 +2,10 @@
 const { promises: fsPromise } = require('fs');
 
 fsPromise
-  .readFile('/Users/zop9896/Projects/cartdrop-api/json_data/products_updated_19-03-2022.json', { encoding: 'utf-8' })
+  .readFile(
+    '/Users/zop9896/Projects/cartdrop-api/json_data/products_updated_19-03-2022.json',
+    { encoding: 'utf-8' },
+  )
   .then((data) => {
     if (data) {
       const jsonData = JSON.parse(data);

@@ -28,7 +28,6 @@ jest.mock('../helpers/getPool', () => {
 });
 
 describe('Database util function test', () => {
-    
   afterEach(() => {
     jest.clearAllMocks();
   });
@@ -60,12 +59,11 @@ describe('Database util function test', () => {
         'SELECT * FROM table where id = $1;',
         [1],
       );
-      expect(error).toBeDefined()
+      expect(error).toBeDefined();
       expect(error?.message).toBe('sql Error');
     }
   });
   describe('executeQueryWithClient tests', () => {
-
     const callback = async (client: PoolClient) => {
       const data: QueryResult<{ id: number; name: string }> =
         await client.query('SELECT * from test_table;');
@@ -83,21 +81,20 @@ describe('Database util function test', () => {
     });
 
     test('database executeQueryWithClient proper error handling and should release client on error', async () => {
-        let error;
+      let error;
       poolQueryMock.mockRejectedValueOnce(new Error('SQL ERROR'));
-      try{
-        await executeQueryWithClient(callback)
-      }
-      catch(err){
-        if (err instanceof Error){
-            error = err
+      try {
+        await executeQueryWithClient(callback);
+      } catch (err) {
+        if (err instanceof Error) {
+          error = err;
         }
         expect(poolConnectMock).toHaveBeenCalledTimes(1);
         expect(poolQueryMock).toHaveBeenCalledTimes(1);
         expect(poolReleaseMock).toHaveBeenCalledTimes(1);
         expect(poolQueryMock).toHaveBeenCalledWith('SELECT * from test_table;');
-        expect(error).toBeDefined()
-        expect(error?.message).toBe("SQL ERROR")
+        expect(error).toBeDefined();
+        expect(error?.message).toBe('SQL ERROR');
       }
     });
   });

@@ -13,7 +13,16 @@ couponData.forEach((row) => {
     couponReusableValues.push(value);
   } else if (row.table === 'coupon_codes') {
     const {
-      fields: { pk, code, discount, valid_from, valid_to, active, summary, reusable_id },
+      fields: {
+        pk,
+        code,
+        discount,
+        valid_from,
+        valid_to,
+        active,
+        summary,
+        reusable_id,
+      },
     } = row;
     const value = `(${pk}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, uuid_generate_v4(), '${code}', ${discount}, '${valid_from}', '${valid_to}', ${active}, ${reusable_id}, '${summary}')`;
     couponValues.push(value);

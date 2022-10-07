@@ -90,9 +90,17 @@ fsPromise
           productData.push(value);
         }
       });
-      const completeData = productFeatureData.concat(productSpecificationData, productWarrentyData, productData)
-      return fsPromise.writeFile('/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productData.json', JSON.stringify(completeData, null, 2), {encoding: "utf8"})
+      const completeData = productFeatureData.concat(
+        productSpecificationData,
+        productWarrentyData,
+        productData,
+      );
+      return fsPromise.writeFile(
+        '/Users/zop9896/Projects/cartdrop-api-node/src/config/db/data/productData.json',
+        JSON.stringify(completeData, null, 2),
+        { encoding: 'utf8' },
+      );
     }
   })
   // eslint-disable-next-line no-undef
-  .catch((err => console.log(err)))
+  .catch((err) => console.log(err));

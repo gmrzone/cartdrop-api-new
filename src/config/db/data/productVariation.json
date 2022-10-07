@@ -1,2617 +1,2388 @@
 [
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 1,
-            "capacity_id": 1,
-            "star_rating_id": 1
-        }
-    },
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 2,
-            "capacity_id": 2,
-            "star_rating_id": 1
-        }
-    },
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 3,
-            "capacity_id": 3,
-            "star_rating_id": 1
-        }
-    },
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 4,
-            "capacity_id": 1,
-            "star_rating_id": 3
-        }
-    },
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 5,
-            "capacity_id": 2,
-            "star_rating_id": 3
-        }
-    },
-    {
-        "table": "product_air_conditioner_variant",
-        "fields": {
-            "pk": 6,
-            "capacity_id": 3,
-            "star_rating_id": 3
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 1,
-            "capacity": "4GB",
-            "type": "DDR4"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 2,
-            "capacity": "6GB",
-            "type": "DDR4"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 3,
-            "capacity": "8GB",
-            "type": "DDR4"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 4,
-            "capacity": "10GB",
-            "type": "DDR4"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 5,
-            "capacity": "12GB",
-            "type": "DDR4"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 6,
-            "capacity": "10GB",
-            "type": "DDR5"
-        }
-    },
-    {
-        "table": "products_ram",
-        "fields": {
-            "pk": 7,
-            "capacity": "12GB",
-            "type": "DDR5"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 1,
-            "capacity": "8GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 2,
-            "capacity": "16GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 3,
-            "capacity": "32GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 4,
-            "capacity": "64GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 5,
-            "capacity": "128GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 6,
-            "capacity": "256GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 7,
-            "capacity": "500GB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 8,
-            "capacity": "1TB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 9,
-            "capacity": "2TB",
-            "type": "SSD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 10,
-            "capacity": "256GB",
-            "type": "HDD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 11,
-            "capacity": "500GB",
-            "type": "HDD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 12,
-            "capacity": "1TB",
-            "type": "HDD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 13,
-            "capacity": "2TB",
-            "type": "HDD"
-        }
-    },
-    {
-        "table": "products_storage",
-        "fields": {
-            "pk": 14,
-            "capacity": "4TB",
-            "type": "HDD"
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 1,
-            "display_size": "",
-            "ram_id": 1,
-            "storage_id": 4
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 2,
-            "display_size": "",
-            "ram_id": 1,
-            "storage_id": 5
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 3,
-            "display_size": "",
-            "ram_id": 2,
-            "storage_id": 4
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 4,
-            "display_size": "",
-            "ram_id": 2,
-            "storage_id": 5
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 5,
-            "display_size": "",
-            "ram_id": 2,
-            "storage_id": 6
-        }
-    },
-    {
-        "table": "product_mobile_variant",
-        "fields": {
-            "pk": 6,
-            "display_size": "",
-            "ram_id": 3,
-            "storage_id": 6
-        }
-    },
-    {
-        "table": "product_laptop_variant",
-        "fields": {
-            "pk": 1,
-            "display_size": "",
-            "ram_id": 2,
-            "storage_id": 7
-        }
-    },
-    {
-        "table": "product_laptop_variant",
-        "fields": {
-            "pk": 2,
-            "display_size": "",
-            "ram_id": 3,
-            "storage_id": 7
-        }
-    },
-    {
-        "table": "product_laptop_variant",
-        "fields": {
-            "pk": 3,
-            "display_size": "",
-            "ram_id": 4,
-            "storage_id": 8
-        }
-    },
-    {
-        "table": "product_laptop_variant",
-        "fields": {
-            "pk": 4,
-            "display_size": "",
-            "ram_id": 3,
-            "storage_id": 8
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 18,
-            "name": "4GB/64GB",
-            "mobile_variant_id": 1,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 19,
-            "name": "4GB/128GB",
-            "mobile_variant_id": 2,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 20,
-            "name": "6GB/64GB",
-            "mobile_variant_id": 3,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 21,
-            "name": "6GB/128GB",
-            "mobile_variant_id": 4,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 35,
-            "name": "8GB/128GB",
-            "mobile_variant_id": 6,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 22,
-            "name": "6GB/256GB",
-            "mobile_variant_id": 5,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 23,
-            "name": "6GB/500GB",
-            "mobile_variant_id": null,
-            "laptop_variant_id": 1,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 24,
-            "name": "8GB/500GB",
-            "mobile_variant_id": null,
-            "laptop_variant_id": 2,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 25,
-            "name": "12GB/1000GB",
-            "mobile_variant_id": null,
-            "laptop_variant_id": 3,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 26,
-            "name": "8GB/1000GB",
-            "mobile_variant_id": null,
-            "laptop_variant_id": 4,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 27,
-            "name": "1 Ton / 3 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 1,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 28,
-            "name": "1.5 Ton / 3 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 2,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 29,
-            "name": "2 Ton / 3 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 3,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 30,
-            "name": "1 Ton / 5 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 4,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 31,
-            "name": "1.5 Ton / 5 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 5,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 32,
-            "name": "2 Ton / 5 Star",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": 6,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": null
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 33,
-            "name": "E-Book",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": 1
-        }
-    },
-    {
-        "table": "product_variant",
-        "fields": {
-            "pk": 34,
-            "name": "Paperback",
-            "mobile_variant_id": null,
-            "laptop_variant_id": null,
-            "fashion_variant_id": null,
-            "air_conditioner_variant_id": null,
-            "television_variant_id": null,
-            "refrigerator_variant_id": null,
-            "juice_variant_id": null,
-            "book_variant_id": 2
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 1,
-            "pid": "MBLOGTKIADMSGKIKZJ",
-            "retail_price": "39900.00",
-            "price": "32999.00",
-            "available_stock": 10,
-            "product_id": 1,
-            "color_id": 7,
-            "variant_id": 18,
-            "active": true,
-            "images": [
-                1,
-                2,
-                3,
-                4
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 2,
-            "pid": "MBLEWRGZAVMRISCPOF",
-            "retail_price": "44900.00",
-            "price": "34999.00",
-            "available_stock": 10,
-            "product_id": 1,
-            "color_id": 2,
-            "variant_id": 19,
-            "active": true,
-            "images": [
-                5,
-                6,
-                7,
-                8
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 3,
-            "pid": "MBLPYPMBGCAATDWXSN",
-            "retail_price": "39900.00",
-            "price": "32999.00",
-            "available_stock": 10,
-            "product_id": 1,
-            "color_id": 8,
-            "variant_id": 18,
-            "active": true,
-            "images": [
-                9,
-                10,
-                11,
-                12
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 4,
-            "pid": "MBLOCPIQAORLDBNAHW",
-            "retail_price": "79900.00",
-            "price": "77900.00",
-            "available_stock": 10,
-            "product_id": 2,
-            "color_id": 7,
-            "variant_id": 20,
-            "active": true,
-            "images": [
-                13,
-                14,
-                15,
-                16,
-                17
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 5,
-            "pid": "MBLSYJANKJXEVGANXD",
-            "retail_price": "84900.00",
-            "price": "82900.00",
-            "available_stock": 90,
-            "product_id": 2,
-            "color_id": 7,
-            "variant_id": 21,
-            "active": true,
-            "images": [
-                13,
-                14,
-                15,
-                16,
-                17
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 6,
-            "pid": "MBLWRSUXDXZEAKTEGE",
-            "retail_price": "94900.00",
-            "price": "92900.00",
-            "available_stock": 90,
-            "product_id": 2,
-            "color_id": 7,
-            "variant_id": 22,
-            "active": true,
-            "images": [
-                13,
-                14,
-                15,
-                16,
-                17
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 7,
-            "pid": "MBLKSVVEESOITBPXZS",
-            "retail_price": "79900.00",
-            "price": "77900.00",
-            "available_stock": 20,
-            "product_id": 2,
-            "color_id": 2,
-            "variant_id": 20,
-            "active": true,
-            "images": [
-                17,
-                18,
-                19,
-                20,
-                21
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 8,
-            "pid": "MBLVJGELBYVOOLRYQI",
-            "retail_price": "79900.00",
-            "price": "77900.00",
-            "available_stock": 20,
-            "product_id": 2,
-            "color_id": 8,
-            "variant_id": 20,
-            "active": true,
-            "images": [
-                17,
-                22,
-                23,
-                24,
-                25
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 9,
-            "pid": "MBLMTAQWPVSIZCLUFO",
-            "retail_price": "94900.00",
-            "price": "92900.00",
-            "available_stock": 10,
-            "product_id": 2,
-            "color_id": 2,
-            "variant_id": 22,
-            "active": true,
-            "images": [
-                17,
-                18,
-                19,
-                20,
-                21
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 10,
-            "pid": "MBLSPKOGALENOMHUJA",
-            "retail_price": "94900.00",
-            "price": "92900.00",
-            "available_stock": 10,
-            "product_id": 2,
-            "color_id": 8,
-            "variant_id": 21,
-            "active": true,
-            "images": [
-                17,
-                22,
-                23,
-                24,
-                25
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 11,
-            "pid": "LPTZWJPMELZZMMOFUK",
-            "retail_price": "64038.00",
-            "price": "53990.00",
-            "available_stock": 10,
-            "product_id": 3,
-            "color_id": 7,
-            "variant_id": 23,
-            "active": true,
-            "images": [
-                30,
-                31,
-                32,
-                33,
-                34
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 12,
-            "pid": "LPTPUXHMKVGRHEUSEO",
-            "retail_price": "43900.00",
-            "price": "40990.00",
-            "available_stock": 50,
-            "product_id": 4,
-            "color_id": 14,
-            "variant_id": 23,
-            "active": true,
-            "images": [
-                26,
-                27,
-                28,
-                29
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 14,
-            "pid": "TVSQDMJQZBSHNATFQW",
-            "retail_price": "222900.00",
-            "price": "124999.00",
-            "available_stock": 20,
-            "product_id": 5,
-            "color_id": 7,
-            "variant_id": 1,
-            "active": true,
-            "images": [
-                35,
-                36,
-                38,
-                39,
-                40,
-                41,
-                42,
-                43
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 15,
-            "pid": "TVSXHYFLBVCGVULKJR",
-            "retail_price": "1444900.00",
-            "price": "92999.00",
-            "available_stock": 30,
-            "product_id": 5,
-            "color_id": 7,
-            "variant_id": 2,
-            "active": true,
-            "images": [
-                35,
-                36,
-                38,
-                39,
-                40,
-                41,
-                42,
-                43
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 16,
-            "pid": "TVSSVBWCOJVSWRXXHX",
-            "retail_price": "119900.00",
-            "price": "77999.00",
-            "available_stock": 30,
-            "product_id": 5,
-            "color_id": 7,
-            "variant_id": 3,
-            "active": true,
-            "images": [
-                35,
-                36,
-                38,
-                39,
-                40,
-                41,
-                42,
-                43
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 17,
-            "pid": "TVSCHJAXODSAOWEJCK",
-            "retail_price": "89990.00",
-            "price": "61999.00",
-            "available_stock": 30,
-            "product_id": 5,
-            "color_id": 7,
-            "variant_id": 4,
-            "active": true,
-            "images": [
-                35,
-                36,
-                38,
-                39,
-                40,
-                41,
-                42,
-                43
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 18,
-            "pid": "NCDIVSOXOXYIIQBYRT",
-            "retail_price": "39000.00",
-            "price": "39000.00",
-            "available_stock": 30,
-            "product_id": 6,
-            "color_id": 7,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                50,
-                51,
-                52,
-                53
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 19,
-            "pid": "NCDRHXIHFCKAKAZSZI",
-            "retail_price": "39000.00",
-            "price": "39000.00",
-            "available_stock": 30,
-            "product_id": 6,
-            "color_id": 15,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                44,
-                45,
-                46,
-                47,
-                48,
-                49
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 20,
-            "pid": "WMSOTJLTGXGPSTCOWX",
-            "retail_price": "43399.00",
-            "price": "34490.00",
-            "available_stock": 30,
-            "product_id": 7,
-            "color_id": 8,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                54,
-                55,
-                56,
-                57,
-                58,
-                59
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 21,
-            "pid": "NCDCMDKJGUNUVWHPMZ",
-            "retail_price": "42990.00",
-            "price": "27490.00",
-            "available_stock": 30,
-            "product_id": 8,
-            "color_id": 5,
-            "variant_id": 1,
-            "active": true,
-            "images": [
-                60,
-                61,
-                62,
-                63,
-                64
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 22,
-            "pid": "NCDMQSEDBFIZAEGAKH",
-            "retail_price": "45990.00",
-            "price": "30990.00",
-            "available_stock": 30,
-            "product_id": 8,
-            "color_id": 5,
-            "variant_id": 2,
-            "active": true,
-            "images": [
-                60,
-                61,
-                62,
-                63,
-                64
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 23,
-            "pid": "NCDYFHZKIYTXMYCGDJ",
-            "retail_price": "44990.00",
-            "price": "28990.00",
-            "available_stock": 30,
-            "product_id": 8,
-            "color_id": 5,
-            "variant_id": 3,
-            "active": true,
-            "images": [
-                60,
-                61,
-                62,
-                63,
-                64
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 24,
-            "pid": "NCDJDSEEWBUVLVRWDN",
-            "retail_price": "51990.00",
-            "price": "32990.00",
-            "available_stock": 30,
-            "product_id": 8,
-            "color_id": 5,
-            "variant_id": 4,
-            "active": true,
-            "images": [
-                60,
-                61,
-                62,
-                63,
-                64
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 25,
-            "pid": "NCDOEIPNRWODCTRTMU",
-            "retail_price": "56990.00",
-            "price": "34990.00",
-            "available_stock": 30,
-            "product_id": 8,
-            "color_id": 5,
-            "variant_id": 5,
-            "active": true,
-            "images": [
-                60,
-                61,
-                62,
-                63,
-                64
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 26,
-            "pid": "REFPVKSOYNKUKLDOHZ",
-            "retail_price": "23590.00",
-            "price": "19399.00",
-            "available_stock": 30,
-            "product_id": 9,
-            "color_id": 16,
-            "variant_id": 11,
-            "active": true,
-            "images": [
-                84,
-                85,
-                86,
-                87,
-                88,
-                89,
-                90
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 27,
-            "pid": "REFRACTSAUHVVFWZOQ",
-            "retail_price": "24990.00",
-            "price": "20490.00",
-            "available_stock": 30,
-            "product_id": 9,
-            "color_id": 17,
-            "variant_id": 12,
-            "active": true,
-            "images": [
-                91,
-                92,
-                93,
-                94,
-                95
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 28,
-            "pid": "PNTSRRKOOTMDQCRKYH",
-            "retail_price": "1591.00",
-            "price": "999.00",
-            "available_stock": 30,
-            "product_id": 10,
-            "color_id": 8,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                77
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 29,
-            "pid": "JUECLULQXBRMBIXMGL",
-            "retail_price": "255.00",
-            "price": "255.00",
-            "available_stock": 30,
-            "product_id": 11,
-            "color_id": 1,
-            "variant_id": 13,
-            "active": true,
-            "images": [
-                78,
-                79,
-                80,
-                81,
-                82
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 30,
-            "pid": "BKSPEPULGXEREHQQZA",
-            "retail_price": "4421.00",
-            "price": "4421.00",
-            "available_stock": 30,
-            "product_id": 12,
-            "color_id": 1,
-            "variant_id": 34,
-            "active": true,
-            "images": [
-                83
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 31,
-            "pid": "BKSXYKJXWBRAIFXELR",
-            "retail_price": "2042.50",
-            "price": "2042.50",
-            "available_stock": 100000,
-            "product_id": 12,
-            "color_id": 1,
-            "variant_id": 33,
-            "active": true,
-            "images": [
-                83
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 32,
-            "pid": "MBLTPZJQAFHUVMGCLS",
-            "retail_price": "84998.00",
-            "price": "46990.00",
-            "available_stock": 30,
-            "product_id": 13,
-            "color_id": 17,
-            "variant_id": 35,
-            "active": true,
-            "images": [
-                96,
-                97,
-                98,
-                99,
-                100
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 33,
-            "pid": "ACCPJVLYSMAEBQTYUU",
-            "retail_price": "1000.00",
-            "price": "1000.00",
-            "available_stock": 30,
-            "product_id": 14,
-            "color_id": 10,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                101,
-                102,
-                103
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 34,
-            "pid": "ACCZBGKSMIGQFXRUYO",
-            "retail_price": "600.00",
-            "price": "549.00",
-            "available_stock": 30,
-            "product_id": 15,
-            "color_id": 1,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                104,
-                105,
-                106,
-                107
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 35,
-            "pid": "NCDSQPAANALNZMIFYG",
-            "retail_price": "450.00",
-            "price": "400.00",
-            "available_stock": 30,
-            "product_id": 16,
-            "color_id": 3,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                108,
-                109,
-                110,
-                111
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 36,
-            "pid": "NCDXJLPEEHCUPJXVCV",
-            "retail_price": "600.00",
-            "price": "480.00",
-            "available_stock": 30,
-            "product_id": 17,
-            "color_id": 1,
-            "variant_id": null,
-            "active": true,
-            "images": [
-                112,
-                113,
-                114
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 37,
-            "pid": "NCDNSMJZYAZMREKMVV",
-            "retail_price": "69.00",
-            "price": "60.00",
-            "available_stock": 30,
-            "product_id": 18,
-            "color_id": 1,
-            "variant_id": 14,
-            "active": true,
-            "images": [
-                115,
-                116,
-                117
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 38,
-            "pid": "CHORNCMOPCDCYMDODB",
-            "retail_price": "650.00",
-            "price": "585.00",
-            "available_stock": 30,
-            "product_id": 19,
-            "color_id": 1,
-            "variant_id": 15,
-            "active": true,
-            "images": [
-                118,
-                119,
-                120,
-                121,
-                122
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 39,
-            "pid": "NCDJNYBQCVZDTJVSGT",
-            "retail_price": "115.00",
-            "price": "110.00",
-            "available_stock": 30,
-            "product_id": 20,
-            "color_id": 1,
-            "variant_id": 14,
-            "active": true,
-            "images": [
-                123,
-                124,
-                125,
-                126
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 40,
-            "pid": "JUEUANUHWMVSZGXLCP",
-            "retail_price": "120.00",
-            "price": "115.00",
-            "available_stock": 30,
-            "product_id": 21,
-            "color_id": 1,
-            "variant_id": 14,
-            "active": true,
-            "images": [
-                125,
-                126,
-                127,
-                128
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 42,
-            "pid": "BKSOUQJNNTFFCLFDHCESD",
-            "retail_price": "5000.00",
-            "price": "3596.00",
-            "available_stock": 30,
-            "product_id": 22,
-            "color_id": 1,
-            "variant_id": 34,
-            "active": true,
-            "images": [
-                129
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 43,
-            "pid": "BKSOUQJNNTFFCLFDHC",
-            "retail_price": "3200.00",
-            "price": "2999.000",
-            "available_stock": 30,
-            "product_id": 23,
-            "color_id": 1,
-            "variant_id": 34,
-            "active": true,
-            "images": [
-                130
-            ]
-        }
-    },
-    {
-        "table": "product_variations",
-        "fields": {
-            "pk": 44,
-            "pid": "BKSADPJCPTUZVXIJCP",
-            "retail_price": "3999.00",
-            "price": "2896.00",
-            "available_stock": 30,
-            "product_id": 24,
-            "color_id": 1,
-            "variant_id": 34,
-            "active": true,
-            "images": [
-                131
-            ]
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 1,
-            "image_summary": "Iphone se black main",
-            "image": "Product_Image/Iphone/iphone-se-black-main/front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 2,
-            "image_summary": "Iphone se black camera",
-            "image": "Product_Image/Iphone/iphone-se-black-camera/camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 3,
-            "image_summary": "Iphone se black back",
-            "image": "Product_Image/Iphone/iphone-se-black-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 4,
-            "image_summary": "Iphone se black side",
-            "image": "Product_Image/Iphone/iphone-se-black-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 5,
-            "image_summary": "Iphone se red main",
-            "image": "Product_Image/Iphone/iphone-se-red-main/front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 6,
-            "image_summary": "Iphone se red back",
-            "image": "Product_Image/Iphone/iphone-se-red-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 7,
-            "image_summary": "Iphone se red side",
-            "image": "Product_Image/Iphone/iphone-se-red-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 8,
-            "image_summary": "Iphone se red camera",
-            "image": "Product_Image/Iphone/iphone-se-red-camera/camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 9,
-            "image_summary": "Iphone se White main",
-            "image": "Product_Image/Iphone/iphone-se-white-main/front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 10,
-            "image_summary": "Iphone se white side",
-            "image": "Product_Image/Iphone/iphone-se-white-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 11,
-            "image_summary": "Iphone se white camera",
-            "image": "Product_Image/Iphone/iphone-se-white-camera/camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 12,
-            "image_summary": "Iphone se white back",
-            "image": "Product_Image/Iphone/iphone-se-white-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 13,
-            "image_summary": "Iphone 12 black main",
-            "image": "Product_Image/Iphone/iphone-12-black-main/front_main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 14,
-            "image_summary": "Iphone 12 black front",
-            "image": "Product_Image/Iphone/iphone-12-black-front/front_black.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 15,
-            "image_summary": "Iphone 12 black camera",
-            "image": "Product_Image/Iphone/iphone-12-black-camera/front_camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 16,
-            "image_summary": "Iphone 12 black camera 2",
-            "image": "Product_Image/Iphone/iphone-12-black-camera-2/front_camera2.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 17,
-            "image_summary": "Iphone 12 detail",
-            "image": "Product_Image/Iphone/iphone-12-detail/iphone_12_detail.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 18,
-            "image_summary": "Iphone 12 red main",
-            "image": "Product_Image/Iphone/iphone-12-red-main/red_main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 19,
-            "image_summary": "Iphone 12 red front",
-            "image": "Product_Image/Iphone/iphone-12-red-front/red_front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 20,
-            "image_summary": "Iphone 12 red camera",
-            "image": "Product_Image/Iphone/iphone-12-red-camera/red_camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 21,
-            "image_summary": "Iphone 12 red camera 2",
-            "image": "Product_Image/Iphone/iphone-12-red-camera-2/red_camera2.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 22,
-            "image_summary": "Iphone 12 white main",
-            "image": "Product_Image/Iphone/iphone-12-white-main/white_main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 23,
-            "image_summary": "Iphone 12 white front",
-            "image": "Product_Image/Iphone/iphone-12-white-front/white_front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 24,
-            "image_summary": "Iphone 12 white camera",
-            "image": "Product_Image/Iphone/iphone-12-white-camera/white_camera.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 25,
-            "image_summary": "Iphone 12 white camera 2",
-            "image": "Product_Image/Iphone/iphone-12-white-camera-2/white_camera2.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 26,
-            "image_summary": "HP 15s main",
-            "image": "Product_Image/HP/hp-15s-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 27,
-            "image_summary": "HP 15s side",
-            "image": "Product_Image/HP/hp-15s-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 28,
-            "image_summary": "HP 15s back",
-            "image": "Product_Image/HP/hp-15s-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 29,
-            "image_summary": "HP 15s closed",
-            "image": "Product_Image/HP/hp-15s-closed/closed.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 30,
-            "image_summary": "Lenovo ThinkPad E14 main",
-            "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 31,
-            "image_summary": "Lenovo ThinkPad E14 touchID",
-            "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-touchid/touch_id.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 32,
-            "image_summary": "Lenovo ThinkPad E14 feature_one",
-            "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_one/features_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 33,
-            "image_summary": "Lenovo ThinkPad E14 feature_two",
-            "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_two/features_two.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 34,
-            "image_summary": "Lenovo ThinkPad E14 feature_three",
-            "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_three/features_three.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 35,
-            "image_summary": "SAMSUNG The Frame main",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 36,
-            "image_summary": "SAMSUNG The Frame edge",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-edge/edge.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 38,
-            "image_summary": "SAMSUNG The Frame feature_one",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-feature_one/feature_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 39,
-            "image_summary": "SAMSUNG The Frame feature_two",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-feature_two/feature_two.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 40,
-            "image_summary": "SAMSUNG The Frame front",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-front/front.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 41,
-            "image_summary": "SAMSUNG The Frame back",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 42,
-            "image_summary": "SAMSUNG The Frame remote",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-remote/remote.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 43,
-            "image_summary": "SAMSUNG The Frame side",
-            "image": "Product_Image/SAMSUNG/samsung-the-frame-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 44,
-            "image_summary": "Bose 500 Silver main",
-            "image": "Product_Image/Bose/bose-500-silver-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 45,
-            "image_summary": "Bose 500 Silver feature one",
-            "image": "Product_Image/Bose/bose-500-silver-feature-one/feature_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 46,
-            "image_summary": "Bose 500 Silver feature two",
-            "image": "Product_Image/Bose/bose-500-silver-feature-two/feature_two.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 47,
-            "image_summary": "Bose 500 Silver detail",
-            "image": "Product_Image/Bose/bose-500-silver-detail/detail.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 48,
-            "image_summary": "Bose 500 Silver top",
-            "image": "Product_Image/Bose/bose-500-silver-top/top_two.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 49,
-            "image_summary": "Bose 500 Silver top one",
-            "image": "Product_Image/Bose/bose-500-silver-top-one/top.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 50,
-            "image_summary": "Bose 500 Black main",
-            "image": "Product_Image/Bose/bose-500-black-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 51,
-            "image_summary": "Bose 500 Black side",
-            "image": "Product_Image/Bose/bose-500-black-side/side.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 52,
-            "image_summary": "Bose 500 Black feature one",
-            "image": "Product_Image/Bose/bose-500-black-feature-one/feature_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 53,
-            "image_summary": "Bose 500 Black top",
-            "image": "Product_Image/Bose/bose-500-black-top/top_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 54,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL main",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 55,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL secondary",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-secondary/secondary.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 56,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL features",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-features/features.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 57,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL inside",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-inside/inside.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 58,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL back",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 59,
-            "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL size",
-            "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-size/size.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 60,
-            "image_summary": "SAMSUNG Star Split Inverter AC main",
-            "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 61,
-            "image_summary": "SAMSUNG Star Split Inverter AC open",
-            "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-open/main_open.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 62,
-            "image_summary": "SAMSUNG Star Split Inverter AC side",
-            "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-side/side_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 63,
-            "image_summary": "SAMSUNG Star Split Inverter AC side open",
-            "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-side-open/side_open.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 64,
-            "image_summary": "SAMSUNG Star Split Inverter AC back",
-            "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 77,
-            "image_summary": "ASIAN PAINTS TE-3 white main",
-            "image": "Product_Image/ASIAN/asian-paints-te-3-white-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 78,
-            "image_summary": "Auric Mens Energy  main",
-            "image": "Product_Image/Auric/auric-mens-energy-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 79,
-            "image_summary": "Auric Mens Energy back",
-            "image": "Product_Image/Auric/auric-mens-energy-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 80,
-            "image_summary": "Auric Mens Energy secondary",
-            "image": "Product_Image/Auric/auric-mens-energy-secondary/secondary.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 81,
-            "image_summary": "Auric Mens Energy detail",
-            "image": "Product_Image/Auric/auric-mens-energy-detail/detail.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 82,
-            "image_summary": "Auric Mens Energy detail_one",
-            "image": "Product_Image/Auric/auric-mens-energy-detail_one/detail_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 83,
-            "image_summary": "Javascript the definative guide",
-            "image": "Product_Image/Javascript/javascript-the-definative-guide/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 84,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow main",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 85,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow back",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 86,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow details",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-details/details.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 87,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow opened",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-opened/opened.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 88,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature one",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-one/features_one.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 89,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature two",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-two/features_two.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 90,
-            "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature three",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-three/features_three.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 91,
-            "image_summary": "LG 215 L Direct Cool Single Door Blue Charm main",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-charm-main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 92,
-            "image_summary": "LG 215 L Direct Cool Single Door Blue back",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-back/back.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 93,
-            "image_summary": "LG 215 L Direct Cool Single Door Blue opened",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-opened/opened.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 94,
-            "image_summary": "LG 215 L Direct Cool Single Door Blue bottom",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-bottom/section_bottom.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 95,
-            "image_summary": "LG 215 L Direct Cool Single Door Blue top",
-            "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-top/section_top.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 96,
-            "image_summary": "Samsung Galaxy S20 FE 5G_main",
-            "image": "Product_Image/main/main/main.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 97,
-            "image_summary": "Samsung Galaxy S20 FE 5G battery",
-            "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-battery/battery.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 98,
-            "image_summary": "Samsung Galaxy S20 FE 5G colors",
-            "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-colors/colors.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 99,
-            "image_summary": "Samsung Galaxy S20 FE 5G info",
-            "image": "Product_Image/info/info/info_black.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 100,
-            "image_summary": "Samsung Galaxy S20 FE 5G isp",
-            "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-isp/water_pr.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 101,
-            "image_summary": "SHAFIRE Main",
-            "image": "Product_Image/SHAFIRE/shafire-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 102,
-            "image_summary": "SHAFIRE secondary",
-            "image": "Product_Image/SHAFIRE/shafire-secondary/secondary.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 103,
-            "image_summary": "SHAFIRE color",
-            "image": "Product_Image/SHAFIRE/shafire-color/colors.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 104,
-            "image_summary": "Steelbird Full Finger Bike Riding Gloves main",
-            "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 105,
-            "image_summary": "Steelbird Full Finger Bike Riding Gloves secondary",
-            "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-secondary/secondary.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 106,
-            "image_summary": "Steelbird Full Finger Bike Riding Gloves sizes",
-            "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-sizes/sizes.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 107,
-            "image_summary": "Steelbird Full Finger Bike Riding Gloves features",
-            "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-features/features.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 108,
-            "image_summary": "Rangwell Heavy Duty Bike Brake Lock main",
-            "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 109,
-            "image_summary": "Rangwell Heavy Duty Bike Brake Lock colors",
-            "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-colors/color.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 110,
-            "image_summary": "Rangwell Heavy Duty Bike Brake Lock sec",
-            "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-sec/opened.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 111,
-            "image_summary": "Rangwell Heavy Duty Bike Brake Lock size",
-            "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-size/size.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 112,
-            "image_summary": "Plantex Stainless Steel Wall Mount main",
-            "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 113,
-            "image_summary": "Plantex Stainless Steel Wall Mount sec",
-            "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-sec/features.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 114,
-            "image_summary": "Plantex Stainless Steel Wall Mount  size",
-            "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-size/size.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 115,
-            "image_summary": "Minute Maid Pulpy Orange main",
-            "image": "Product_Image/Minute/minute-maid-pulpy-orange-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 116,
-            "image_summary": "Minute Maid Pulpy Orange nutrition",
-            "image": "Product_Image/Minute/minute-maid-pulpy-orange-nutrition/nutrition_facts.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 117,
-            "image_summary": "Minute Maid Pulpy Orange ingrediants",
-            "image": "Product_Image/Minute/minute-maid-pulpy-orange-ingrediants/ingrediants.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 118,
-            "image_summary": "Cadbury Silk Potli Gift main",
-            "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 119,
-            "image_summary": "Cadbury Silk Potli Gift sec",
-            "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-sec/sec.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 120,
-            "image_summary": "Cadbury Silk Potli Gift sec2",
-            "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-sec2/sec2.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 121,
-            "image_summary": "Cadbury Silk Potli Gift  nut1",
-            "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-nut1/nutrition1.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 122,
-            "image_summary": "Cadbury Silk Potli Gift  nut2",
-            "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-nut2/nutrition2.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 123,
-            "image_summary": "Tropicana Orange Delight main",
-            "image": "Product_Image/Tropicana/tropicana-orange-delight-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 124,
-            "image_summary": "Tropicana Orange Delight sec",
-            "image": "Product_Image/Tropicana/tropicana-orange-delight-sec/secondary.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 125,
-            "image_summary": "Tropicana Orange Delight nutrition",
-            "image": "Product_Image/Tropicana/tropicana-orange-delight-nutrition/nutrition.jpeg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 126,
-            "image_summary": "Tropicana Orange Delight ingrediants",
-            "image": "Product_Image/Tropicana/tropicana-orange-delight-ingrediants/ingrediant.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 127,
-            "image_summary": "Tropicana Litchi Delight Fruit Juice main",
-            "image": "Product_Image/Tropicana/tropicana-litchi-delight-fruit-juice/main_1.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 128,
-            "image_summary": "Tropicana Litchi Delight Fruit Juice sec",
-            "image": "Product_Image/Tropicana/tropicana-litchi-delight-fruit-juice-sec/secondary_2.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": false
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 129,
-            "image_summary": "efffective typescript main",
-            "image": "Product_Image/efffective/efffective-typescript-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 130,
-            "image_summary": "Django 3 by example main",
-            "image": "Product_Image/Django/django-3-by-example-main/51hUJQm8byL._SX404_BO1204203200_.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
-    },
-    {
-        "table": "product_variation_images",
-        "fields": {
-            "pk": 131,
-            "image_summary": "react book main",
-            "image": "Product_Image/react/react-book-main/main.jpg",
-            "placeholder": "default_placeholder.jpg",
-            "is_primary": true
-        }
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 1,
+      "capacity_id": 1,
+      "star_rating_id": 1
     }
+  },
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 2,
+      "capacity_id": 2,
+      "star_rating_id": 1
+    }
+  },
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 3,
+      "capacity_id": 3,
+      "star_rating_id": 1
+    }
+  },
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 4,
+      "capacity_id": 1,
+      "star_rating_id": 3
+    }
+  },
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 5,
+      "capacity_id": 2,
+      "star_rating_id": 3
+    }
+  },
+  {
+    "table": "product_air_conditioner_variant",
+    "fields": {
+      "pk": 6,
+      "capacity_id": 3,
+      "star_rating_id": 3
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 1,
+      "capacity": "4GB",
+      "type": "DDR4"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 2,
+      "capacity": "6GB",
+      "type": "DDR4"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 3,
+      "capacity": "8GB",
+      "type": "DDR4"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 4,
+      "capacity": "10GB",
+      "type": "DDR4"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 5,
+      "capacity": "12GB",
+      "type": "DDR4"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 6,
+      "capacity": "10GB",
+      "type": "DDR5"
+    }
+  },
+  {
+    "table": "products_ram",
+    "fields": {
+      "pk": 7,
+      "capacity": "12GB",
+      "type": "DDR5"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 1,
+      "capacity": "8GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 2,
+      "capacity": "16GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 3,
+      "capacity": "32GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 4,
+      "capacity": "64GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 5,
+      "capacity": "128GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 6,
+      "capacity": "256GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 7,
+      "capacity": "500GB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 8,
+      "capacity": "1TB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 9,
+      "capacity": "2TB",
+      "type": "SSD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 10,
+      "capacity": "256GB",
+      "type": "HDD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 11,
+      "capacity": "500GB",
+      "type": "HDD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 12,
+      "capacity": "1TB",
+      "type": "HDD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 13,
+      "capacity": "2TB",
+      "type": "HDD"
+    }
+  },
+  {
+    "table": "products_storage",
+    "fields": {
+      "pk": 14,
+      "capacity": "4TB",
+      "type": "HDD"
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 1,
+      "display_size": "",
+      "ram_id": 1,
+      "storage_id": 4
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 2,
+      "display_size": "",
+      "ram_id": 1,
+      "storage_id": 5
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 3,
+      "display_size": "",
+      "ram_id": 2,
+      "storage_id": 4
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 4,
+      "display_size": "",
+      "ram_id": 2,
+      "storage_id": 5
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 5,
+      "display_size": "",
+      "ram_id": 2,
+      "storage_id": 6
+    }
+  },
+  {
+    "table": "product_mobile_variant",
+    "fields": {
+      "pk": 6,
+      "display_size": "",
+      "ram_id": 3,
+      "storage_id": 6
+    }
+  },
+  {
+    "table": "product_laptop_variant",
+    "fields": {
+      "pk": 1,
+      "display_size": "",
+      "ram_id": 2,
+      "storage_id": 7
+    }
+  },
+  {
+    "table": "product_laptop_variant",
+    "fields": {
+      "pk": 2,
+      "display_size": "",
+      "ram_id": 3,
+      "storage_id": 7
+    }
+  },
+  {
+    "table": "product_laptop_variant",
+    "fields": {
+      "pk": 3,
+      "display_size": "",
+      "ram_id": 4,
+      "storage_id": 8
+    }
+  },
+  {
+    "table": "product_laptop_variant",
+    "fields": {
+      "pk": 4,
+      "display_size": "",
+      "ram_id": 3,
+      "storage_id": 8
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 18,
+      "name": "4GB/64GB",
+      "mobile_variant_id": 1,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 19,
+      "name": "4GB/128GB",
+      "mobile_variant_id": 2,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 20,
+      "name": "6GB/64GB",
+      "mobile_variant_id": 3,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 21,
+      "name": "6GB/128GB",
+      "mobile_variant_id": 4,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 35,
+      "name": "8GB/128GB",
+      "mobile_variant_id": 6,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 22,
+      "name": "6GB/256GB",
+      "mobile_variant_id": 5,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 23,
+      "name": "6GB/500GB",
+      "mobile_variant_id": null,
+      "laptop_variant_id": 1,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 24,
+      "name": "8GB/500GB",
+      "mobile_variant_id": null,
+      "laptop_variant_id": 2,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 25,
+      "name": "12GB/1000GB",
+      "mobile_variant_id": null,
+      "laptop_variant_id": 3,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 26,
+      "name": "8GB/1000GB",
+      "mobile_variant_id": null,
+      "laptop_variant_id": 4,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 27,
+      "name": "1 Ton / 3 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 1,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 28,
+      "name": "1.5 Ton / 3 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 2,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 29,
+      "name": "2 Ton / 3 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 3,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 30,
+      "name": "1 Ton / 5 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 4,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 31,
+      "name": "1.5 Ton / 5 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 5,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 32,
+      "name": "2 Ton / 5 Star",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": 6,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": null
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 33,
+      "name": "E-Book",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": 1
+    }
+  },
+  {
+    "table": "product_variant",
+    "fields": {
+      "pk": 34,
+      "name": "Paperback",
+      "mobile_variant_id": null,
+      "laptop_variant_id": null,
+      "fashion_variant_id": null,
+      "air_conditioner_variant_id": null,
+      "television_variant_id": null,
+      "refrigerator_variant_id": null,
+      "juice_variant_id": null,
+      "book_variant_id": 2
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 1,
+      "pid": "MBLOGTKIADMSGKIKZJ",
+      "retail_price": "39900.00",
+      "price": "32999.00",
+      "available_stock": 10,
+      "product_id": 1,
+      "color_id": 7,
+      "variant_id": 18,
+      "active": true,
+      "images": [1, 2, 3, 4]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 2,
+      "pid": "MBLEWRGZAVMRISCPOF",
+      "retail_price": "44900.00",
+      "price": "34999.00",
+      "available_stock": 10,
+      "product_id": 1,
+      "color_id": 2,
+      "variant_id": 19,
+      "active": true,
+      "images": [5, 6, 7, 8]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 3,
+      "pid": "MBLPYPMBGCAATDWXSN",
+      "retail_price": "39900.00",
+      "price": "32999.00",
+      "available_stock": 10,
+      "product_id": 1,
+      "color_id": 8,
+      "variant_id": 18,
+      "active": true,
+      "images": [9, 10, 11, 12]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 4,
+      "pid": "MBLOCPIQAORLDBNAHW",
+      "retail_price": "79900.00",
+      "price": "77900.00",
+      "available_stock": 10,
+      "product_id": 2,
+      "color_id": 7,
+      "variant_id": 20,
+      "active": true,
+      "images": [13, 14, 15, 16, 17]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 5,
+      "pid": "MBLSYJANKJXEVGANXD",
+      "retail_price": "84900.00",
+      "price": "82900.00",
+      "available_stock": 90,
+      "product_id": 2,
+      "color_id": 7,
+      "variant_id": 21,
+      "active": true,
+      "images": [13, 14, 15, 16, 17]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 6,
+      "pid": "MBLWRSUXDXZEAKTEGE",
+      "retail_price": "94900.00",
+      "price": "92900.00",
+      "available_stock": 90,
+      "product_id": 2,
+      "color_id": 7,
+      "variant_id": 22,
+      "active": true,
+      "images": [13, 14, 15, 16, 17]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 7,
+      "pid": "MBLKSVVEESOITBPXZS",
+      "retail_price": "79900.00",
+      "price": "77900.00",
+      "available_stock": 20,
+      "product_id": 2,
+      "color_id": 2,
+      "variant_id": 20,
+      "active": true,
+      "images": [17, 18, 19, 20, 21]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 8,
+      "pid": "MBLVJGELBYVOOLRYQI",
+      "retail_price": "79900.00",
+      "price": "77900.00",
+      "available_stock": 20,
+      "product_id": 2,
+      "color_id": 8,
+      "variant_id": 20,
+      "active": true,
+      "images": [17, 22, 23, 24, 25]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 9,
+      "pid": "MBLMTAQWPVSIZCLUFO",
+      "retail_price": "94900.00",
+      "price": "92900.00",
+      "available_stock": 10,
+      "product_id": 2,
+      "color_id": 2,
+      "variant_id": 22,
+      "active": true,
+      "images": [17, 18, 19, 20, 21]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 10,
+      "pid": "MBLSPKOGALENOMHUJA",
+      "retail_price": "94900.00",
+      "price": "92900.00",
+      "available_stock": 10,
+      "product_id": 2,
+      "color_id": 8,
+      "variant_id": 21,
+      "active": true,
+      "images": [17, 22, 23, 24, 25]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 11,
+      "pid": "LPTZWJPMELZZMMOFUK",
+      "retail_price": "64038.00",
+      "price": "53990.00",
+      "available_stock": 10,
+      "product_id": 3,
+      "color_id": 7,
+      "variant_id": 23,
+      "active": true,
+      "images": [30, 31, 32, 33, 34]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 12,
+      "pid": "LPTPUXHMKVGRHEUSEO",
+      "retail_price": "43900.00",
+      "price": "40990.00",
+      "available_stock": 50,
+      "product_id": 4,
+      "color_id": 14,
+      "variant_id": 23,
+      "active": true,
+      "images": [26, 27, 28, 29]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 14,
+      "pid": "TVSQDMJQZBSHNATFQW",
+      "retail_price": "222900.00",
+      "price": "124999.00",
+      "available_stock": 20,
+      "product_id": 5,
+      "color_id": 7,
+      "variant_id": 1,
+      "active": true,
+      "images": [35, 36, 38, 39, 40, 41, 42, 43]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 15,
+      "pid": "TVSXHYFLBVCGVULKJR",
+      "retail_price": "1444900.00",
+      "price": "92999.00",
+      "available_stock": 30,
+      "product_id": 5,
+      "color_id": 7,
+      "variant_id": 2,
+      "active": true,
+      "images": [35, 36, 38, 39, 40, 41, 42, 43]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 16,
+      "pid": "TVSSVBWCOJVSWRXXHX",
+      "retail_price": "119900.00",
+      "price": "77999.00",
+      "available_stock": 30,
+      "product_id": 5,
+      "color_id": 7,
+      "variant_id": 3,
+      "active": true,
+      "images": [35, 36, 38, 39, 40, 41, 42, 43]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 17,
+      "pid": "TVSCHJAXODSAOWEJCK",
+      "retail_price": "89990.00",
+      "price": "61999.00",
+      "available_stock": 30,
+      "product_id": 5,
+      "color_id": 7,
+      "variant_id": 4,
+      "active": true,
+      "images": [35, 36, 38, 39, 40, 41, 42, 43]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 18,
+      "pid": "NCDIVSOXOXYIIQBYRT",
+      "retail_price": "39000.00",
+      "price": "39000.00",
+      "available_stock": 30,
+      "product_id": 6,
+      "color_id": 7,
+      "variant_id": null,
+      "active": true,
+      "images": [50, 51, 52, 53]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 19,
+      "pid": "NCDRHXIHFCKAKAZSZI",
+      "retail_price": "39000.00",
+      "price": "39000.00",
+      "available_stock": 30,
+      "product_id": 6,
+      "color_id": 15,
+      "variant_id": null,
+      "active": true,
+      "images": [44, 45, 46, 47, 48, 49]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 20,
+      "pid": "WMSOTJLTGXGPSTCOWX",
+      "retail_price": "43399.00",
+      "price": "34490.00",
+      "available_stock": 30,
+      "product_id": 7,
+      "color_id": 8,
+      "variant_id": null,
+      "active": true,
+      "images": [54, 55, 56, 57, 58, 59]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 21,
+      "pid": "NCDCMDKJGUNUVWHPMZ",
+      "retail_price": "42990.00",
+      "price": "27490.00",
+      "available_stock": 30,
+      "product_id": 8,
+      "color_id": 5,
+      "variant_id": 1,
+      "active": true,
+      "images": [60, 61, 62, 63, 64]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 22,
+      "pid": "NCDMQSEDBFIZAEGAKH",
+      "retail_price": "45990.00",
+      "price": "30990.00",
+      "available_stock": 30,
+      "product_id": 8,
+      "color_id": 5,
+      "variant_id": 2,
+      "active": true,
+      "images": [60, 61, 62, 63, 64]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 23,
+      "pid": "NCDYFHZKIYTXMYCGDJ",
+      "retail_price": "44990.00",
+      "price": "28990.00",
+      "available_stock": 30,
+      "product_id": 8,
+      "color_id": 5,
+      "variant_id": 3,
+      "active": true,
+      "images": [60, 61, 62, 63, 64]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 24,
+      "pid": "NCDJDSEEWBUVLVRWDN",
+      "retail_price": "51990.00",
+      "price": "32990.00",
+      "available_stock": 30,
+      "product_id": 8,
+      "color_id": 5,
+      "variant_id": 4,
+      "active": true,
+      "images": [60, 61, 62, 63, 64]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 25,
+      "pid": "NCDOEIPNRWODCTRTMU",
+      "retail_price": "56990.00",
+      "price": "34990.00",
+      "available_stock": 30,
+      "product_id": 8,
+      "color_id": 5,
+      "variant_id": 5,
+      "active": true,
+      "images": [60, 61, 62, 63, 64]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 26,
+      "pid": "REFPVKSOYNKUKLDOHZ",
+      "retail_price": "23590.00",
+      "price": "19399.00",
+      "available_stock": 30,
+      "product_id": 9,
+      "color_id": 16,
+      "variant_id": 11,
+      "active": true,
+      "images": [84, 85, 86, 87, 88, 89, 90]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 27,
+      "pid": "REFRACTSAUHVVFWZOQ",
+      "retail_price": "24990.00",
+      "price": "20490.00",
+      "available_stock": 30,
+      "product_id": 9,
+      "color_id": 17,
+      "variant_id": 12,
+      "active": true,
+      "images": [91, 92, 93, 94, 95]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 28,
+      "pid": "PNTSRRKOOTMDQCRKYH",
+      "retail_price": "1591.00",
+      "price": "999.00",
+      "available_stock": 30,
+      "product_id": 10,
+      "color_id": 8,
+      "variant_id": null,
+      "active": true,
+      "images": [77]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 29,
+      "pid": "JUECLULQXBRMBIXMGL",
+      "retail_price": "255.00",
+      "price": "255.00",
+      "available_stock": 30,
+      "product_id": 11,
+      "color_id": 1,
+      "variant_id": 13,
+      "active": true,
+      "images": [78, 79, 80, 81, 82]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 30,
+      "pid": "BKSPEPULGXEREHQQZA",
+      "retail_price": "4421.00",
+      "price": "4421.00",
+      "available_stock": 30,
+      "product_id": 12,
+      "color_id": 1,
+      "variant_id": 34,
+      "active": true,
+      "images": [83]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 31,
+      "pid": "BKSXYKJXWBRAIFXELR",
+      "retail_price": "2042.50",
+      "price": "2042.50",
+      "available_stock": 100000,
+      "product_id": 12,
+      "color_id": 1,
+      "variant_id": 33,
+      "active": true,
+      "images": [83]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 32,
+      "pid": "MBLTPZJQAFHUVMGCLS",
+      "retail_price": "84998.00",
+      "price": "46990.00",
+      "available_stock": 30,
+      "product_id": 13,
+      "color_id": 17,
+      "variant_id": 35,
+      "active": true,
+      "images": [96, 97, 98, 99, 100]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 33,
+      "pid": "ACCPJVLYSMAEBQTYUU",
+      "retail_price": "1000.00",
+      "price": "1000.00",
+      "available_stock": 30,
+      "product_id": 14,
+      "color_id": 10,
+      "variant_id": null,
+      "active": true,
+      "images": [101, 102, 103]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 34,
+      "pid": "ACCZBGKSMIGQFXRUYO",
+      "retail_price": "600.00",
+      "price": "549.00",
+      "available_stock": 30,
+      "product_id": 15,
+      "color_id": 1,
+      "variant_id": null,
+      "active": true,
+      "images": [104, 105, 106, 107]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 35,
+      "pid": "NCDSQPAANALNZMIFYG",
+      "retail_price": "450.00",
+      "price": "400.00",
+      "available_stock": 30,
+      "product_id": 16,
+      "color_id": 3,
+      "variant_id": null,
+      "active": true,
+      "images": [108, 109, 110, 111]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 36,
+      "pid": "NCDXJLPEEHCUPJXVCV",
+      "retail_price": "600.00",
+      "price": "480.00",
+      "available_stock": 30,
+      "product_id": 17,
+      "color_id": 1,
+      "variant_id": null,
+      "active": true,
+      "images": [112, 113, 114]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 37,
+      "pid": "NCDNSMJZYAZMREKMVV",
+      "retail_price": "69.00",
+      "price": "60.00",
+      "available_stock": 30,
+      "product_id": 18,
+      "color_id": 1,
+      "variant_id": 14,
+      "active": true,
+      "images": [115, 116, 117]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 38,
+      "pid": "CHORNCMOPCDCYMDODB",
+      "retail_price": "650.00",
+      "price": "585.00",
+      "available_stock": 30,
+      "product_id": 19,
+      "color_id": 1,
+      "variant_id": 15,
+      "active": true,
+      "images": [118, 119, 120, 121, 122]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 39,
+      "pid": "NCDJNYBQCVZDTJVSGT",
+      "retail_price": "115.00",
+      "price": "110.00",
+      "available_stock": 30,
+      "product_id": 20,
+      "color_id": 1,
+      "variant_id": 14,
+      "active": true,
+      "images": [123, 124, 125, 126]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 40,
+      "pid": "JUEUANUHWMVSZGXLCP",
+      "retail_price": "120.00",
+      "price": "115.00",
+      "available_stock": 30,
+      "product_id": 21,
+      "color_id": 1,
+      "variant_id": 14,
+      "active": true,
+      "images": [125, 126, 127, 128]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 42,
+      "pid": "BKSOUQJNNTFFCLFDHCESD",
+      "retail_price": "5000.00",
+      "price": "3596.00",
+      "available_stock": 30,
+      "product_id": 22,
+      "color_id": 1,
+      "variant_id": 34,
+      "active": true,
+      "images": [129]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 43,
+      "pid": "BKSOUQJNNTFFCLFDHC",
+      "retail_price": "3200.00",
+      "price": "2999.000",
+      "available_stock": 30,
+      "product_id": 23,
+      "color_id": 1,
+      "variant_id": 34,
+      "active": true,
+      "images": [130]
+    }
+  },
+  {
+    "table": "product_variations",
+    "fields": {
+      "pk": 44,
+      "pid": "BKSADPJCPTUZVXIJCP",
+      "retail_price": "3999.00",
+      "price": "2896.00",
+      "available_stock": 30,
+      "product_id": 24,
+      "color_id": 1,
+      "variant_id": 34,
+      "active": true,
+      "images": [131]
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 1,
+      "image_summary": "Iphone se black main",
+      "image": "Product_Image/Iphone/iphone-se-black-main/front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 2,
+      "image_summary": "Iphone se black camera",
+      "image": "Product_Image/Iphone/iphone-se-black-camera/camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 3,
+      "image_summary": "Iphone se black back",
+      "image": "Product_Image/Iphone/iphone-se-black-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 4,
+      "image_summary": "Iphone se black side",
+      "image": "Product_Image/Iphone/iphone-se-black-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 5,
+      "image_summary": "Iphone se red main",
+      "image": "Product_Image/Iphone/iphone-se-red-main/front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 6,
+      "image_summary": "Iphone se red back",
+      "image": "Product_Image/Iphone/iphone-se-red-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 7,
+      "image_summary": "Iphone se red side",
+      "image": "Product_Image/Iphone/iphone-se-red-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 8,
+      "image_summary": "Iphone se red camera",
+      "image": "Product_Image/Iphone/iphone-se-red-camera/camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 9,
+      "image_summary": "Iphone se White main",
+      "image": "Product_Image/Iphone/iphone-se-white-main/front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 10,
+      "image_summary": "Iphone se white side",
+      "image": "Product_Image/Iphone/iphone-se-white-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 11,
+      "image_summary": "Iphone se white camera",
+      "image": "Product_Image/Iphone/iphone-se-white-camera/camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 12,
+      "image_summary": "Iphone se white back",
+      "image": "Product_Image/Iphone/iphone-se-white-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 13,
+      "image_summary": "Iphone 12 black main",
+      "image": "Product_Image/Iphone/iphone-12-black-main/front_main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 14,
+      "image_summary": "Iphone 12 black front",
+      "image": "Product_Image/Iphone/iphone-12-black-front/front_black.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 15,
+      "image_summary": "Iphone 12 black camera",
+      "image": "Product_Image/Iphone/iphone-12-black-camera/front_camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 16,
+      "image_summary": "Iphone 12 black camera 2",
+      "image": "Product_Image/Iphone/iphone-12-black-camera-2/front_camera2.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 17,
+      "image_summary": "Iphone 12 detail",
+      "image": "Product_Image/Iphone/iphone-12-detail/iphone_12_detail.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 18,
+      "image_summary": "Iphone 12 red main",
+      "image": "Product_Image/Iphone/iphone-12-red-main/red_main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 19,
+      "image_summary": "Iphone 12 red front",
+      "image": "Product_Image/Iphone/iphone-12-red-front/red_front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 20,
+      "image_summary": "Iphone 12 red camera",
+      "image": "Product_Image/Iphone/iphone-12-red-camera/red_camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 21,
+      "image_summary": "Iphone 12 red camera 2",
+      "image": "Product_Image/Iphone/iphone-12-red-camera-2/red_camera2.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 22,
+      "image_summary": "Iphone 12 white main",
+      "image": "Product_Image/Iphone/iphone-12-white-main/white_main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 23,
+      "image_summary": "Iphone 12 white front",
+      "image": "Product_Image/Iphone/iphone-12-white-front/white_front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 24,
+      "image_summary": "Iphone 12 white camera",
+      "image": "Product_Image/Iphone/iphone-12-white-camera/white_camera.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 25,
+      "image_summary": "Iphone 12 white camera 2",
+      "image": "Product_Image/Iphone/iphone-12-white-camera-2/white_camera2.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 26,
+      "image_summary": "HP 15s main",
+      "image": "Product_Image/HP/hp-15s-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 27,
+      "image_summary": "HP 15s side",
+      "image": "Product_Image/HP/hp-15s-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 28,
+      "image_summary": "HP 15s back",
+      "image": "Product_Image/HP/hp-15s-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 29,
+      "image_summary": "HP 15s closed",
+      "image": "Product_Image/HP/hp-15s-closed/closed.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 30,
+      "image_summary": "Lenovo ThinkPad E14 main",
+      "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 31,
+      "image_summary": "Lenovo ThinkPad E14 touchID",
+      "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-touchid/touch_id.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 32,
+      "image_summary": "Lenovo ThinkPad E14 feature_one",
+      "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_one/features_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 33,
+      "image_summary": "Lenovo ThinkPad E14 feature_two",
+      "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_two/features_two.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 34,
+      "image_summary": "Lenovo ThinkPad E14 feature_three",
+      "image": "Product_Image/Lenovo/lenovo-thinkpad-e14-feature_three/features_three.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 35,
+      "image_summary": "SAMSUNG The Frame main",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 36,
+      "image_summary": "SAMSUNG The Frame edge",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-edge/edge.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 38,
+      "image_summary": "SAMSUNG The Frame feature_one",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-feature_one/feature_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 39,
+      "image_summary": "SAMSUNG The Frame feature_two",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-feature_two/feature_two.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 40,
+      "image_summary": "SAMSUNG The Frame front",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-front/front.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 41,
+      "image_summary": "SAMSUNG The Frame back",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 42,
+      "image_summary": "SAMSUNG The Frame remote",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-remote/remote.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 43,
+      "image_summary": "SAMSUNG The Frame side",
+      "image": "Product_Image/SAMSUNG/samsung-the-frame-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 44,
+      "image_summary": "Bose 500 Silver main",
+      "image": "Product_Image/Bose/bose-500-silver-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 45,
+      "image_summary": "Bose 500 Silver feature one",
+      "image": "Product_Image/Bose/bose-500-silver-feature-one/feature_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 46,
+      "image_summary": "Bose 500 Silver feature two",
+      "image": "Product_Image/Bose/bose-500-silver-feature-two/feature_two.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 47,
+      "image_summary": "Bose 500 Silver detail",
+      "image": "Product_Image/Bose/bose-500-silver-detail/detail.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 48,
+      "image_summary": "Bose 500 Silver top",
+      "image": "Product_Image/Bose/bose-500-silver-top/top_two.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 49,
+      "image_summary": "Bose 500 Silver top one",
+      "image": "Product_Image/Bose/bose-500-silver-top-one/top.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 50,
+      "image_summary": "Bose 500 Black main",
+      "image": "Product_Image/Bose/bose-500-black-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 51,
+      "image_summary": "Bose 500 Black side",
+      "image": "Product_Image/Bose/bose-500-black-side/side.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 52,
+      "image_summary": "Bose 500 Black feature one",
+      "image": "Product_Image/Bose/bose-500-black-feature-one/feature_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 53,
+      "image_summary": "Bose 500 Black top",
+      "image": "Product_Image/Bose/bose-500-black-top/top_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 54,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL main",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 55,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL secondary",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-secondary/secondary.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 56,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL features",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-features/features.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 57,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL inside",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-inside/inside.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 58,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL back",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 59,
+      "image_summary": "BOSCH 8 kg INVERTER TOUCH CONTROL size",
+      "image": "Product_Image/BOSCH/bosch-8-kg-inverter-touch-control-size/size.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 60,
+      "image_summary": "SAMSUNG Star Split Inverter AC main",
+      "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 61,
+      "image_summary": "SAMSUNG Star Split Inverter AC open",
+      "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-open/main_open.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 62,
+      "image_summary": "SAMSUNG Star Split Inverter AC side",
+      "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-side/side_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 63,
+      "image_summary": "SAMSUNG Star Split Inverter AC side open",
+      "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-side-open/side_open.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 64,
+      "image_summary": "SAMSUNG Star Split Inverter AC back",
+      "image": "Product_Image/SAMSUNG/samsung-star-split-inverter-ac-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 77,
+      "image_summary": "ASIAN PAINTS TE-3 white main",
+      "image": "Product_Image/ASIAN/asian-paints-te-3-white-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 78,
+      "image_summary": "Auric Mens Energy  main",
+      "image": "Product_Image/Auric/auric-mens-energy-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 79,
+      "image_summary": "Auric Mens Energy back",
+      "image": "Product_Image/Auric/auric-mens-energy-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 80,
+      "image_summary": "Auric Mens Energy secondary",
+      "image": "Product_Image/Auric/auric-mens-energy-secondary/secondary.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 81,
+      "image_summary": "Auric Mens Energy detail",
+      "image": "Product_Image/Auric/auric-mens-energy-detail/detail.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 82,
+      "image_summary": "Auric Mens Energy detail_one",
+      "image": "Product_Image/Auric/auric-mens-energy-detail_one/detail_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 83,
+      "image_summary": "Javascript the definative guide",
+      "image": "Product_Image/Javascript/javascript-the-definative-guide/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 84,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow main",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 85,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow back",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 86,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow details",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-details/details.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 87,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow opened",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-opened/opened.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 88,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature one",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-one/features_one.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 89,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature two",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-two/features_two.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 90,
+      "image_summary": "LG 215 L Direct Cool Single Door Purple Glow feature three",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-purple-glow-feature-three/features_three.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 91,
+      "image_summary": "LG 215 L Direct Cool Single Door Blue Charm main",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-charm-main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 92,
+      "image_summary": "LG 215 L Direct Cool Single Door Blue back",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-back/back.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 93,
+      "image_summary": "LG 215 L Direct Cool Single Door Blue opened",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-opened/opened.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 94,
+      "image_summary": "LG 215 L Direct Cool Single Door Blue bottom",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-bottom/section_bottom.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 95,
+      "image_summary": "LG 215 L Direct Cool Single Door Blue top",
+      "image": "Product_Image/LG/lg-215-l-direct-cool-single-door-blue-top/section_top.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 96,
+      "image_summary": "Samsung Galaxy S20 FE 5G_main",
+      "image": "Product_Image/main/main/main.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 97,
+      "image_summary": "Samsung Galaxy S20 FE 5G battery",
+      "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-battery/battery.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 98,
+      "image_summary": "Samsung Galaxy S20 FE 5G colors",
+      "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-colors/colors.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 99,
+      "image_summary": "Samsung Galaxy S20 FE 5G info",
+      "image": "Product_Image/info/info/info_black.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 100,
+      "image_summary": "Samsung Galaxy S20 FE 5G isp",
+      "image": "Product_Image/Samsung/samsung-galaxy-s20-fe-5g-isp/water_pr.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 101,
+      "image_summary": "SHAFIRE Main",
+      "image": "Product_Image/SHAFIRE/shafire-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 102,
+      "image_summary": "SHAFIRE secondary",
+      "image": "Product_Image/SHAFIRE/shafire-secondary/secondary.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 103,
+      "image_summary": "SHAFIRE color",
+      "image": "Product_Image/SHAFIRE/shafire-color/colors.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 104,
+      "image_summary": "Steelbird Full Finger Bike Riding Gloves main",
+      "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 105,
+      "image_summary": "Steelbird Full Finger Bike Riding Gloves secondary",
+      "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-secondary/secondary.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 106,
+      "image_summary": "Steelbird Full Finger Bike Riding Gloves sizes",
+      "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-sizes/sizes.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 107,
+      "image_summary": "Steelbird Full Finger Bike Riding Gloves features",
+      "image": "Product_Image/Steelbird/steelbird-full-finger-bike-riding-gloves-features/features.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 108,
+      "image_summary": "Rangwell Heavy Duty Bike Brake Lock main",
+      "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 109,
+      "image_summary": "Rangwell Heavy Duty Bike Brake Lock colors",
+      "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-colors/color.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 110,
+      "image_summary": "Rangwell Heavy Duty Bike Brake Lock sec",
+      "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-sec/opened.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 111,
+      "image_summary": "Rangwell Heavy Duty Bike Brake Lock size",
+      "image": "Product_Image/Rangwell/rangwell-heavy-duty-bike-brake-lock-size/size.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 112,
+      "image_summary": "Plantex Stainless Steel Wall Mount main",
+      "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 113,
+      "image_summary": "Plantex Stainless Steel Wall Mount sec",
+      "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-sec/features.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 114,
+      "image_summary": "Plantex Stainless Steel Wall Mount  size",
+      "image": "Product_Image/Plantex/plantex-stainless-steel-wall-mount-size/size.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 115,
+      "image_summary": "Minute Maid Pulpy Orange main",
+      "image": "Product_Image/Minute/minute-maid-pulpy-orange-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 116,
+      "image_summary": "Minute Maid Pulpy Orange nutrition",
+      "image": "Product_Image/Minute/minute-maid-pulpy-orange-nutrition/nutrition_facts.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 117,
+      "image_summary": "Minute Maid Pulpy Orange ingrediants",
+      "image": "Product_Image/Minute/minute-maid-pulpy-orange-ingrediants/ingrediants.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 118,
+      "image_summary": "Cadbury Silk Potli Gift main",
+      "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 119,
+      "image_summary": "Cadbury Silk Potli Gift sec",
+      "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-sec/sec.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 120,
+      "image_summary": "Cadbury Silk Potli Gift sec2",
+      "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-sec2/sec2.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 121,
+      "image_summary": "Cadbury Silk Potli Gift  nut1",
+      "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-nut1/nutrition1.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 122,
+      "image_summary": "Cadbury Silk Potli Gift  nut2",
+      "image": "Product_Image/Cadbury/cadbury-silk-potli-gift-nut2/nutrition2.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 123,
+      "image_summary": "Tropicana Orange Delight main",
+      "image": "Product_Image/Tropicana/tropicana-orange-delight-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 124,
+      "image_summary": "Tropicana Orange Delight sec",
+      "image": "Product_Image/Tropicana/tropicana-orange-delight-sec/secondary.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 125,
+      "image_summary": "Tropicana Orange Delight nutrition",
+      "image": "Product_Image/Tropicana/tropicana-orange-delight-nutrition/nutrition.jpeg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 126,
+      "image_summary": "Tropicana Orange Delight ingrediants",
+      "image": "Product_Image/Tropicana/tropicana-orange-delight-ingrediants/ingrediant.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 127,
+      "image_summary": "Tropicana Litchi Delight Fruit Juice main",
+      "image": "Product_Image/Tropicana/tropicana-litchi-delight-fruit-juice/main_1.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 128,
+      "image_summary": "Tropicana Litchi Delight Fruit Juice sec",
+      "image": "Product_Image/Tropicana/tropicana-litchi-delight-fruit-juice-sec/secondary_2.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": false
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 129,
+      "image_summary": "efffective typescript main",
+      "image": "Product_Image/efffective/efffective-typescript-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 130,
+      "image_summary": "Django 3 by example main",
+      "image": "Product_Image/Django/django-3-by-example-main/51hUJQm8byL._SX404_BO1204203200_.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  },
+  {
+    "table": "product_variation_images",
+    "fields": {
+      "pk": 131,
+      "image_summary": "react book main",
+      "image": "Product_Image/react/react-book-main/main.jpg",
+      "placeholder": "default_placeholder.jpg",
+      "is_primary": true
+    }
+  }
 ]

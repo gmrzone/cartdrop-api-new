@@ -19,7 +19,8 @@ export const generateErrorObject = (err: unknown, code: number) => {
   const defaultErrorMssg = DEFAULT_ERROR_MESSAGE[code.toString()];
   return {
     currentDate: currentDate,
-    message: err instanceof Error ? err.message || defaultErrorMssg : defaultErrorMssg,
+    message:
+      err instanceof Error ? err.message || defaultErrorMssg : defaultErrorMssg,
     statusCode: code,
   };
 };

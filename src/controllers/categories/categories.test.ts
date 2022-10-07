@@ -10,8 +10,8 @@ jest.mock('../../services/categoryService', () => {
 
 jest.mock('../../config/constants', () => ({
   __esModule: true,
-  ROW_COUNT_HEADER_NAME: "x-row-count"
-}))
+  ROW_COUNT_HEADER_NAME: 'x-row-count',
+}));
 
 const mockRequest = {
   protocol: 'http',
@@ -48,17 +48,32 @@ describe('category controllers tests', () => {
       rowCount: 1,
     };
     getCategoriesWithImages.mockResolvedValueOnce(categoriesWithImages);
-    await getCategories(mockRequest as unknown as Request, mockResponse as unknown as Response);
-    expect(getCategoriesWithImages).toHaveBeenCalledWith('http://localhost:8080/static/');
-    expect(mockResponse.setHeader).toHaveBeenCalledWith('x-row-count', categoriesWithImages.rowCount);
+    await getCategories(
+      mockRequest as unknown as Request,
+      mockResponse as unknown as Response,
+    );
+    expect(getCategoriesWithImages).toHaveBeenCalledWith(
+      'http://localhost:8080/static/',
+    );
+    expect(mockResponse.setHeader).toHaveBeenCalledWith(
+      'x-row-count',
+      categoriesWithImages.rowCount,
+    );
     expect(mockResponse.status).toHaveBeenCalledWith(200);
     expect(mockResponse.json).toHaveBeenCalledWith(categoriesWithImages.rows);
   });
 
   test('getCategory should return a error response if there is an error', async () => {
-    getCategoriesWithImages.mockRejectedValueOnce(new Error('CATEGORY SERVICE ERROR'));
-    await getCategories(mockRequest as unknown as Request, mockResponse as unknown as Response);
-    expect(getCategoriesWithImages).toHaveBeenCalledWith('http://localhost:8080/static/');
+    getCategoriesWithImages.mockRejectedValueOnce(
+      new Error('CATEGORY SERVICE ERROR'),
+    );
+    await getCategories(
+      mockRequest as unknown as Request,
+      mockResponse as unknown as Response,
+    );
+    expect(getCategoriesWithImages).toHaveBeenCalledWith(
+      'http://localhost:8080/static/',
+    );
     expect(mockResponse.setHeader).not.toHaveBeenCalled();
     expect(mockResponse.status).toHaveBeenCalledWith(500);
     expect(mockResponse.json).toHaveBeenCalledWith(
