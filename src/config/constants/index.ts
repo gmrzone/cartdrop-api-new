@@ -15,12 +15,13 @@ export const POOL_CONFIG: PoolConfig = {
 };
 
 export const CORS_WHITE_LIST = [
-  'http://127.0.0.1:3000/',
-  'http://localhost:4000/',
+  'http://127.0.0.1:3000',
+  'http://localhost:3000',
 ];
 
 export const CORS_OPTIONS: CorsOptions = {
   origin: function (origin, callback) {
+    console.log(origin, 'cors Origin');
     if (!origin || CORS_WHITE_LIST.indexOf(origin) !== -1) {
       return callback(null, true);
     }
@@ -30,7 +31,7 @@ export const CORS_OPTIONS: CorsOptions = {
 
 export const ROW_COUNT_HEADER_NAME = 'x-row-count';
 
-export const rateLimitOptions = {
+export const RATE_LIMIT_OPTIONS = {
   windowMs: 5 * 60 * 1000, // 15 minutes
   max: 50, // Limit each IP to 100 requests per `window` (here, per 5 minutes)
   standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers

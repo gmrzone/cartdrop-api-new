@@ -2,19 +2,18 @@ import express, { Application } from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import database from './config/db/index';
-import { CORS_OPTIONS } from './config/constants';
+import { CORS_OPTIONS, RATE_LIMIT_OPTIONS } from './config/constants';
 import userRoutes from './routes/user';
 import categoryRoute from './routes/categories';
 import subcategoryRoutes from './routes/subcategories';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
-import { rateLimitOptions } from './config/constants';
 
 const swaggerDocument = YAML.load('./docs/cartdrop.yml');
 const app: Application = express();
 
 // TODO : Remove express-rate-limit dependency and implement request rate limit middleware using redis
-const limiter = rateLimit(rateLimitOptions);
+const limiter = rateLimit(RATE_LIMIT_OPTIONS);
 database.runMigrations();
 
 app.use(express.json());
