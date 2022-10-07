@@ -23,6 +23,7 @@ export const generateErrorObject = (err: unknown, code: number) => {
   const currentDate = new Date().toISOString();
   const defaultErrorMssg = DEFAULT_ERROR_MESSAGE[code.toString()];
   return {
+    status: 'error',
     currentDate: currentDate,
     message:
       err instanceof Error ? err.message || defaultErrorMssg : defaultErrorMssg,
@@ -34,17 +35,18 @@ export const generateErrorObject = (err: unknown, code: number) => {
 export const rateLimiterHandler: RateLimitExceededEventHandler = (
   request,
   response,
-  next,
+  _next,
   options,
 ) => {
   const {
     rateLimit: { resetTime },
   } = request as AugmentedRequest;
   let formatedDate = '';
+  const currentDate = new Date();
   if (resetTime) {
     const intervalObj = intervalToDuration({
       start: resetTime,
-      end: new Date(),
+      end: currentDate,
     });
     if (intervalObj.years) {
       formatedDate += `${intervalObj.years} Year${
@@ -79,7 +81,9 @@ export const rateLimiterHandler: RateLimitExceededEventHandler = (
   }
   const updatedMessage = {
     ...options.message,
+    currentDate: currentDate.toISOString(),
     message: `You have made too many requests, please try again after ${formatedDate}.`,
+    statusCode: options.statusCode,
   };
   response.status(options.statusCode).send(updatedMessage);
 };

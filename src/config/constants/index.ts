@@ -21,7 +21,6 @@ export const CORS_WHITE_LIST = [
 
 export const CORS_OPTIONS: CorsOptions = {
   origin: function (origin, callback) {
-    console.log(origin, 'cors Origin');
     if (!origin || CORS_WHITE_LIST.indexOf(origin) !== -1) {
       return callback(null, true);
     }
@@ -42,3 +41,10 @@ export const RATE_LIMIT_OPTIONS = {
   handler: rateLimiterHandler,
   skipFailedRequests: true,
 };
+
+/*
+{
+  "status": "error",
+  "message": "You have made too many requests, please try again after 4 Mins, 57 Secs, ."
+}
+*/
