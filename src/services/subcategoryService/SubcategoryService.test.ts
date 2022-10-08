@@ -133,8 +133,8 @@ describe('Subcategory Service Test', () => {
       };
       queryMock.mockResolvedValue(queryResponseWithImages);
       const data = await SubcategoryServices.getSubcategoriesForCategory(
-        category,
         baseURL,
+        category,
       );
       expect(data).toEqual(queryResponseWithImages);
       expect(queryMock).toHaveBeenCalledTimes(1);
@@ -149,8 +149,8 @@ describe('Subcategory Service Test', () => {
       queryMock.mockRejectedValueOnce(new Error('SQL ERROR'));
       try {
         await SubcategoryServices.getSubcategoriesForCategory(
-          category,
           baseURL,
+          category,
         );
       } catch (err) {
         if (err instanceof Error) {

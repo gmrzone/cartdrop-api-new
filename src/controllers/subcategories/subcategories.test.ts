@@ -116,8 +116,8 @@ describe('subcategory controllers tests', () => {
       mockResponse as unknown as Response,
     );
     expect(getSubcategoriesForCategoryMock).toHaveBeenCalledWith(
-      'electronics',
       'http://localhost:8080/static/',
+      'electronics',
     );
     expect(mockResponse.setHeader).toHaveBeenCalledWith(
       'x-row-count',
@@ -137,8 +137,8 @@ describe('subcategory controllers tests', () => {
       mockResponse as unknown as Response,
     );
     expect(getSubcategoriesForCategoryMock).toHaveBeenCalledWith(
-      'electronics',
       'http://localhost:8080/static/',
+      'electronics',
     );
     expect(mockResponse.setHeader).toHaveBeenCalledWith('x-row-count', 0);
     expect(mockResponse.status).toHaveBeenCalledWith(404);
@@ -160,8 +160,8 @@ describe('subcategory controllers tests', () => {
       mockResponse as unknown as Response,
     );
     expect(getSubcategoriesForCategoryMock).toHaveBeenCalledWith(
-      'electronics',
       'http://localhost:8080/static/',
+      'electronics',
     );
     expect(mockResponse.setHeader).not.toHaveBeenCalled();
     expect(mockResponse.status).toHaveBeenCalledWith(500);
