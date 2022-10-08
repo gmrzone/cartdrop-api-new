@@ -16,3 +16,21 @@ export const getBrands = async (req: Request, res: Response) => {
     return res.json(errorObj);
   }
 };
+
+export const getBrandsByCategory = async (req: Request, res: Response) => {
+  try {
+    const baseUrl = getBaseImageUrl(req);
+    const { category } = req.params;
+    const { rows, rowCount } = await BrandService.getBrandsByCategory(
+      baseUrl,
+      category,
+    );
+    res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
+    res.status(200);
+    return res.json(rows);
+  } catch (err) {
+    const errorObj = generateErrorObject(err, 500);
+    res.status(500);
+    return res.json(errorObj);
+  }
+};
