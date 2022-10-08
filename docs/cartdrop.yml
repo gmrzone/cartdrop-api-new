@@ -50,7 +50,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error500'
-        '429': 
+        '429':
           description: Rate Limit Error
           content:
             application/json:
@@ -79,7 +79,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error500'
-        '429': 
+        '429':
           description: Rate Limit Error
           content:
             application/json:
@@ -130,7 +130,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error500'
-        '429': 
+        '429':
           description: Rate Limit Error
           content:
             application/json:
@@ -159,13 +159,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error500'
 
-        '429': 
+        '429':
           description: Rate Limit Error
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error429'
-
 components:
   schemas:
     Category:
@@ -232,7 +231,6 @@ components:
             properties:
               image:
                 type: string
-
     Error500:
       type: object
       properties:
@@ -246,7 +244,6 @@ components:
         statusCode:
           type: integer
           example: 500
-
     Error404:
       type: object
       properties:
@@ -260,7 +257,6 @@ components:
         statusCode:
           type: integer
           example: 404
-
     Error429:
       type: object
       properties:
@@ -274,10 +270,6 @@ components:
         statusCode:
           type: integer
           example: 429
-
-        
-
-
   securitySchemes:
     petstore_auth:
       type: oauth2
