@@ -14,7 +14,7 @@ export const getVar = (key: string): string => {
   return value;
 };
 
-export const getBaseStaticUrl = (req: Request) => {
+export const getBaseImageUrl = (req: Request) => {
   const absoluteUrl = req.protocol + '://' + req.get('host') + '/static/';
   return absoluteUrl;
 };

@@ -11,7 +11,13 @@ interface ISUBCATEGORY_SERVICE {
     rows: ISUBCATEGORY[];
     rowCount: number;
   }>;
-
+  getSubcategoriesForCategory: (
+    baseUrl: string,
+    category: string,
+  ) => Promise<{
+    rows: ISUBCATEGORY_WITH_IMAGES[];
+    rowCount: number;
+  }>;
   getSubcategoriesWithImages: (baseUrl: string) => Promise<{
     rows: ISUBCATEGORY_WITH_IMAGES[];
     rowCount: number;
@@ -34,7 +40,7 @@ class SubCategoryService implements ISUBCATEGORY_SERVICE {
     return { rows, rowCount };
   };
 
-  getSubcategoriesForCategory = async (category: string, baseUrl: string) => {
+  getSubcategoriesForCategory = async (baseUrl: string, category: string) => {
     const { rows, rowCount } = await query<ISUBCATEGORY_WITH_IMAGES>(
       SUBCATEGORY_SERVICE_SQL.GET_SUBCATEGORIES_FOR_CATEGORY,
       [baseUrl, category],

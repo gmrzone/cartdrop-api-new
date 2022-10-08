@@ -1,13 +1,12 @@
 import { Request, Response } from 'express';
-import CategoryService from '../../services/categoryService';
-import { generateErrorObject, getBaseImageUrl } from '../../helpers';
+import BrandService from '../../services/brandService';
+import { getBaseImageUrl, generateErrorObject } from '../../helpers';
 import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
-export const getCategories = async (req: Request, res: Response) => {
+
+export const getBrands = async (req: Request, res: Response) => {
   try {
     const baseUrl = getBaseImageUrl(req);
-    const { rows, rowCount } = await CategoryService.getCategoriesWithImages(
-      baseUrl,
-    );
+    const { rows, rowCount } = await BrandService.getBrands(baseUrl);
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
     res.status(200);
     return res.json(rows);
