@@ -21,6 +21,8 @@ interface IBRAND_SERVICES {
 }
 
 class BrandService implements IBRAND_SERVICES {
+  // TODO : Need to refactor pagination logic out of getBrands and create a
+  // seperate PaginationService with cursor so we can reuse it everywhere
   getBrands = async (
     baseUrl: string,
     pageSize: number,
@@ -28,7 +30,6 @@ class BrandService implements IBRAND_SERVICES {
   ) => {
     const cursorField = 'id';
     const [position, reverse] = cursor ? cursor.split('r') : '0';
-    console.log(position, 'Position');
     const condition = `WHERE ${cursorField} ${
       reverse ? '<' : '>'
     } ${position} `;
@@ -39,7 +40,6 @@ class BrandService implements IBRAND_SERVICES {
     if (reverse) {
       SQL = `WITH reverse as (${SQL}) SELECT * FROM reverse ORDER BY ${cursorField} ASC;`;
     }
-    console.log(SQL);
     const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [baseUrl]);
 
     const data =
