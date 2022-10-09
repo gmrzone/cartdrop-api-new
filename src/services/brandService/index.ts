@@ -4,11 +4,12 @@ interface IBRAND_SERVICES {
   getBrands: (
     baseUrl: string,
     pageSize: number,
-    cursor: number,
+    cursor: string | undefined,
   ) => Promise<{
     rows: IBRAND_RESPONSE[];
     rowCount: number;
     nextCursor: string | null;
+    prevCursor: string | null;
   }>;
   getBrandsByCategory: (
     baseUrl: string,
@@ -20,20 +21,42 @@ interface IBRAND_SERVICES {
 }
 
 class BrandService implements IBRAND_SERVICES {
-  getBrands = async (baseUrl: string, pageSize: number, cursor: number) => {
+  getBrands = async (
+    baseUrl: string,
+    pageSize: number,
+    cursor: string | undefined,
+  ) => {
     const cursorField = 'id';
-    const SQL = `SELECT id, uuid, name, concat($1::text, photo) as photo, 
+    const [position, reverse] = cursor ? cursor.split('r') : '0';
+    console.log(position, 'Position');
+    const condition = `WHERE ${cursorField} ${
+      reverse ? '<' : '>'
+    } ${position} `;
+    const ordering = `ORDER BY ${cursorField} ${reverse ? 'DESC' : 'ASC'}`;
+    let SQL = `SELECT id, uuid, name, concat($1::text, photo) as photo, 
       concat($1::text, placeholder) as placeholder FROM 
-      public.brands WHERE ${cursorField} >= ${cursor} ORDER BY ${cursorField} ASC LIMIT ${
-      pageSize + 1
-    }`;
-
+      public.brands ${condition} ${ordering} LIMIT ${pageSize + 1}`;
+    if (reverse) {
+      SQL = `WITH reverse as (${SQL}) SELECT * FROM reverse ORDER BY ${cursorField} ASC;`;
+    }
+    console.log(SQL);
     const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [baseUrl]);
 
-    const data = rowCount === pageSize + 1 ? rows.slice(0, -1) : rows;
+    const data =
+      rowCount === pageSize + 1
+        ? reverse
+          ? rows.slice(1)
+          : rows.slice(0, -1)
+        : rows;
+    //
     const nextCursor =
-      rowCount === pageSize + 1 ? rows[rows.length - 1].id : null;
-    return { rows: data, rowCount, nextCursor };
+      rowCount === pageSize + 1 || reverse ? data[data.length - 1].id : null;
+    // if cursor is there and not in reverse or if it is in reverse mode then row should be pageSize + 1
+    const prevCursor =
+      cursor && (!reverse || (reverse && rowCount === pageSize + 1))
+        ? `${data[0].id}r1`
+        : null;
+    return { rows: data, rowCount, nextCursor, prevCursor };
   };
 
   getBrandsByCategory = async (baseUrl: string, category: string) => {

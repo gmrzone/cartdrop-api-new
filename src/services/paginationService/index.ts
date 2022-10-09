@@ -80,3 +80,46 @@ const a = new PaginationService(10, 12, '');
 
 console.log(a.encodeCursor(10, true));
 console.log(a.decodeCursor('cj0xJnA9MTA='));
+
+/*
+example with pageSize of 5
+
+# Get First page, if cursor is not there then fetch the data with limit as pageSize + 1
+
+SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands ORDER BY id ASC limit 6;
+
+// query response of first page will have 6 rows. 
+//if 6th row is there then it means we have next page
+// we will return first five row as response and fifth row id will be next_page cursor
+// we are on first page so previous_page will be null
+
+// When getting secong page we will have id 5 as cursor so we will 
+// fetch next 5 item by ading a where clause and limit
+// again we will fetch limit + 1 so we know if next page is there or not
+// and since we are going to next page we know that there will be previous page
+// we will use first row id for previous_cursor
+SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id > 5 ORDER BY id ASC limit 6;
+
+
+SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id > 10 ORDER BY id ASC limit 6;
+	
+SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id > 15 ORDER BY id ASC limit 6;
+
+
+with this_set as (SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id < 16 ORDER BY id DESC limit 6) select * from this_set order by id asc;
+
+
+with this_set as (SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id < 11 ORDER BY id DESC limit 6) select * from this_set order by id asc;
+
+with this_set as (SELECT id, uuid, name, slug, photo, placeholder
+	FROM public.brands WHERE id < 6 ORDER BY id DESC limit 6) select * from this_set order by id asc;
+
+
+
+*/
