@@ -30,17 +30,18 @@ class BrandService implements IBRAND_SERVICES {
   ) => {
     const cursorField = 'id';
     const [position, reverse] = cursor ? cursor.split('r') : '0';
-    const condition = `WHERE ${cursorField} ${
-      reverse ? '<' : '>'
-    } ${position} `;
-    const ordering = `ORDER BY ${cursorField} ${reverse ? 'DESC' : 'ASC'}`;
+    const condition = `WHERE ${cursorField} ${reverse ? '<' : '>'} $2 `;
+    const ordering = `ORDER BY ${cursorField} ${reverse ? 'DESC' : 'ASC'} `;
     let SQL = `SELECT id, uuid, name, concat($1::text, photo) as photo, 
       concat($1::text, placeholder) as placeholder FROM 
       public.brands ${condition} ${ordering} LIMIT ${pageSize + 1}`;
     if (reverse) {
       SQL = `WITH reverse as (${SQL}) SELECT * FROM reverse ORDER BY ${cursorField} ASC;`;
     }
-    const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [baseUrl]);
+    const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [
+      baseUrl,
+      position,
+    ]);
 
     const data =
       rowCount === pageSize + 1
