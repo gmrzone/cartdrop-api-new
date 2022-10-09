@@ -3,7 +3,13 @@ import { query } from '../../config/db';
 interface IBRAND_SERVICES {
   getBrands: (
     baseUrl: string,
-  ) => Promise<{ rows: IBRAND_RESPONSE[]; rowCount: number }>;
+    pageSize: number,
+    cursor: number,
+  ) => Promise<{
+    rows: IBRAND_RESPONSE[];
+    rowCount: number;
+    nextCursor: string | null;
+  }>;
   getBrandsByCategory: (
     baseUrl: string,
     category: string,
@@ -14,11 +20,20 @@ interface IBRAND_SERVICES {
 }
 
 class BrandService implements IBRAND_SERVICES {
-  getBrands = async (baseUrl: string) => {
-    const SQL =
-      'SELECT uuid, name, concat($1::text, photo) as photo, concat($1::text, placeholder) as placeholder FROM public.brands ORDER BY id ASC;';
+  getBrands = async (baseUrl: string, pageSize: number, cursor: number) => {
+    const cursorField = 'id';
+    const SQL = `SELECT id, uuid, name, concat($1::text, photo) as photo, 
+      concat($1::text, placeholder) as placeholder FROM 
+      public.brands WHERE ${cursorField} >= ${cursor} ORDER BY ${cursorField} ASC LIMIT ${
+      pageSize + 1
+    }`;
+
     const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [baseUrl]);
-    return { rows, rowCount };
+
+    const data = rowCount === pageSize + 1 ? rows.slice(0, -1) : rows;
+    const nextCursor =
+      rowCount === pageSize + 1 ? rows[rows.length - 1].id : null;
+    return { rows: data, rowCount, nextCursor };
   };
 
   getBrandsByCategory = async (baseUrl: string, category: string) => {

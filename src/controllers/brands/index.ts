@@ -5,11 +5,16 @@ import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
 
 export const getBrands = async (req: Request, res: Response) => {
   try {
+    const { pageSize = '5', cursor = '1' } = req.query;
     const baseUrl = getBaseImageUrl(req);
-    const { rows, rowCount } = await BrandService.getBrands(baseUrl);
+    const { rows, rowCount, nextCursor } = await BrandService.getBrands(
+      baseUrl,
+      +pageSize,
+      +cursor,
+    );
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
     res.status(200);
-    return res.json(rows);
+    return res.json({ nextCursor: nextCursor, rows });
   } catch (err) {
     const errorObj = generateErrorObject(err, 500);
     res.status(500);
