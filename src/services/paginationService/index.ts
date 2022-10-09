@@ -6,7 +6,7 @@ export interface IPAGINATE_QUERY_OPTIONS {
   sql: string;
   baseUrl: string;
   cursor: string;
-  ordering: string[];
+  ordering: string;
 }
 
 export interface IPAGINATION_SERVICE {
@@ -18,16 +18,12 @@ export interface IPAGINATION_SERVICE {
 class PaginationService implements IPAGINATION_SERVICE {
   private _pageSize: number;
   private _maxSize: number;
-  private _invalidCursorMessage: string;
   private _ordering: string;
-  private _baseUrl: string;
 
-  constructor(pageSize: number, maxSize: number, baseUrl: string) {
+  constructor(pageSize: number, maxSize: number, ordering: string) {
     this._pageSize = pageSize;
     this._maxSize = maxSize;
-    this._invalidCursorMessage = 'Invalid Cursor';
-    this._ordering = 'id';
-    this._baseUrl = baseUrl;
+    this._ordering = ordering;
   }
 
   getPaginateParams = (options: IPAGINATE_QUERY_OPTIONS) => {
@@ -49,7 +45,7 @@ class PaginationService implements IPAGINATION_SERVICE {
 
     return { condition, limit };
   };
-  encodeCursor = (cursorId: number, reverse: boolean) => {
+  encodeCursor = (cursorId: string, reverse: boolean) => {
     const queryParams = {
       ...(reverse && { r: 1 }),
       p: cursorId,
@@ -74,12 +70,56 @@ class PaginationService implements IPAGINATION_SERVICE {
       position,
     };
   };
+  // TODO: remove newCursorPosition and directly pass the list of data
+  // Also create a generic for type
+  getNextLink = (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+  ) => {
+    if (rowCount === this._pageSize + 1 || reverse) {
+      const encodedCursor = this.encodeCursor(newCursorPosition, false);
+      const parsedBaseUrl = new URL(baseUrl);
+      parsedBaseUrl.search = new url.URLSearchParams(
+        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
+      );
+      return parsedBaseUrl.href;
+    }
+    return null;
+  };
+
+  // TODO: remove newCursorPosition and directly pass the list of data
+  // Also create a generic for type
+  getPreviousLink = (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+    isCursorAvailable: boolean,
+  ) => {
+    if (
+      isCursorAvailable &&
+      (!reverse || (reverse && rowCount === this._pageSize + 1))
+    ) {
+      const encodedCursor = this.encodeCursor(newCursorPosition, true);
+      const parsedBaseUrl = new URL(baseUrl);
+      parsedBaseUrl.search = new url.URLSearchParams(
+        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
+      );
+      return parsedBaseUrl.href;
+    }
+
+    return null;
+  };
 }
 
-const a = new PaginationService(10, 12, '');
+const a = new PaginationService(5, 12, 'id');
 
-console.log(a.encodeCursor(10, true));
-console.log(a.decodeCursor('cj0xJnA9MTA='));
+console.log(a.getNextLink('http://localhost:5000/api/brands', 6, '10', false));
+console.log(
+  a.decodeCursor(new url.URLSearchParams('cursor=cD0xMA%3D%3D').get('cursor')),
+);
 
 /*
 example with pageSize of 5
