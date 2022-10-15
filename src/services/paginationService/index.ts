@@ -2,12 +2,6 @@
 const url = require('url');
 
 // TODO : This pagination class is incomplete:
-export interface IPAGINATE_QUERY_OPTIONS {
-  sql: string;
-  baseUrl: string;
-  cursor: string;
-  ordering: string[];
-}
 
 export interface IPAGINATION_SERVICE {
   decodeCursor: (cursor: string) => {
@@ -18,38 +12,46 @@ export interface IPAGINATION_SERVICE {
 class PaginationService implements IPAGINATION_SERVICE {
   private _pageSize: number;
   private _maxSize: number;
-  private _invalidCursorMessage: string;
   private _ordering: string;
-  private _baseUrl: string;
 
-  constructor(pageSize: number, maxSize: number, baseUrl: string) {
+  constructor(pageSize: number, maxSize: number, ordering: string) {
     this._pageSize = pageSize;
     this._maxSize = maxSize;
-    this._invalidCursorMessage = 'Invalid Cursor';
-    this._ordering = 'id';
-    this._baseUrl = baseUrl;
+    this._ordering = ordering;
   }
 
-  getPaginateParams = (options: IPAGINATE_QUERY_OPTIONS) => {
-    const { cursor, ordering } = options;
+  getPaginateParams = (cursor: string) => {
     const cursorObj = this.decodeCursor(cursor);
     const { reverse, position } = cursorObj;
-    const limit = `LIMIT ${this._pageSize}`;
-    // const ordering = `ORDER BY ${position} ASC`
-    let condition;
-    if (position) {
-      const order = ordering[0];
-      //   const isReversedOrdering = order.startsWith('-');
-      const orderingColumnName = order.slice(1);
-
-      condition = reverse
-        ? `WHERE ${orderingColumnName} < ${position}`
-        : `WHERE ${orderingColumnName} > ${position}`;
-    }
-
-    return { condition, limit };
+    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
+    const condition = this.getCondition(position, Boolean(reverse));
+    const pageSizeLimit =
+      this._pageSize > this._maxSize ? this._maxSize : this._pageSize;
+    const orderBY = `ORDER BY ${orderFieldName} ${order}`;
+    const limit = `LIMIT ${pageSizeLimit + 1}`;
+    return { condition, orderBY, limit };
   };
-  encodeCursor = (cursorId: number, reverse: boolean) => {
+
+  parseOrdering = (isReverse: boolean) => {
+    // ordering for - functionality will be added later current will only add order by ASC
+    const isDescending = this._ordering.startsWith('-');
+    const order = isReverse ? 'DESC' : 'ASC';
+    const orderFieldName = isDescending
+      ? this._ordering.slice(1)
+      : this._ordering;
+
+    return { order, orderFieldName };
+  };
+
+  getCondition = (position: string, reverse?: boolean) => {
+    // for condition also will only support order by ASC for now later will add the remaning functionality
+    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
+    const condition = `WHERE ${orderFieldName} ${
+      reverse ? 'DESC' : 'ASC'
+    } ${position}`;
+    return condition;
+  };
+  encodeCursor = (cursorId: string, reverse: boolean) => {
     const queryParams = {
       ...(reverse && { r: 1 }),
       p: cursorId,
@@ -74,13 +76,65 @@ class PaginationService implements IPAGINATION_SERVICE {
       position,
     };
   };
+  // TODO: remove newCursorPosition and directly pass the list of data
+  // Also create a generic for type
+  getNextLink = (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+  ) => {
+    if (rowCount === this._pageSize + 1 || reverse) {
+      const encodedCursor = this.encodeCursor(newCursorPosition, false);
+      const parsedBaseUrl = new URL(baseUrl);
+      parsedBaseUrl.search = new url.URLSearchParams(
+        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
+      );
+      return parsedBaseUrl.href;
+    }
+    return null;
+  };
+
+  // TODO: remove newCursorPosition and directly pass the list of data
+  // Also create a generic for type
+  getPreviousLink = (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+    isCursorAvailable: boolean,
+  ) => {
+    if (
+      isCursorAvailable &&
+      (!reverse || (reverse && rowCount === this._pageSize + 1))
+    ) {
+      const encodedCursor = this.encodeCursor(newCursorPosition, true);
+      const parsedBaseUrl = new URL(baseUrl);
+      parsedBaseUrl.search = new url.URLSearchParams(
+        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
+      );
+      return parsedBaseUrl.href;
+    }
+
+    return null;
+  };
 }
 
-const a = new PaginationService(10, 12, '');
+const a = new PaginationService(5, 12, 'id');
 
-console.log(a.encodeCursor(10, true));
-console.log(a.decodeCursor('cj0xJnA9MTA='));
-
+console.log(a.getNextLink('http://localhost:5000/api/brands', 6, '10', false));
+console.log(
+  a.decodeCursor(new url.URLSearchParams('cursor=cD0xMA%3D%3D').get('cursor')),
+);
+console.log(
+  a.getPreviousLink('http://localhost:5000/api/brands', 6, '11', true, true),
+);
+console.log(
+  a.decodeCursor(
+    new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'),
+  ),
+);
+console.log(new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'));
 /*
 example with pageSize of 5
 
