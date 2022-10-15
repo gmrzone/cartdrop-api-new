@@ -3,6 +3,12 @@ const url = require('url');
 
 // TODO : This pagination class is incomplete:
 
+interface IPAGINATED_RESPONSE<T> {
+  previousPage: string | null;
+  nextPage: string | null;
+  items: T[];
+}
+
 export interface IPAGINATION_SERVICE {
   getPaginateParams: (cursor: string | undefined) => {
     condition: string;
@@ -29,16 +35,23 @@ export interface IPAGINATION_SERVICE {
     isReversed: boolean,
     groupBy?: boolean,
   ) => string;
-  getNextLink: (
-    baseUrl: string,
+  getPaginatedResponse: <T extends { id: string }>(
+    items: T[],
     rowCount: number,
-    newCursorPosition: string,
+    baseUrl: string,
+    reverse: boolean,
+    isCursorAvailable: boolean,
+  ) => IPAGINATED_RESPONSE<T>;
+  getNextLink: <T extends { id?: string }>(
+    items: T[],
+    rowCount: number,
+    baseUrl: string,
     reverse: boolean,
   ) => string | null;
-  getPreviousLink: (
-    baseUrl: string,
+  getPreviousLink: <T extends { id?: string }>(
+    items: T[],
     rowCount: number,
-    newCursorPosition: string,
+    baseUrl: string,
     reverse: boolean,
     isCursorAvailable: boolean,
   ) => string | null;
@@ -130,36 +143,42 @@ export class PaginationService implements IPAGINATION_SERVICE {
       position,
     };
   };
-  // TODO: remove newCursorPosition and directly pass the list of data
-  // Also create a generic for type
-  getNextLink = (
-    baseUrl: string,
+  getPaginatedResponse = <T extends { id?: string }>(
+    items: T[],
     rowCount: number,
-    newCursorPosition: string,
+    baseUrl: string,
     reverse: boolean,
-  ) => {
-    if (rowCount === this._pageSize + 1 || reverse) {
-      const encodedCursor = this.encodeCursor(newCursorPosition, false);
-      const parsedBaseUrl = new URL(baseUrl);
-      parsedBaseUrl.search = new url.URLSearchParams(
-        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
-      );
-      return parsedBaseUrl.href;
-    }
-    return null;
+    isCursorAvailable: boolean,
+  ): { nextPage: string | null; previousPage: string | null; items: T[] } => {
+    const nextPage = this.getNextLink(items, rowCount, baseUrl, reverse);
+    const previousPage = this.getPreviousLink(
+      items,
+      rowCount,
+      baseUrl,
+      reverse,
+      isCursorAvailable,
+    );
+    const updatedItems = reverse ? items.slice(1) : items.slice(0, -1);
+    return {
+      previousPage,
+      nextPage,
+      items: updatedItems,
+    };
   };
 
   // TODO: remove newCursorPosition and directly pass the list of data
   // Also create a generic for type
-  getPreviousLink = (
-    baseUrl: string,
+  getPreviousLink = <T extends { id?: string }>(
+    items: T[],
     rowCount: number,
-    newCursorPosition: string,
+    baseUrl: string,
     reverse: boolean,
     isCursorAvailable: boolean,
   ) => {
+    const newCursorPosition = items[0].id;
     if (
       isCursorAvailable &&
+      newCursorPosition &&
       (!reverse || (reverse && rowCount === this._pageSize + 1))
     ) {
       const encodedCursor = this.encodeCursor(newCursorPosition, true);
@@ -172,23 +191,26 @@ export class PaginationService implements IPAGINATION_SERVICE {
 
     return null;
   };
+
+  getNextLink = <T extends { id?: string }>(
+    items: T[],
+    rowCount: number,
+    baseUrl: string,
+    reverse: boolean,
+  ) => {
+    const newCursorPosition = items[items.length - 1].id;
+    if (newCursorPosition && (rowCount === this._pageSize + 1 || reverse)) {
+      const encodedCursor = this.encodeCursor(newCursorPosition, false);
+      const parsedBaseUrl = new URL(baseUrl);
+      parsedBaseUrl.search = new url.URLSearchParams(
+        `pageSize=${this._pageSize}&cursor=${encodedCursor}`,
+      );
+      return parsedBaseUrl.href;
+    }
+    return null;
+  };
 }
 
-const a = new PaginationService(5, 12, 'id');
-
-console.log(a.getNextLink('http://localhost:5000/api/brands', 6, '10', false));
-console.log(
-  a.decodeCursor(new url.URLSearchParams('cursor=cD0xMA%3D%3D').get('cursor')),
-);
-console.log(
-  a.getPreviousLink('http://localhost:5000/api/brands', 6, '11', true, true),
-);
-console.log(
-  a.decodeCursor(
-    new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'),
-  ),
-);
-console.log(new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'));
 /*
 example with pageSize of 5
 
