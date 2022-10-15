@@ -1,5 +1,3 @@
-import { th } from 'date-fns/locale';
-
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const url = require('url');
 
