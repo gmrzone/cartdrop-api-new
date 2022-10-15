@@ -1,13 +1,9 @@
+import { th } from 'date-fns/locale';
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const url = require('url');
 
 // TODO : This pagination class is incomplete:
-export interface IPAGINATE_QUERY_OPTIONS {
-  sql: string;
-  baseUrl: string;
-  cursor: string;
-  ordering: string;
-}
 
 export interface IPAGINATION_SERVICE {
   decodeCursor: (cursor: string) => {
@@ -26,24 +22,36 @@ class PaginationService implements IPAGINATION_SERVICE {
     this._ordering = ordering;
   }
 
-  getPaginateParams = (options: IPAGINATE_QUERY_OPTIONS) => {
-    const { cursor, ordering } = options;
+  getPaginateParams = (cursor: string) => {
     const cursorObj = this.decodeCursor(cursor);
     const { reverse, position } = cursorObj;
-    const limit = `LIMIT ${this._pageSize}`;
-    // const ordering = `ORDER BY ${position} ASC`
-    let condition;
-    if (position) {
-      const order = ordering[0];
-      //   const isReversedOrdering = order.startsWith('-');
-      const orderingColumnName = order.slice(1);
+    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
+    const condition = this.getCondition(position, Boolean(reverse));
+    const pageSizeLimit =
+      this._pageSize > this._maxSize ? this._maxSize : this._pageSize;
+    const orderBY = `ORDER BY ${orderFieldName} ${order}`;
+    const limit = `LIMIT ${pageSizeLimit + 1}`;
+    return { condition, orderBY, limit };
+  };
 
-      condition = reverse
-        ? `WHERE ${orderingColumnName} < ${position}`
-        : `WHERE ${orderingColumnName} > ${position}`;
-    }
+  parseOrdering = (isReverse: boolean) => {
+    // ordering for - functionality will be added later current will only add order by ASC
+    const isDescending = this._ordering.startsWith('-');
+    const order = isReverse ? 'DESC' : 'ASC';
+    const orderFieldName = isDescending
+      ? this._ordering.slice(1)
+      : this._ordering;
 
-    return { condition, limit };
+    return { order, orderFieldName };
+  };
+
+  getCondition = (position: string, reverse?: boolean) => {
+    // for condition also will only support order by ASC for now later will add the remaning functionality
+    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
+    const condition = `WHERE ${orderFieldName} ${
+      reverse ? 'DESC' : 'ASC'
+    } ${position}`;
+    return condition;
   };
   encodeCursor = (cursorId: string, reverse: boolean) => {
     const queryParams = {
@@ -120,7 +128,15 @@ console.log(a.getNextLink('http://localhost:5000/api/brands', 6, '10', false));
 console.log(
   a.decodeCursor(new url.URLSearchParams('cursor=cD0xMA%3D%3D').get('cursor')),
 );
-
+console.log(
+  a.getPreviousLink('http://localhost:5000/api/brands', 6, '11', true, true),
+);
+console.log(
+  a.decodeCursor(
+    new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'),
+  ),
+);
+console.log(new url.URLSearchParams('cursor=cj0xJnA9MTE%3D').get('cursor'));
 /*
 example with pageSize of 5
 
