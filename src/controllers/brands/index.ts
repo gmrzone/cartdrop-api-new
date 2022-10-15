@@ -6,16 +6,15 @@ import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
 export const getBrands = async (req: Request, res: Response) => {
   try {
     const { pageSize = '5', cursor } = req.query;
-    const baseUrl = getBaseImageUrl(req);
-    const { rows, rowCount, nextCursor, prevCursor } =
-      await BrandService.getBrands(
-        baseUrl,
-        +pageSize,
-        cursor ? String(cursor) : undefined,
-      );
+    const baseImageUrl = getBaseImageUrl(req);
+    const { rows, rowCount } = await BrandService.getBrands(
+      baseImageUrl,
+      +pageSize,
+      cursor ? String(cursor) : undefined,
+    );
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
     res.status(200);
-    return res.json({ nextCursor, prevCursor, rows });
+    return res.json({ rows });
   } catch (err) {
     const errorObj = generateErrorObject(err, 500);
     res.status(500);
@@ -25,10 +24,10 @@ export const getBrands = async (req: Request, res: Response) => {
 
 export const getBrandsByCategory = async (req: Request, res: Response) => {
   try {
-    const baseUrl = getBaseImageUrl(req);
+    const baseImageUrl = getBaseImageUrl(req);
     const { category } = req.params;
     const { rows, rowCount } = await BrandService.getBrandsByCategory(
-      baseUrl,
+      baseImageUrl,
       category,
     );
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);

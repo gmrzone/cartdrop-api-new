@@ -4,12 +4,47 @@ const url = require('url');
 // TODO : This pagination class is incomplete:
 
 export interface IPAGINATION_SERVICE {
+  getPaginateParams: (cursor: string | undefined) => {
+    condition: string;
+    orderBy: string;
+    limit: string;
+    position: string;
+    isReversed: boolean;
+  };
+  parseOrdering: (isReverse: boolean) => {
+    order: string;
+    orderFieldName: string;
+  };
+  getCondition: (isReverse: boolean) => string;
+  encodeCursor: (cursorId: string, reverse: boolean) => string;
   decodeCursor: (cursor: string) => {
-    reverse?: string;
+    reverse?: number;
     position: string;
   };
+  buildSQL: (
+    baseSQL: string,
+    condition: string,
+    orderBy: string,
+    limit: string,
+    isReversed: boolean,
+    groupBy?: boolean,
+  ) => string;
+  getNextLink: (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+  ) => string | null;
+  getPreviousLink: (
+    baseUrl: string,
+    rowCount: number,
+    newCursorPosition: string,
+    reverse: boolean,
+    isCursorAvailable: boolean,
+  ) => string | null;
+  setPageSize: (size: number) => void;
 }
-class PaginationService implements IPAGINATION_SERVICE {
+export class PaginationService implements IPAGINATION_SERVICE {
   private _pageSize: number;
   private _maxSize: number;
   private _ordering: string;
@@ -19,17 +54,22 @@ class PaginationService implements IPAGINATION_SERVICE {
     this._maxSize = maxSize;
     this._ordering = ordering;
   }
-
-  getPaginateParams = (cursor: string) => {
-    const cursorObj = this.decodeCursor(cursor);
+  setPageSize = (size: number) => {
+    this._pageSize = size;
+  };
+  getPaginateParams = (cursor: string | undefined) => {
+    const cursorObj = cursor
+      ? this.decodeCursor(cursor)
+      : { reverse: 0, position: '0' };
     const { reverse, position } = cursorObj;
-    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
-    const condition = this.getCondition(position, Boolean(reverse));
+    const isReversed = Boolean(reverse);
+    const { order, orderFieldName } = this.parseOrdering(isReversed);
+    const condition = this.getCondition(isReversed);
     const pageSizeLimit =
       this._pageSize > this._maxSize ? this._maxSize : this._pageSize;
-    const orderBY = `ORDER BY ${orderFieldName} ${order}`;
+    const orderBy = `ORDER BY ${orderFieldName} ${order}`;
     const limit = `LIMIT ${pageSizeLimit + 1}`;
-    return { condition, orderBY, limit };
+    return { condition, orderBy, limit, isReversed, position };
   };
 
   parseOrdering = (isReverse: boolean) => {
@@ -43,13 +83,27 @@ class PaginationService implements IPAGINATION_SERVICE {
     return { order, orderFieldName };
   };
 
-  getCondition = (position: string, reverse?: boolean) => {
+  getCondition = (reverse?: boolean) => {
     // for condition also will only support order by ASC for now later will add the remaning functionality
-    const { order, orderFieldName } = this.parseOrdering(Boolean(reverse));
-    const condition = `WHERE ${orderFieldName} ${
-      reverse ? 'DESC' : 'ASC'
-    } ${position}`;
+    const { order: __, orderFieldName } = this.parseOrdering(Boolean(reverse));
+    const condition = `WHERE ${orderFieldName} ${reverse ? '<' : '>'} $1`;
     return condition;
+  };
+
+  buildSQL = (
+    baseSQL: string,
+    condition: string,
+    orderBy: string,
+    limit: string,
+    isReversed: boolean,
+    _groupBy = false,
+  ) => {
+    let SQL = `${baseSQL} ${condition} ${orderBy} ${limit}`;
+    if (isReversed) {
+      const reverseOrderBy = orderBy.replace('DESC', 'ASC');
+      SQL = `WITH reverse as (${SQL}) SELECT * from reverse ${reverseOrderBy}`;
+    }
+    return SQL;
   };
   encodeCursor = (cursorId: string, reverse: boolean) => {
     const queryParams = {
@@ -62,17 +116,17 @@ class PaginationService implements IPAGINATION_SERVICE {
     return base64Cursor;
   };
 
-  decodeCursor: (cursor: string) => { reverse?: string; position: string } = (
+  decodeCursor: (cursor: string) => { reverse?: number; position: string } = (
     cursor: string,
   ) => {
     const cursorBuffer = Buffer.from(cursor, 'base64');
     const cursorDecoded = cursorBuffer.toString('utf-8');
     const queryData = new url.URLSearchParams(cursorDecoded);
-    const reverse = queryData.get('r');
+    const reverse: string = queryData.get('r');
     const position = queryData.get('p');
 
     return {
-      ...(reverse && { reverse }),
+      ...(reverse && { reverse: +reverse }),
       position,
     };
   };
