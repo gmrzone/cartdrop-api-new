@@ -9,6 +9,7 @@ export const getBrands = async (req: Request, res: Response) => {
     const baseImageUrl = getBaseImageUrl(req);
     const { rows, rowCount } = await BrandService.getBrands(
       baseImageUrl,
+      req.url,
       +pageSize,
       cursor ? String(cursor) : undefined,
     );

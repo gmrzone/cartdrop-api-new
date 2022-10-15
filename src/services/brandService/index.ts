@@ -4,6 +4,7 @@ import { PaginationService, IPAGINATION_SERVICE } from '../paginationService';
 interface IBRAND_SERVICES {
   getBrands: (
     baseImageUrl: string,
+    baseUrl: string,
     pageSize: number,
     cursor: string | undefined,
   ) => Promise<{
@@ -34,6 +35,7 @@ class BrandService implements IBRAND_SERVICES {
   // seperate PaginationService with cursor so we can reuse it everywhere
   getBrands = async (
     baseImageUrl: string,
+    baseUrl: string,
     pageSize: number,
     cursor: string | undefined,
   ) => {
