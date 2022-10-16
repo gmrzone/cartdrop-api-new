@@ -19,6 +19,11 @@ export const getBaseImageUrl = (req: Request) => {
   return absoluteUrl;
 };
 
+export const getAbsoulueUrl = (req: Request) => {
+  const absoluteUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+  return absoluteUrl;
+};
+
 export const generateErrorObject = (err: unknown, code: number) => {
   const currentDate = new Date().toISOString();
   const defaultErrorMssg = DEFAULT_ERROR_MESSAGE[code.toString()];
