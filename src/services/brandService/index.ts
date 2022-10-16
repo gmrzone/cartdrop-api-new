@@ -1,3 +1,4 @@
+import { ParsedQs } from 'qs';
 import { IBRAND_RESPONSE } from './interface';
 import { query } from '../../config/db';
 import {
@@ -9,7 +10,7 @@ interface IBRAND_SERVICES {
   getBrands: (
     baseImageUrl: string,
     baseUrl: string,
-    pageSize: number,
+    pageSize: string | ParsedQs | string[] | ParsedQs[] | undefined,
     cursor: string | undefined,
   ) => Promise<{
     // rows: IBRAND_RESPONSE[];
@@ -41,11 +42,13 @@ class BrandService implements IBRAND_SERVICES {
   getBrands = async (
     baseImageUrl: string,
     baseUrl: string,
-    pageSize: number,
+    pageSize: string | ParsedQs | string[] | ParsedQs[] | undefined,
     cursor: string | undefined,
   ) => {
-    console.log({ baseImageUrl, baseUrl, pageSize, cursor });
-    this._paginationService.setPageSize(pageSize);
+    console.log(typeof pageSize);
+    if (pageSize && typeof pageSize === 'string') {
+      this._paginationService.setPageSize(+pageSize);
+    }
     const { condition, orderBy, limit, isReversed, position } =
       this._paginationService.getPaginateParams(cursor);
     const BASE_SQL = `SELECT id, uuid, name, concat($2::text, photo) as photo,

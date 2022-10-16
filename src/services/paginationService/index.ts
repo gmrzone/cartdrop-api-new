@@ -136,7 +136,7 @@ export class PaginationService implements IPAGINATION_SERVICE {
     const cursorDecoded = cursorBuffer.toString('utf-8');
     const queryData = new url.URLSearchParams(cursorDecoded);
     const reverse: string = queryData.get('r');
-    const position = queryData.get('p');
+    const position: string = queryData.get('p');
 
     return {
       ...(reverse && { reverse: +reverse }),

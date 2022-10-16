@@ -9,13 +9,13 @@ import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
 
 export const getBrands = async (req: Request, res: Response) => {
   try {
-    const { pageSize = '5', cursor } = req.query;
+    const { pageSize, cursor } = req.query;
     const baseImageUrl = getBaseImageUrl(req);
     const baseUrl = getAbsoulueUrl(req);
     const { response, rowCount } = await BrandService.getBrands(
       baseImageUrl,
       baseUrl,
-      +pageSize,
+      pageSize,
       cursor ? String(cursor) : undefined,
     );
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
