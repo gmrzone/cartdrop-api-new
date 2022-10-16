@@ -91,25 +91,35 @@ export class PaginationService implements IPAGINATION_SERVICE {
     const limit = `LIMIT ${this._pageSize + 1}`;
     return { condition, orderBy, limit, isReversed, position };
   };
-
+  // this method is used to parse ordering and return order and fieldName
+  // if - is there in front of the ordering field name then its DESC else its ASC
+  // also if its in reverse then we have to reverse the ordering again
+  // so that we can do proper ordering of data using WITH SQL
   parseOrdering = (isReverse: boolean) => {
-    // TODO : ordering for - functionality will be added later current will only add order by ASC
     const isDescending = this._ordering.startsWith('-');
-    const order = isReverse ? 'DESC' : 'ASC';
+    let order = isDescending ? 'DESC' : 'ASC';
+    order = isReverse ? (order === 'DESC' ? 'ASC' : 'DESC') : order;
     const orderFieldName = isDescending
       ? this._ordering.slice(1)
       : this._ordering;
 
     return { order, orderFieldName };
   };
-
+  // this method is used to get the WHERE condition for the pagination
+  // if - is there in front of the ordering field then it means DESC order other wise its ASC order
+  // In ASC order if we have to get next page we have to use > and if we want to
+  // get the previous page (reverse) then we have to use <
+  // And in DESC Order we have to do the opposite of that
   getCondition = (reverse?: boolean) => {
-    // TODO : for condition also will only support order by ASC for now later will add the remaning functionality
-    const { order: __, orderFieldName } = this.parseOrdering(Boolean(reverse));
-    const condition = `WHERE ${orderFieldName} ${reverse ? '<' : '>'} $1`;
+    const isDescending = this._ordering.startsWith('-');
+    const { orderFieldName } = this.parseOrdering(Boolean(reverse));
+    let operator = isDescending ? '<' : '>';
+    operator = reverse ? (operator === '<' ? '>' : '<') : operator;
+
+    const condition = `WHERE ${orderFieldName} ${operator} $1`;
     return condition;
   };
-
+  // This method is used to build Final Paginated SQL
   buildSQL = (
     baseSQL: string,
     condition: string | undefined,
@@ -120,12 +130,18 @@ export class PaginationService implements IPAGINATION_SERVICE {
   ) => {
     // This method will take base url, condition, orderBy, limit, isReversed and build a paginated SQL
     // IF isReverse is true then we will use WITH SQL statement to reorder the reverse SQL to proper ordering
+    // Also the with SQL Will have a opposite ordering then the inner SQL
+    // for example: In ASC ordering the inner SQL will have DESC and outer SQL Will have ASC
+    // And In DESC ordering the inner SQL will have ASC and oute SQL will have DESC
     if (condition) {
       baseSQL = baseSQL + ` ${condition}`;
     }
     let SQL = `${baseSQL} ${orderBy} ${limit}`;
     if (isReversed) {
-      const reverseOrderBy = orderBy.replace('DESC', 'ASC');
+      const isDescending = this._ordering.startsWith('-');
+      const reverseOrderBy = isDescending
+        ? orderBy.replace('ASC', 'DESC')
+        : orderBy.replace('DESC', 'ASC');
       SQL = `WITH reverse as (${SQL}) SELECT * from reverse ${reverseOrderBy}`;
     }
     return SQL;
@@ -215,6 +231,7 @@ export class PaginationService implements IPAGINATION_SERVICE {
       (!reverse || (reverse && rowCount === this._pageSize + 1))
     ) {
       const newCursorPosition = items[0].id;
+      console.log('previousId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, true);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
@@ -238,6 +255,7 @@ export class PaginationService implements IPAGINATION_SERVICE {
     // add it to the request url
     if (rowCount === this._pageSize + 1 || reverse) {
       const newCursorPosition = items[items.length - 1].id;
+      console.log('nextId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, false);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
