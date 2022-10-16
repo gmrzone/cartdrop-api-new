@@ -45,14 +45,18 @@ class BrandService implements IBRAND_SERVICES {
     pageSize: string | ParsedQs | string[] | ParsedQs[] | undefined,
     cursor: string | undefined,
   ) => {
-    console.log(typeof pageSize);
+    console.log(typeof cursor);
     if (pageSize && typeof pageSize === 'string') {
       this._paginationService.setPageSize(+pageSize);
     }
     const { condition, orderBy, limit, isReversed, position } =
       this._paginationService.getPaginateParams(cursor);
-    const BASE_SQL = `SELECT id, uuid, name, concat($2::text, photo) as photo,
-          concat($2::text, placeholder) as placeholder FROM
+    const BASE_SQL = `SELECT id, uuid, name, concat(${
+      position ? '$2' : '$1'
+    }::text, photo) as photo,
+          concat(${
+            position ? '$2' : '$1'
+          }::text, placeholder) as placeholder FROM
           public.brands`;
     const SQL = this._paginationService.buildSQL(
       BASE_SQL,
@@ -61,10 +65,9 @@ class BrandService implements IBRAND_SERVICES {
       limit,
       isReversed,
     );
-    const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [
-      position,
-      baseImageUrl,
-    ]);
+    console.log(SQL);
+    const queryParams = position ? [position, baseImageUrl] : [baseImageUrl];
+    const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, queryParams);
     const response =
       this._paginationService.getPaginatedResponse<IBRAND_RESPONSE>(
         rows,
@@ -104,7 +107,7 @@ class BrandService implements IBRAND_SERVICES {
     return { rows, rowCount };
   };
 }
-export default new BrandService(5, 12, 'id');
+export default new BrandService(5, 10, 'id');
 
 // class BrandService implements IBRAND_SERVICES {
 //   // TODO : Need to refactor pagination logic out of getBrands and create a

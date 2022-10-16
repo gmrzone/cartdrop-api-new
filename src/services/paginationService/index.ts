@@ -11,10 +11,10 @@ export interface IPAGINATED_RESPONSE<T> {
 
 export interface IPAGINATION_SERVICE {
   getPaginateParams: (cursor: string | undefined) => {
-    condition: string;
+    condition: string | undefined;
     orderBy: string;
     limit: string;
-    position: string;
+    position: string | undefined;
     isReversed: boolean;
   };
   parseOrdering: (isReverse: boolean) => {
@@ -29,7 +29,7 @@ export interface IPAGINATION_SERVICE {
   };
   buildSQL: (
     baseSQL: string,
-    condition: string,
+    condition: string | undefined,
     orderBy: string,
     limit: string,
     isReversed: boolean,
@@ -71,17 +71,16 @@ export class PaginationService implements IPAGINATION_SERVICE {
     this._pageSize = size;
   };
   getPaginateParams = (cursor: string | undefined) => {
-    const cursorObj = cursor
-      ? this.decodeCursor(cursor)
-      : { reverse: 0, position: '0' };
-    const { reverse, position } = cursorObj;
+    const cursorObj = cursor ? this.decodeCursor(cursor) : null;
+    const reverse = cursorObj?.reverse;
+    const position = cursorObj?.position;
     const isReversed = Boolean(reverse);
     const { order, orderFieldName } = this.parseOrdering(isReversed);
-    const condition = this.getCondition(isReversed);
-    const pageSizeLimit =
+    const condition = position ? this.getCondition(isReversed) : undefined;
+    this._pageSize =
       this._pageSize > this._maxSize ? this._maxSize : this._pageSize;
     const orderBy = `ORDER BY ${orderFieldName} ${order}`;
-    const limit = `LIMIT ${pageSizeLimit + 1}`;
+    const limit = `LIMIT ${this._pageSize + 1}`;
     return { condition, orderBy, limit, isReversed, position };
   };
 
@@ -105,13 +104,16 @@ export class PaginationService implements IPAGINATION_SERVICE {
 
   buildSQL = (
     baseSQL: string,
-    condition: string,
+    condition: string | undefined,
     orderBy: string,
     limit: string,
     isReversed: boolean,
     _groupBy = false,
   ) => {
-    let SQL = `${baseSQL} ${condition} ${orderBy} ${limit}`;
+    if (condition) {
+      baseSQL = baseSQL + ` ${condition}`;
+    }
+    let SQL = `${baseSQL} ${orderBy} ${limit}`;
     if (isReversed) {
       const reverseOrderBy = orderBy.replace('DESC', 'ASC');
       SQL = `WITH reverse as (${SQL}) SELECT * from reverse ${reverseOrderBy}`;
