@@ -1,6 +1,10 @@
 import { IBRAND_RESPONSE } from './interface';
 import { query } from '../../config/db';
-import { PaginationService, IPAGINATION_SERVICE } from '../paginationService';
+import {
+  PaginationService,
+  IPAGINATION_SERVICE,
+  IPAGINATED_RESPONSE,
+} from '../paginationService';
 interface IBRAND_SERVICES {
   getBrands: (
     baseImageUrl: string,
@@ -8,7 +12,8 @@ interface IBRAND_SERVICES {
     pageSize: number,
     cursor: string | undefined,
   ) => Promise<{
-    rows: IBRAND_RESPONSE[];
+    // rows: IBRAND_RESPONSE[];
+    response: IPAGINATED_RESPONSE<IBRAND_RESPONSE>;
     rowCount: number;
     // nextCursor: string | null;
     // prevCursor: string | null;
@@ -39,6 +44,7 @@ class BrandService implements IBRAND_SERVICES {
     pageSize: number,
     cursor: string | undefined,
   ) => {
+    console.log({ baseImageUrl, baseUrl, pageSize, cursor });
     this._paginationService.setPageSize(pageSize);
     const { condition, orderBy, limit, isReversed, position } =
       this._paginationService.getPaginateParams(cursor);
@@ -52,12 +58,20 @@ class BrandService implements IBRAND_SERVICES {
       limit,
       isReversed,
     );
-    // console.log({ condition, orderBy, limit, isReversed, position, cursor });
-    console.log(SQL);
     const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, [
       position,
       baseImageUrl,
     ]);
+    const response =
+      this._paginationService.getPaginatedResponse<IBRAND_RESPONSE>(
+        rows,
+        rowCount,
+        baseUrl,
+        isReversed,
+        Boolean(cursor),
+      );
+
+    return { response, rowCount };
 
     // const data =
     //   rowCount === pageSize + 1
@@ -74,7 +88,7 @@ class BrandService implements IBRAND_SERVICES {
     //     ? `${data[0].id}r1`
     //     : null;
 
-    return { rows, rowCount };
+    // return { rows, rowCount };
   };
 
   getBrandsByCategory = async (baseImageUrl: string, category: string) => {

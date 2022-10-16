@@ -3,7 +3,7 @@ const url = require('url');
 
 // TODO : This pagination class is incomplete:
 
-interface IPAGINATED_RESPONSE<T> {
+export interface IPAGINATED_RESPONSE<T> {
   previousPage: string | null;
   nextPage: string | null;
   items: T[];
@@ -42,13 +42,13 @@ export interface IPAGINATION_SERVICE {
     reverse: boolean,
     isCursorAvailable: boolean,
   ) => IPAGINATED_RESPONSE<T>;
-  getNextLink: <T extends { id?: string }>(
+  getNextLink: <T extends { id: string }>(
     items: T[],
     rowCount: number,
     baseUrl: string,
     reverse: boolean,
   ) => string | null;
-  getPreviousLink: <T extends { id?: string }>(
+  getPreviousLink: <T extends { id: string }>(
     items: T[],
     rowCount: number,
     baseUrl: string,
@@ -143,22 +143,28 @@ export class PaginationService implements IPAGINATION_SERVICE {
       position,
     };
   };
-  getPaginatedResponse = <T extends { id?: string }>(
+  getPaginatedResponse = <T extends { id: string }>(
     items: T[],
     rowCount: number,
     baseUrl: string,
     reverse: boolean,
     isCursorAvailable: boolean,
   ): { nextPage: string | null; previousPage: string | null; items: T[] } => {
-    const nextPage = this.getNextLink(items, rowCount, baseUrl, reverse);
+    let updatedItems;
+    if (rowCount === this._pageSize + 1) {
+      updatedItems = reverse ? items.slice(1) : items.slice(0, -1);
+    } else {
+      updatedItems = items;
+    }
+
+    const nextPage = this.getNextLink(updatedItems, rowCount, baseUrl, reverse);
     const previousPage = this.getPreviousLink(
-      items,
+      updatedItems,
       rowCount,
       baseUrl,
       reverse,
       isCursorAvailable,
     );
-    const updatedItems = reverse ? items.slice(1) : items.slice(0, -1);
     return {
       previousPage,
       nextPage,
@@ -168,19 +174,18 @@ export class PaginationService implements IPAGINATION_SERVICE {
 
   // TODO: remove newCursorPosition and directly pass the list of data
   // Also create a generic for type
-  getPreviousLink = <T extends { id?: string }>(
+  getPreviousLink = <T extends { id: string }>(
     items: T[],
     rowCount: number,
     baseUrl: string,
     reverse: boolean,
     isCursorAvailable: boolean,
   ) => {
-    const newCursorPosition = items[0].id;
     if (
       isCursorAvailable &&
-      newCursorPosition &&
       (!reverse || (reverse && rowCount === this._pageSize + 1))
     ) {
+      const newCursorPosition = items[0].id;
       const encodedCursor = this.encodeCursor(newCursorPosition, true);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
@@ -192,14 +197,14 @@ export class PaginationService implements IPAGINATION_SERVICE {
     return null;
   };
 
-  getNextLink = <T extends { id?: string }>(
+  getNextLink = <T extends { id: string }>(
     items: T[],
     rowCount: number,
     baseUrl: string,
     reverse: boolean,
   ) => {
-    const newCursorPosition = items[items.length - 1].id;
-    if (newCursorPosition && (rowCount === this._pageSize + 1 || reverse)) {
+    if (rowCount === this._pageSize + 1 || reverse) {
+      const newCursorPosition = items[items.length - 1].id;
       const encodedCursor = this.encodeCursor(newCursorPosition, false);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
