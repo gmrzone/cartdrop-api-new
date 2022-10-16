@@ -107,7 +107,7 @@ class BrandService implements IBRAND_SERVICES {
     return { rows, rowCount };
   };
 }
-export default new BrandService(5, 10, 'id');
+export default new BrandService(5, 10, '-id');
 
 // class BrandService implements IBRAND_SERVICES {
 //   // TODO : Need to refactor pagination logic out of getBrands and create a

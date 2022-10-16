@@ -95,7 +95,8 @@ export class PaginationService implements IPAGINATION_SERVICE {
   parseOrdering = (isReverse: boolean) => {
     // TODO : ordering for - functionality will be added later current will only add order by ASC
     const isDescending = this._ordering.startsWith('-');
-    const order = isReverse ? 'DESC' : 'ASC';
+    let order = isDescending ? 'DESC' : 'ASC';
+    order = isReverse ? (order === 'DESC' ? 'ASC' : 'DESC') : order;
     const orderFieldName = isDescending
       ? this._ordering.slice(1)
       : this._ordering;
@@ -105,8 +106,12 @@ export class PaginationService implements IPAGINATION_SERVICE {
 
   getCondition = (reverse?: boolean) => {
     // TODO : for condition also will only support order by ASC for now later will add the remaning functionality
-    const { order: __, orderFieldName } = this.parseOrdering(Boolean(reverse));
-    const condition = `WHERE ${orderFieldName} ${reverse ? '<' : '>'} $1`;
+    const isDescending = this._ordering.startsWith('-');
+    const { orderFieldName } = this.parseOrdering(Boolean(reverse));
+    let operator = isDescending ? '<' : '>';
+    operator = reverse ? (operator === '<' ? '>' : '<') : operator;
+
+    const condition = `WHERE ${orderFieldName} ${operator} $1`;
     return condition;
   };
 
@@ -125,7 +130,10 @@ export class PaginationService implements IPAGINATION_SERVICE {
     }
     let SQL = `${baseSQL} ${orderBy} ${limit}`;
     if (isReversed) {
-      const reverseOrderBy = orderBy.replace('DESC', 'ASC');
+      const isDescending = this._ordering.startsWith('-');
+      const reverseOrderBy = isDescending
+        ? orderBy.replace('ASC', 'DESC')
+        : orderBy.replace('DESC', 'ASC');
       SQL = `WITH reverse as (${SQL}) SELECT * from reverse ${reverseOrderBy}`;
     }
     return SQL;
@@ -215,6 +223,7 @@ export class PaginationService implements IPAGINATION_SERVICE {
       (!reverse || (reverse && rowCount === this._pageSize + 1))
     ) {
       const newCursorPosition = items[0].id;
+      console.log('previousId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, true);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
@@ -238,6 +247,7 @@ export class PaginationService implements IPAGINATION_SERVICE {
     // add it to the request url
     if (rowCount === this._pageSize + 1 || reverse) {
       const newCursorPosition = items[items.length - 1].id;
+      console.log('nextId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, false);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
