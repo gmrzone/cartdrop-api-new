@@ -4,6 +4,7 @@ export const USERNAME_MAX_LENGTH = 24;
 export const NUMBER_FIELD = 'number';
 export const NUMBER_MIN_LENGTH = 10;
 export const NUMBER_MAX_LENGTH = 10;
+export const EMAIL_FIELD = 'email';
 export const PASSWORD_FIELD = 'password';
 export const PASSWORD_MIN_LENGTH = 8;
 export const PASSWORD_MAX_LENGTH = 50;

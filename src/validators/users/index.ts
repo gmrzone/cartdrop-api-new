@@ -15,6 +15,7 @@ import {
   LAST_NAME_FIELD,
   LAST_NAME_MAX_LENGTH,
   LAST_NAME_MIN_LENGTH,
+  EMAIL_FIELD,
 } from './constants';
 
 const userSchema = Joi.object({
@@ -30,6 +31,7 @@ const userSchema = Joi.object({
       'string.max': `#${USERNAME_FIELD} should have a maximum length of ${USERNAME_MAX_LENGTH}`,
       'string.required': `#${USERNAME_FIELD} is a required field`,
     }),
+  [EMAIL_FIELD]: Joi.string().email().required(),
   [NUMBER_FIELD]: Joi.string()
     .min(NUMBER_MIN_LENGTH)
     .max(NUMBER_MAX_LENGTH)
@@ -43,7 +45,7 @@ const userSchema = Joi.object({
   [PASSWORD_FIELD]: Joi.string()
     .min(PASSWORD_MIN_LENGTH)
     .max(PASSWORD_MAX_LENGTH)
-    .pattern(/[a-z]+[A-Z]+[0-9]+/)
+    .pattern(/^[a-zA-Z0-9]{3,30}$/)
     .required()
     .messages({
       'string.base': `#${PASSWORD_FIELD} should be of type string`,
@@ -52,26 +54,36 @@ const userSchema = Joi.object({
       'string.pattern.base': `#${PASSWORD_FIELD} should have atleast 1 Upper letter, 1 lower Letter and a number`,
       'string.required': `#${PASSWORD_FIELD} is a required field`,
     }),
-  confirmPassword: Joi.ref(PASSWORD_FIELD),
+  confirmPassword: Joi.any()
+    .equal(Joi.ref(PASSWORD_FIELD))
+    .required()
+    .messages({
+      'any.only': `{{#label}} {{#value}} does not match with the password`,
+      'any.required': `{{#label}} is a required field`,
+    }),
   firstName: Joi.string()
+    .alphanum()
     .min(FIRST_NAME_MIN_LENGTH)
     .max(FIRST_NAME_MAX_LENGTH)
     .required()
     .messages({
-      'any.base': `#${FIRST_NAME_FIELD} should be of type string`,
-      'any.min': `#${FIRST_NAME_FIELD} should have a minimum length of ${FIRST_NAME_MIN_LENGTH}`,
-      'any.max': `#${FIRST_NAME_FIELD} should have a maximum length of ${FIRST_NAME_MAX_LENGTH}`,
+      'string.base': `#${FIRST_NAME_FIELD} should be of type string`,
+      'string.min': `#${FIRST_NAME_FIELD} should have a minimum length of ${FIRST_NAME_MIN_LENGTH}`,
+      'string.max': `#${FIRST_NAME_FIELD} should have a maximum length of ${FIRST_NAME_MAX_LENGTH}`,
       'any.required': `#${FIRST_NAME_FIELD} is a required field`,
+      'string.empty': `#${FIRST_NAME_FIELD} is not allowed to be empty`,
     }),
   lastName: Joi.string()
+    .alphanum()
     .min(LAST_NAME_MIN_LENGTH)
     .max(LAST_NAME_MAX_LENGTH)
     .required()
     .messages({
-      'any.base': `#${LAST_NAME_FIELD} should be of type string`,
-      'any.min': `#${LAST_NAME_FIELD} should have a minimum length of ${LAST_NAME_MIN_LENGTH}`,
-      'any.max': `#${LAST_NAME_FIELD} should have a maximum length of ${LAST_NAME_MAX_LENGTH}`,
+      'string.base': `#${LAST_NAME_FIELD} should be of type string`,
+      'string.min': `#${LAST_NAME_FIELD} should have a minimum length of ${LAST_NAME_MIN_LENGTH}`,
+      'string.max': `#${LAST_NAME_FIELD} should have a maximum length of ${LAST_NAME_MAX_LENGTH}`,
       'any.required': `#${LAST_NAME_FIELD} is a required field`,
+      'string.empty': `#${LAST_NAME_FIELD} is not allowed to be empty`,
     }),
 });
 
