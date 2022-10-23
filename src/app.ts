@@ -16,7 +16,6 @@ const app: Application = express();
 // TODO : Remove express-rate-limit dependency and implement request rate limit middleware using redis
 const limiter = rateLimit(RATE_LIMIT_OPTIONS);
 database.runMigrations();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(CORS_OPTIONS));
