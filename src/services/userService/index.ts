@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
-import { IDATABASE } from '../../config/db/index';
+import { IDATABASE, query } from '../../config/db/index';
 import database from '../../config/db/index';
+
 interface IUser {
   _db: IDATABASE;
   hashPassword: (
@@ -15,12 +16,8 @@ class User implements IUser {
     this._db = db;
   }
   hashPassword = async (password: string, saltRound = 10) => {
-    try {
-      const hash = await bcrypt.hash(password, saltRound);
-      return hash;
-    } catch (err) {
-      console.log('Hashing Password Failed With error, err');
-    }
+    const hash = await bcrypt.hash(password, saltRound);
+    return hash;
   };
   createUser = async (
     username: string,
@@ -69,6 +66,43 @@ class User implements IUser {
     } catch (err) {
       console.log(err);
     }
+  };
+
+  signUp = async (
+    username: string,
+    email: string,
+    number: string,
+    password: string,
+    firstName: string,
+    lastName: string,
+    type = 'buyer',
+    photoUrl = 'static/default_profilepic.png',
+    isSuperUser = false,
+    isStaff = false,
+  ) => {
+    const hashedPassword = await this.hashPassword(password);
+    const SQL = `INSERT INTO public.users 
+    (username, number, email, type, password, first_name, last_name, photo, 
+    last_login, date_joined, is_active, is_superuser, is_staff, is_email_verified, 
+    is_number_verified, is_disabled) VALUES 
+    ($1, $2, $3, $4, $5, $6, $7, $8, current_timestamp, current_timestamp, $9, $10, $11, $12, $13, $14);`;
+    const { rows, rowCount } = await query(SQL, [
+      username,
+      number,
+      email,
+      type,
+      hashedPassword,
+      firstName,
+      lastName,
+      photoUrl,
+      false,
+      isSuperUser,
+      isStaff,
+      false,
+      false,
+      true,
+    ]);
+    return { rows, rowCount };
   };
 }
 

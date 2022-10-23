@@ -41,7 +41,7 @@ export class Database implements IDATABASE {
 
 export async function query<T extends QueryResultRow>(
   sql: string,
-  params: (string | number)[],
+  params: (string | number | boolean)[],
 ): Promise<QueryResult<T>> {
   return await poolInstance.query(sql, params);
 }

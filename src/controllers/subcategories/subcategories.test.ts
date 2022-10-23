@@ -85,7 +85,7 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         currentDate: expect.any(String),
-        message: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'SUBCATEGORY SERVICE ERROR',
         statusCode: 500,
       }),
     );
@@ -145,7 +145,7 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         currentDate: expect.any(String),
-        message: 'There is no subcategories for category electronics',
+        errors: 'There is no subcategories for category electronics',
         statusCode: 404,
       }),
     );
@@ -168,7 +168,7 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         currentDate: expect.any(String),
-        message: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'SUBCATEGORY SERVICE ERROR',
         statusCode: 500,
       }),
     );
@@ -231,7 +231,7 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         currentDate: expect.any(String),
-        message: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'SUBCATEGORY SERVICE ERROR',
         statusCode: 500,
       }),
     );

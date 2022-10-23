@@ -79,7 +79,7 @@ describe('category controllers tests', () => {
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
         currentDate: expect.any(String),
-        message: 'CATEGORY SERVICE ERROR',
+        errors: 'CATEGORY SERVICE ERROR',
         statusCode: 500,
       }),
     );

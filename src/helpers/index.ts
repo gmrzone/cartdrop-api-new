@@ -5,6 +5,8 @@ import {
   RateLimitExceededEventHandler,
   AugmentedRequest,
 } from 'express-rate-limit';
+import { ValidationError } from 'joi';
+import { isEmpty } from 'lodash';
 
 export const getVar = (key: string): string => {
   const value = process.env[key];
@@ -30,9 +32,20 @@ export const generateErrorObject = (err: unknown, code: number) => {
   return {
     status: 'error',
     currentDate: currentDate,
-    message:
+    errors:
       err instanceof Error ? err.message || defaultErrorMssg : defaultErrorMssg,
     statusCode: code,
+  };
+};
+
+export const generateValidationError = (err: ValidationError) => {
+  const currentDate = new Date().toISOString();
+  const errors = err.details.map((error) => error.message);
+  return {
+    status: 'validation error',
+    currentDate: currentDate,
+    error: errors,
+    statusCode: 400,
   };
 };
 
