@@ -45,7 +45,6 @@ class BrandService implements IBRAND_SERVICES {
     pageSize: string | ParsedQs | string[] | ParsedQs[] | undefined,
     cursor: string | undefined,
   ) => {
-    console.log(typeof cursor);
     if (pageSize && typeof pageSize === 'string') {
       this._paginationService.setPageSize(+pageSize);
     }
@@ -65,7 +64,6 @@ class BrandService implements IBRAND_SERVICES {
       limit,
       isReversed,
     );
-    console.log(SQL);
     const queryParams = position ? [position, baseImageUrl] : [baseImageUrl];
     const { rows, rowCount } = await query<IBRAND_RESPONSE>(SQL, queryParams);
     const response =
@@ -78,23 +76,6 @@ class BrandService implements IBRAND_SERVICES {
       );
 
     return { response, rowCount };
-
-    // const data =
-    //   rowCount === pageSize + 1
-    //     ? isReversed
-    //       ? rows.slice(1)
-    //       : rows.slice(0, -1)
-    //     : rows;
-    // //
-    // const nextCursor =
-    //   rowCount === pageSize + 1 || isReversed ? data[data.length - 1].id : null;
-    // // if cursor is there and not in reverse or if it is in reverse mode then row should be pageSize + 1
-    // const prevCursor =
-    //   cursor && (!isReversed || (isReversed && rowCount === pageSize + 1))
-    //     ? `${data[0].id}r1`
-    //     : null;
-
-    // return { rows, rowCount };
   };
 
   getBrandsByCategory = async (baseImageUrl: string, category: string) => {
@@ -109,9 +90,8 @@ class BrandService implements IBRAND_SERVICES {
 }
 export default new BrandService(5, 10, '-id');
 
+// basic cursor based pagination implementation
 // class BrandService implements IBRAND_SERVICES {
-//   // TODO : Need to refactor pagination logic out of getBrands and create a
-//   // seperate PaginationService with cursor so we can reuse it everywhere
 //   getBrands = async (
 //     baseUrl: string,
 //     pageSize: number,

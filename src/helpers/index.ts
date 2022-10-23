@@ -36,7 +36,7 @@ export const generateErrorObject = (err: unknown, code: number) => {
   };
 };
 
-// TODO: Need to refactor this to many if conditions
+// TODO: Need to refactor this, has too many if conditions
 export const rateLimiterHandler: RateLimitExceededEventHandler = (
   request,
   response,
