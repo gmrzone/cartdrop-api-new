@@ -1,8 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const url = require('url');
-
-// TODO : This pagination class is incomplete:
-
 export interface IPAGINATED_RESPONSE<T> {
   previousPage: string | null;
   nextPage: string | null;
@@ -231,7 +228,6 @@ export class PaginationService implements IPAGINATION_SERVICE {
       (!reverse || (reverse && rowCount === this._pageSize + 1))
     ) {
       const newCursorPosition = items[0].id;
-      console.log('previousId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, true);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(
@@ -255,7 +251,6 @@ export class PaginationService implements IPAGINATION_SERVICE {
     // add it to the request url
     if (rowCount === this._pageSize + 1 || reverse) {
       const newCursorPosition = items[items.length - 1].id;
-      console.log('nextId', newCursorPosition);
       const encodedCursor = this.encodeCursor(newCursorPosition, false);
       const parsedBaseUrl = new URL(baseUrl);
       parsedBaseUrl.search = new url.URLSearchParams(

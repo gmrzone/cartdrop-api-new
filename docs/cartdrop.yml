@@ -26,6 +26,11 @@ tags:
     externalDocs:
       description: Source Code
       url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/subcategories'
+  - name: Brand
+    description: All endpoints elated to brands
+    externalDocs:
+      description: Source Code
+      url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/brands'
 paths:
   /categories:
     get:
@@ -74,7 +79,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/Subcategory'
         '500':
-          description: Internal Error Response
+          description: Internal Server Error Response
           content:
             application/json:
               schema:
@@ -119,13 +124,13 @@ paths:
                 items:
                   $ref: '#/components/schemas/Subcategory'
         '404':
-          description: 404 Response
+          description: Not Found Error Response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error404'
         '500':
-          description: 404 Response
+          description: Internal Server Error Response
           content:
             application/json:
               schema:
@@ -145,13 +150,55 @@ paths:
       operationId: getSubcategoriesWithCoupons
       responses:
         '200':
-          description:
+          description: Success Response
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SubcategoryWithCoupons'
+        '500':
+          description: Internal Server Error Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+
+        '429':
+          description: Rate Limit Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error429'
+  /brands:
+    get:
+      tags:
+        - Brands
+      summary: Get List of Brands with Cursor based Pagination
+      description: Get List of Brands with Cursor based Pagination
+      operationId: getBrands
+      parameters:
+        - name: pageSize
+          in: query
+          description: pagination page size
+          required: false
+          schema:
+            type: number
+            default:
+        - name: cursor
+          in: query
+          description: pagination cursor
+          required: false
+          schema:
+            type: string
+
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brands'
         '500':
           description: 404 Response
           content:
@@ -165,6 +212,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error429'
+
 components:
   schemas:
     Category:
@@ -231,6 +279,30 @@ components:
             properties:
               image:
                 type: string
+    Brands:
+      type: object
+      properties:
+        previousPage:
+          type: string
+        nextPage:
+          type: string
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              uuid:
+                type: string
+                example: eb90362c-8e9d-4812-9a17-daaa7a85de04
+              name:
+                type: string
+              photo:
+                type: string
+              placeholder:
+                type: string
+
     Error500:
       type: object
       properties:
