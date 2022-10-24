@@ -84,8 +84,10 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.status).toHaveBeenCalledWith(500);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
+        code: 'INTERNAL_ERROR',
         currentDate: expect.any(String),
-        errors: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'Internal Server Error. Please try again later',
+        status: 'error',
         statusCode: 500,
       }),
     );
@@ -167,8 +169,10 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.status).toHaveBeenCalledWith(500);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
+        code: 'INTERNAL_ERROR',
         currentDate: expect.any(String),
-        errors: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'Internal Server Error. Please try again later',
+        status: 'error',
         statusCode: 500,
       }),
     );
@@ -230,8 +234,10 @@ describe('subcategory controllers tests', () => {
     expect(mockResponse.status).toHaveBeenCalledWith(500);
     expect(mockResponse.json).toHaveBeenCalledWith(
       expect.objectContaining({
+        code: 'INTERNAL_ERROR',
         currentDate: expect.any(String),
-        errors: 'SUBCATEGORY SERVICE ERROR',
+        errors: 'Internal Server Error. Please try again later',
+        status: 'error',
         statusCode: 500,
       }),
     );
