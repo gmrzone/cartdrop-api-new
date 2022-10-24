@@ -1,4 +1,5 @@
-import Joi from 'joi';
+import Joi, { ObjectSchema } from 'joi';
+import { IUSER_INPUT } from './interfaces';
 import {
   USERNAME_FIELD,
   USERNAME_MAX_LENGTH,
@@ -18,7 +19,7 @@ import {
   EMAIL_FIELD,
 } from './constants';
 
-const userSchema = Joi.object({
+const userSchema: ObjectSchema<IUSER_INPUT> = Joi.object({
   [USERNAME_FIELD]: Joi.string()
     .alphanum()
     .min(USERNAME_MIN_LENGTH)
