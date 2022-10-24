@@ -12,8 +12,8 @@ export const getCategories = async (req: Request, res: Response) => {
     res.status(200);
     return res.json(rows);
   } catch (err) {
-    const errorObj = generateErrorObject(err, 500);
-    res.status(500);
+    const errorObj = generateErrorObject(err);
+    res.status(errorObj.statusCode);
     return res.json(errorObj);
   }
 };

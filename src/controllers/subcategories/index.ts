@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import SubcategoryService from '../../services/subcategoryService';
 import { getBaseImageUrl, generateErrorObject } from '../../helpers';
 import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
-
+import { NotFoundError } from '../../helpers/errors';
 export const getSubCategories = async (req: Request, res: Response) => {
   try {
     const baseUrl = getBaseImageUrl(req);
@@ -12,8 +12,8 @@ export const getSubCategories = async (req: Request, res: Response) => {
     res.status(200);
     return res.json(rows);
   } catch (err) {
-    const errorObj = generateErrorObject(err, 500);
-    res.status(500);
+    const errorObj = generateErrorObject(err);
+    res.status(errorObj.statusCode);
     return res.json(errorObj);
   }
 };
@@ -30,17 +30,16 @@ export const getSubcategoriesForCategory = async (
     res.setHeader(ROW_COUNT_HEADER_NAME, rowCount);
     if (!rowCount) {
       const errorResponse = generateErrorObject(
-        new Error(`There is no subcategories for category ${category}`),
-        404,
+        new NotFoundError(`There is no subcategories for category ${category}`),
       );
-      res.status(404);
+      res.status(errorResponse.statusCode);
       res.json(errorResponse);
     }
     res.status(200);
     return res.json(rows);
   } catch (err) {
-    const errorObj = generateErrorObject(err, 500);
-    res.status(500);
+    const errorObj = generateErrorObject(err);
+    res.status(errorObj.statusCode);
     return res.json(errorObj);
   }
 };
@@ -57,8 +56,8 @@ export const getSubcategoriesWithOffers = async (
     res.status(200);
     return res.json(rows);
   } catch (err) {
-    const errorObj = generateErrorObject(err, 500);
-    res.status(500);
+    const errorObj = generateErrorObject(err);
+    res.status(errorObj.statusCode);
     return res.json(errorObj);
   }
 };
