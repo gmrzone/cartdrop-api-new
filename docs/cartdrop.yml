@@ -16,26 +16,31 @@ info:
 servers:
   - url: http://localhost:5000/api
 tags:
-  - name: Category
+  - name: Categories
     description: All endpoints related to categories
     externalDocs:
       description: Source Code
       url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/categories'
-  - name: Subcategory
+  - name: Subcategories
     description: All endpoints related to subcategories
     externalDocs:
       description: Source Code
       url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/subcategories'
-  - name: Brand
+  - name: Brands
     description: All endpoints elated to brands
     externalDocs:
       description: Source Code
       url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/brands'
+  - name: Users
+    description: All endpoints related to users
+    externalDocs:
+      description: Source Code
+      url: 'https://github.com/gmrzone/cartdrop-api-new/tree/main/src/controllers/users'
 paths:
   /categories:
     get:
       tags:
-        - Category
+        - Categories
       summary: Get list of categories
       description: Get list of categories
       operationId: getCategories
@@ -65,7 +70,7 @@ paths:
   /subcategories:
     get:
       tags:
-        - Subcategory
+        - Subcategories
       summary: Get list of subcategories
       description: Get list of subcategories
       operationId: getSubcategories
@@ -93,7 +98,7 @@ paths:
   /subcategories/{category}:
     get:
       tags:
-        - Subcategory
+        - Subcategories
       summary: Get subcategories for specific category
       description: Get subcategories for specific category
       operationId: getSubcategoriesForCategory
@@ -144,7 +149,7 @@ paths:
   /subcategories/offers:
     get:
       tags:
-        - Subcategory
+        - Subcategories
       summary: Get list for subcategories with offer coupons available
       description: Get list for subcategories with offer coupons available
       operationId: getSubcategoriesWithCoupons
@@ -212,7 +217,85 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error429'
+  /users/signup:
+    post:
+      tags:
+        - Users
+      summary: User Signup by providing all the params
+      description: User Signup by providing all the params
+      operationId: signUp
+      parameters:
+        - name: username
+          in: form
+          description: username of the user must be unique and alphanumeric
+          required: true
+          schema:
+            type: string
+        - name: number
+          in: form
+          description: number of the user must be unique and should be a valid indian number
+          required: false
+          schema:
+            type: string
+        - name: email
+          in: form
+          description: email of the user must be unique and a valid email address
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: form
+          description: password of the user. should contain alteast one lower case, one uppercase and a number
+          required: true
+          schema:
+            type: string
+        - name: confirmPassword
+          in: form
+          description: confirmpassword should be same as password for validation purpose
+          required: true
+          schema:
+            type: string
+        - name: firstName
+          in: form
+          description: First Name of the user must be alphanumeric
+          required: true
+          schema:
+            type: string
+        - name: lastName
+          in: form
+          description: Last Name of the user must be alphanumeric
+          required: true
+          schema:
+            type: string
+            placeholder: Last Name
+      responses:
+        '400':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error400'
+        '409':
+          description: Duplicate Resource Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error409'  
+        '500':
+          description: Internal Server Error Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error500'
+        '429':
+          description: Rate Limit Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error429'
+        
 
+          
 components:
   schemas:
     Category:
@@ -384,9 +467,8 @@ components:
         currentDate:
           type: string
         errors:
-          type: array
-          items:
-            type: string
+          type: string
+
   securitySchemes:
     petstore_auth:
       type: oauth2
