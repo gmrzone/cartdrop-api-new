@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
-import database from './config/db/index';
+// import database from './config/db/index';
 import { CORS_OPTIONS, RATE_LIMIT_OPTIONS } from './config/constants';
 import userRoutes from './routes/user';
 import categoryRoutes from './routes/categories';
@@ -15,7 +15,7 @@ const app: Application = express();
 
 // TODO : Remove express-rate-limit dependency and implement request rate limit middleware using redis
 const limiter = rateLimit(RATE_LIMIT_OPTIONS);
-database.runMigrations();
+// database.runMigrations();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors(CORS_OPTIONS));
