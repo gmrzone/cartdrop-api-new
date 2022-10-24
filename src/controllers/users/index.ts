@@ -1,12 +1,11 @@
 import { Request, Response } from 'express';
-import user from '../../services/userService';
 import database from '../../config/db';
 import userValidatorSchema from '../../validators/users';
 import { generateErrorObject, generateValidationError } from '../../helpers';
 import userService from '../../services/userService';
 import { ROW_COUNT_HEADER_NAME } from '../../config/constants';
 export const createUser = async (req: Request, res: Response) => {
-  const userData = await user.createUser(
+  const userData = await userService.createUser(
     'gmrzone',
     '27021992',
     '9220976696',
@@ -19,7 +18,7 @@ export const createUser = async (req: Request, res: Response) => {
 };
 
 export const getUsers = async (req: Request, res: Response) => {
-  await user.createUser(
+  await userService.createUser(
     'gmrzone',
     '27021992',
     '9220976696',

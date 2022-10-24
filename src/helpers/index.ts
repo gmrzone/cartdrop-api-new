@@ -6,7 +6,7 @@ import {
   AugmentedRequest,
 } from 'express-rate-limit';
 import { ValidationError } from 'joi';
-import { isEmpty } from 'lodash';
+import { DatabaseError } from 'pg';
 
 export const getVar = (key: string): string => {
   const value = process.env[key];
@@ -27,13 +27,41 @@ export const getAbsoulueUrl = (req: Request) => {
 };
 
 export const generateErrorObject = (err: unknown, code: number) => {
+  console.log(err);
   const currentDate = new Date().toISOString();
-  const defaultErrorMssg = DEFAULT_ERROR_MESSAGE[code.toString()];
+  let errorCode;
+  let errorMssg;
+  const defaultErrorMssg = DEFAULT_ERROR_MESSAGE[code];
+  if (err instanceof DatabaseError) {
+    errorCode = err.code;
+    switch (err.code) {
+      case '23505':
+        if (err.detail) {
+          const fieldAndValue = err.detail.slice(4, -16);
+          let [field, value] = fieldAndValue.split('=');
+          field = field.slice(1, -1);
+          value = value.slice(1, -1);
+
+          console.log({ field, value });
+          errorMssg = `${field} with ${value} already exists. please try different value or if you already have a account then please login`;
+        } else {
+          errorMssg = defaultErrorMssg;
+        }
+
+        break;
+      default:
+        errorMssg = defaultErrorMssg;
+    }
+  } else {
+    errorMssg = defaultErrorMssg;
+    errorCode = 'ERROR';
+  }
+
   return {
+    code: errorCode,
     status: 'error',
     currentDate: currentDate,
-    errors:
-      err instanceof Error ? err.message || defaultErrorMssg : defaultErrorMssg,
+    errors: errorMssg,
     statusCode: code,
   };
 };
