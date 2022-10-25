@@ -17,6 +17,7 @@ export const POOL_CONFIG: PoolConfig = {
 export const CORS_WHITE_LIST = [
   'http://127.0.0.1:3000',
   'http://localhost:3000',
+  'http://localhost:5000',
 ];
 
 export const CORS_OPTIONS: CorsOptions = {
