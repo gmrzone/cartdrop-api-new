@@ -234,7 +234,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UserBodyResponse'
-              
+
       responses:
         '400':
           description: Validation Error
@@ -247,7 +247,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error409'  
+                $ref: '#/components/schemas/Error409'
         '500':
           description: Internal Server Error Response
           content:
@@ -260,9 +260,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error429'
-        
 
-          
 components:
   schemas:
     UserBodyResponse:
@@ -271,7 +269,7 @@ components:
         username:
           type: string
           example: afzalsaiyed123
-        email: 
+        email:
           type: string
           example: saiyedafzalgz@gmail.com
         number:
@@ -290,12 +288,12 @@ components:
           type: string
           example: saiyed
       required:
-          - username
-          - email
-          - password
-          - confirmPassword
-          - firstName
-          - lastName
+        - username
+        - email
+        - password
+        - confirmPassword
+        - firstName
+        - lastName
     Category:
       type: object
       properties:
