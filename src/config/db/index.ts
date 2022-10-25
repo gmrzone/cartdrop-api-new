@@ -12,6 +12,7 @@ export interface IDATABASE {
   getPoolClient: () => Promise<PoolClient>;
   getQuery: () => Pool;
 }
+
 export class Database implements IDATABASE {
   _pool: Pool;
   constructor() {
@@ -22,8 +23,9 @@ export class Database implements IDATABASE {
     const client = await this._pool.connect();
     try {
       await migrate({ client }, path.resolve(__dirname, 'migrations/files'));
+      console.log('\x1b[32m%s\x1b[0m', 'Data Migration Completed');
     } catch (e) {
-      console.log('Migration Failed with err', e);
+      console.log('\x1b[31m%s\x1b[0m', 'Migration Failed with err', e);
     } finally {
       client.release();
     }
@@ -57,6 +59,22 @@ export async function executeQueryWithClient<T extends QueryResultRow>(
   } catch (err) {
     client.release();
     throw err;
+  }
+}
+
+export async function runMigrations(): Promise<void> {
+  const client = await poolInstance.connect();
+  try {
+    await migrate({ client }, path.resolve(__dirname, 'migrations/files'));
+    console.log('\x1b[32m%s\x1b[0m', 'Data Migration Completed');
+  } catch (err) {
+    console.log(
+      '\x1b[31m%s\x1b[0m',
+      'Migration Failed with err',
+      JSON.stringify(err, null, 2),
+    );
+  } finally {
+    client.release();
   }
 }
 
