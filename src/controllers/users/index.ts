@@ -35,6 +35,7 @@ export const getUsers = async (req: Request, res: Response) => {
 };
 
 export const signUp = async (req: Request, res: Response) => {
+  console.log({ body: req.body });
   try {
     const { error, value } = userValidatorSchema.validate(req.body, {
       stripUnknown: true,

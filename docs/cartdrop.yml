@@ -224,50 +224,17 @@ paths:
       summary: User Signup by providing all the params
       description: User Signup by providing all the params
       operationId: signUp
-      parameters:
-        - name: username
-          in: form
-          description: username of the user must be unique and alphanumeric
-          required: true
-          schema:
-            type: string
-        - name: number
-          in: form
-          description: number of the user must be unique and should be a valid indian number
-          required: false
-          schema:
-            type: string
-        - name: email
-          in: form
-          description: email of the user must be unique and a valid email address
-          required: true
-          schema:
-            type: string
-        - name: password
-          in: form
-          description: password of the user. should contain alteast one lower case, one uppercase and a number
-          required: true
-          schema:
-            type: string
-        - name: confirmPassword
-          in: form
-          description: confirmpassword should be same as password for validation purpose
-          required: true
-          schema:
-            type: string
-        - name: firstName
-          in: form
-          description: First Name of the user must be alphanumeric
-          required: true
-          schema:
-            type: string
-        - name: lastName
-          in: form
-          description: Last Name of the user must be alphanumeric
-          required: true
-          schema:
-            type: string
-            placeholder: Last Name
+      requestBody:
+        description: request body can be json or url encoded form
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserBodyResponse'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserBodyResponse'
+              
       responses:
         '400':
           description: Validation Error
@@ -298,6 +265,37 @@ paths:
           
 components:
   schemas:
+    UserBodyResponse:
+      type: object
+      properties:
+        username:
+          type: string
+          example: afzalsaiyed123
+        email: 
+          type: string
+          example: saiyedafzalgz@gmail.com
+        number:
+          type: string
+          example: 7856954123
+        password:
+          type: string
+          example: password
+        confirmPassword:
+          type: string
+          example: confirmPassword
+        firstName:
+          type: string
+          example: afzal
+        lastName:
+          type: string
+          example: saiyed
+      required:
+          - username
+          - email
+          - password
+          - confirmPassword
+          - firstName
+          - lastName
     Category:
       type: object
       properties:
