@@ -1,10 +1,12 @@
 import { Request, Response } from 'express';
-
-export const getFeaturedProducts = (req: Request, res: Response) => {
-  return res.status(200).json({ status: 'ok' });
+import ProductService from '../../services/productService';
+export const getFeaturedProducts = async (req: Request, res: Response) => {
+  const { rows, rowCount } = await ProductService.getFeaturedProducts('');
+  res.setHeader('x-row-count', rowCount);
+  return res.status(200).json(rows);
 };
 
-export const getProductForCategory = (req: Request, res: Response) => {
+export const getProductForCategory = async (req: Request, res: Response) => {
   return res.status(200).json({ status: 'ok' });
 };
 

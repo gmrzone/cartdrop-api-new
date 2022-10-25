@@ -4,12 +4,13 @@ import rateLimit from 'express-rate-limit';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 // import database from './config/db/index';
+import { runMigrations } from './config/db';
 import { CORS_OPTIONS, RATE_LIMIT_OPTIONS } from './config/constants';
 import userRoutes from './routes/user';
 import categoryRoutes from './routes/categories';
 import brandRoutes from './routes/brands';
 import subcategoryRoutes from './routes/subcategories';
-import { runMigrations } from './config/db';
+import productRoutes from './routes/products';
 
 const swaggerDocument = YAML.load('./docs/cartdrop.yml');
 const app: Application = express();
@@ -27,6 +28,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/subcategories', subcategoryRoutes);
 app.use('/api/brands', brandRoutes);
+app.use('/api/products', productRoutes);
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 export default app;
