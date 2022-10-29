@@ -775,7 +775,7 @@
     "fields": {
       "pk": 15,
       "pid": "TVSXHYFLBVCGVULKJR",
-      "retail_price": "1444900.00",
+      "retail_price": "144490.00",
       "price": "92999.00",
       "available_stock": 30,
       "product_id": 5,
@@ -870,7 +870,7 @@
       "available_stock": 30,
       "product_id": 8,
       "color_id": 5,
-      "variant_id": 1,
+      "variant_id": 28,
       "active": true,
       "images": [60, 61, 62, 63, 64]
     }
@@ -885,7 +885,7 @@
       "available_stock": 30,
       "product_id": 8,
       "color_id": 5,
-      "variant_id": 2,
+      "variant_id": 29,
       "active": true,
       "images": [60, 61, 62, 63, 64]
     }
@@ -900,7 +900,7 @@
       "available_stock": 30,
       "product_id": 8,
       "color_id": 5,
-      "variant_id": 3,
+      "variant_id": 27,
       "active": true,
       "images": [60, 61, 62, 63, 64]
     }
@@ -915,7 +915,7 @@
       "available_stock": 30,
       "product_id": 8,
       "color_id": 5,
-      "variant_id": 4,
+      "variant_id": 30,
       "active": true,
       "images": [60, 61, 62, 63, 64]
     }
@@ -930,7 +930,7 @@
       "available_stock": 30,
       "product_id": 8,
       "color_id": 5,
-      "variant_id": 5,
+      "variant_id": 32,
       "active": true,
       "images": [60, 61, 62, 63, 64]
     }
