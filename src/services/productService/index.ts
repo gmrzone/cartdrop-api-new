@@ -1,3 +1,4 @@
+import { ParsedQs } from 'qs';
 import { query } from '../../config/db';
 import { IPRODUCT_RESPONSE } from './interfaces';
 
@@ -8,6 +9,7 @@ interface IPRODUCT_SERVICE {
   getProductsForCategory: (
     baseImageUrl: string,
     category: string,
+    topProducts: string | ParsedQs | string[] | ParsedQs[] | undefined,
   ) => Promise<{ rows: IPRODUCT_RESPONSE[]; rowCount: number }>;
   getProductDetail: (
     baseImageUrl: string,
@@ -204,8 +206,12 @@ class ProductService implements IPRODUCT_SERVICE {
     return { rows, rowCount };
   };
 
-  getProductsForCategory = async (baseImageUrl: string, category: string) => {
-    const SQL = `select
+  getProductsForCategory = async (
+    baseImageUrl: string,
+    category: string,
+    topProducts: string | ParsedQs | string[] | ParsedQs[] | undefined,
+  ) => {
+    let SQL = `select
     pv.uuid,
     case
       when pv2.mobile_variant_id is not null then
@@ -380,8 +386,10 @@ class ProductService implements IPRODUCT_SERVICE {
   LEFT JOIN public.product_ac_star_rating pasr ON
     pacv.star_rating_id = pasr.id
   LEFT JOIN public.product_clothes_size pcs ON
-    pfv.size_id = pcs.id where pc2.slug = $2::text;`;
-
+    pfv.size_id = pcs.id where pc2.slug = $2::text`;
+    if (topProducts) {
+      SQL = SQL + ' ORDER BY p.total_rating;';
+    }
     const { rows, rowCount } = await query<IPRODUCT_RESPONSE>(SQL, [
       baseImageUrl,
       category,
@@ -395,7 +403,6 @@ class ProductService implements IPRODUCT_SERVICE {
     uuid: string,
     pid: string,
   ) => {
-    console.log({ uuid, pid, slug });
     const SQL = `select
     pv.uuid,
     case
