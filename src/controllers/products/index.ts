@@ -15,9 +15,11 @@ export const getFeaturedProducts = async (req: Request, res: Response) => {
 export const getProductForCategory = async (req: Request, res: Response) => {
   const imageBaseUrl = getBaseImageUrl(req);
   const { category } = req.params;
+  const { topProducts } = req.query;
   const { rows, rowCount } = await ProductService.getProductsForCategory(
     imageBaseUrl,
     category,
+    topProducts,
   );
   res.setHeader('x-row-count', rowCount);
   return res.status(200).json(rows);
